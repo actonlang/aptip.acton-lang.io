@@ -1,0 +1,41 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Origin: Acton
+Label: Acton
+Suite: unstable
+Codename: tip
+Date: Fri, 09 Aug 2024 01:50:40 UTC
+Architectures: amd64
+Components: main
+Description: Acton apt tip repository
+MD5Sum:
+ 5b542c834d3a7b97f02cf63846885091 38349 main/binary-amd64/Packages
+ 3330cf85b2cfa7217dda56f58f886f42 10731 main/binary-amd64/Packages.gz
+ 3215f5fc7e4ff14eb7e19da61f3cb9ed 119 main/binary-amd64/Release
+SHA1:
+ ad254804a5dd71068775e741ca264b776216d75a 38349 main/binary-amd64/Packages
+ 91692b7424d0088e8a0bca1096cb9af97860453d 10731 main/binary-amd64/Packages.gz
+ a1b8de048fba62b519525132f390cc544a939139 119 main/binary-amd64/Release
+SHA256:
+ f9a41f65e2a0f40b874e0f43047ef6feefb409b0c1f1ffd622d0e521931d5864 38349 main/binary-amd64/Packages
+ a8512fc1d1f6fb75ef5b2a534b4b04e03baa5196f4aceb387bf880be3c0fa857 10731 main/binary-amd64/Packages.gz
+ da9844e9de18078cac94be7232b5a69b9ac8931629e7863a34c69f78c68e78e3 119 main/binary-amd64/Release
+SHA512:
+ ae4c349e289cea666e432c5df0a69ab7a04e720efb6167d6e3a0bfee2ab3a87d7a28eda5856f06f7c2133a993d5476821bc8845cc7ed76a9ccf731ca63d48e17 38349 main/binary-amd64/Packages
+ 22286777a98fe6aaec538557f4a4220ca48098050c1cffae512e6da8223c0a07ffad2bb02979529b40b3878deb5f9881db97deb4d391246a36300e4c6208ffae 10731 main/binary-amd64/Packages.gz
+ e4421238937473b34ccb62096a8967ea60cde17a69ffbde4431180c164620efd6a8f49c40be7258c4c8846bd49f71719e2373fdab5367c050f73500accc33d4d 119 main/binary-amd64/Release
+-----BEGIN PGP SIGNATURE-----
+
+iQGzBAEBCgAdFiEEBbqisxkyppKzt3P4tCu7fdZYLIcFAma1dfAACgkQtCu7fdZY
+LIcrcQwAgZ1UXHQ4e4hC4hPjeeQ1BrCCwZ7mQHpbv09DP/EqgqhC9xRRGhxrenj1
+/B7aL4ttKmjsrVAqCDNS7DWRMFKJeeQCR1NDnytsWn7b0E8H0BWK6qknH4CFGsdU
+tpYjoUcgRsINLKVNm+i3tO4L5rLnufqwT31qLW831DUNpF5dSzE0y+QVGvakGM1e
+yk+NnUhhUJZb8UkEJ9zj43QMLVdCf0IKYTpCS8p4IKx1Kf+P29o8Y3/t7+SbNucR
+pWgz5SlltuPoR34uyFHAwDDNqYl2eSTCa15Z1eMXztsVzQtItv0iMO58Z6GUlZV9
+vk9MnZojuJGgaSA349YVxzzkhbQ+YZShxrwZH3whjy1fNxzvNiZKlltowercGMQI
+TXVh9HR5HaqUEm9A/hU+ngApQbSMPnbZQiB/96Ibg5SIDKXCZyHNQkv5AJjP40MO
+ziWgF3jRgBru83XHUu7k7bJHqGn+2DE52VOjv6IgL9mHFOwE7Qzm3hqRQFwV3iaV
+F9wWetzD
+=kuXg
+-----END PGP SIGNATURE-----
