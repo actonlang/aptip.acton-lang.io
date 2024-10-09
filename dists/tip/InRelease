@@ -1,0 +1,41 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Origin: Acton
+Label: Acton
+Suite: unstable
+Codename: tip
+Date: Wed, 09 Oct 2024 13:10:52 UTC
+Architectures: amd64
+Components: main
+Description: Acton apt tip repository
+MD5Sum:
+ 22e833c1715005b1263241de278215b2 16039 main/binary-amd64/Packages
+ 2d618d7e6d2a663ede1b1697821c6a2e 4633 main/binary-amd64/Packages.gz
+ 3215f5fc7e4ff14eb7e19da61f3cb9ed 119 main/binary-amd64/Release
+SHA1:
+ e7b7c565c91cb3af69e8a4b42e78b8bc02c2f462 16039 main/binary-amd64/Packages
+ 4a18c949fb5b56a1c70d37145ab3e243ee561057 4633 main/binary-amd64/Packages.gz
+ a1b8de048fba62b519525132f390cc544a939139 119 main/binary-amd64/Release
+SHA256:
+ afc41c114b36833c917cb02265650f618211860659edb3ab1a346516bd287114 16039 main/binary-amd64/Packages
+ 4edfe8357f5e42500e0a862c367e7ab36ddb7662d25f8cd9d54fa8fc2cbd915d 4633 main/binary-amd64/Packages.gz
+ da9844e9de18078cac94be7232b5a69b9ac8931629e7863a34c69f78c68e78e3 119 main/binary-amd64/Release
+SHA512:
+ 1f88b889bcc62baccd11460cc4f807e5ce9a720f7d929844f6a186b41c98cb4bc107a7a5ac22b367dfd9a809809989b66f09290ba384dbbafc03a2f7eb2c92b5 16039 main/binary-amd64/Packages
+ 8cc136abe21d0b0368d469929ba196f0562e540cfe51259e41b0cb81dc2f23aaff48d77d01cad8e5f1333f7ecfda46ee53320170897dbabf56e9e3c8d8ad12aa 4633 main/binary-amd64/Packages.gz
+ e4421238937473b34ccb62096a8967ea60cde17a69ffbde4431180c164620efd6a8f49c40be7258c4c8846bd49f71719e2373fdab5367c050f73500accc33d4d 119 main/binary-amd64/Release
+-----BEGIN PGP SIGNATURE-----
+
+iQGzBAEBCgAdFiEEBbqisxkyppKzt3P4tCu7fdZYLIcFAmcGgNwACgkQtCu7fdZY
+LIcqGAv+Kti+S4ji8u8OZ0dczTS6t6SeGhS8a7Ch92NwLhcK1lyZdpjrGy0HlbmI
+0GHpPYRZmj1RAECJwxnhZNYTptoqUZIDPZv5+fLUHU7liiOQO1cJvckSYn/rbFXw
+a5iDTFDh1QBZjgkjLWS6FaxtMP3/ZnvO/FuKWSDNk+I913qqul8/Hd44q2jiRdVP
+Vri7I7h3SESsqiem02/rW12z/pxa4RFdcjS2R1SRs+f7WEvBe7qB6ySxA/L4mQd9
+yEvRdH6TNzz73ANaKs3W+MTesPodzitPTSpDkvrgWmInnVz3WmA6ssaUZGVpQGdQ
+spNM8XTvNwoEJ1+tvYAm08UKrGM3xzkxFpLJm51d3oM7jnQDz5Yh7ZPZ9sv9VhFw
+vQnYy1iEtxJGPF2IcMKSbQwvVZ1KIv9Vk1IB5g0jpvqWTfaYFkTDX9OAWmtn8cyD
+C3HBXvk69a9R/2pXAeoz1cbHtlECBWnWvjHVnwmCqVOyplzvJQ7itySr+KseyZAA
+KneDI7Ky
+=3KVW
+-----END PGP SIGNATURE-----
