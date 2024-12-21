@@ -1,0 +1,41 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Origin: Acton
+Label: Acton
+Suite: unstable
+Codename: tip
+Date: Sat, 21 Dec 2024 02:08:30 UTC
+Architectures: amd64
+Components: main
+Description: Acton apt tip repository
+MD5Sum:
+ 60ef2d39fb86148f337dfa38a3e1dd7e 16029 main/binary-amd64/Packages
+ 555f3a27a103f30902ad9110d0d892a3 4650 main/binary-amd64/Packages.gz
+ 3215f5fc7e4ff14eb7e19da61f3cb9ed 119 main/binary-amd64/Release
+SHA1:
+ 20ff8bcca4c07175b5c92651d7b161b6457bde2f 16029 main/binary-amd64/Packages
+ 3467392d5133e928e131b9441ddfd510c6475c3f 4650 main/binary-amd64/Packages.gz
+ a1b8de048fba62b519525132f390cc544a939139 119 main/binary-amd64/Release
+SHA256:
+ 5ad6b28f5818c364445647d66188cc74a4d0e1dcd08297d2b5f761440d733bd1 16029 main/binary-amd64/Packages
+ 413fd85e822de39dd94df183a9f25f7871254284e08429fa42e5dedbaef8a401 4650 main/binary-amd64/Packages.gz
+ da9844e9de18078cac94be7232b5a69b9ac8931629e7863a34c69f78c68e78e3 119 main/binary-amd64/Release
+SHA512:
+ ecfa2f5b7d3d12b40bc14a34642163b68324666ac72309d08bc3ba2cddfd648cd4b65dfd31840f61c1f0c57cbdeea3a11e0cbf01d6d1c6c855e2559d3642a428 16029 main/binary-amd64/Packages
+ b3886c4b9992dc3c9f376d53bf9fa04758a98abdbde29b7e0881d4243aa3d63e6fd30c65153fce6b3ae99b85b43de513e9295e7855d84f1fb991fcb33ca5273e 4650 main/binary-amd64/Packages.gz
+ e4421238937473b34ccb62096a8967ea60cde17a69ffbde4431180c164620efd6a8f49c40be7258c4c8846bd49f71719e2373fdab5367c050f73500accc33d4d 119 main/binary-amd64/Release
+-----BEGIN PGP SIGNATURE-----
+
+iQGzBAEBCgAdFiEEBbqisxkyppKzt3P4tCu7fdZYLIcFAmdmIx4ACgkQtCu7fdZY
+LIeXZQv/c3B5uwQ3DZFF2zWl3adOFikZNEt3ZmwNKFKsJSyElBqSA2MubiH+d83Z
+hzj59yHikW5Sc0JkvO0sLsBy6rePnJ7s74GmISwoWFhP7l3aqat53EQHQeYY35vq
+fDEq218MaSm6WCSCbYU8qaBpVAZICRP64ww4vNPVoE/l7mIpd2D151V8Twe5B2H9
+HopQ58rb/t7Dfo3BHyGwFUQoPs5IXYJSVsbYbdXM64evHu4FMoFp6rPO6g0eLV5e
+paKUt2SrzS8c595myL6QGE30JdutpVn7vJwxDmVU6uF8XQ4VMIHQzyxj2+Rvj6IL
+nAXxIt+2s5D4UVurO1C3ScsOMkkDRnfWa5nQDu8EKg/3c11b8q8Pi/YvP8/TiuOP
+f7Ki0fJ241opREegqbefsfPP1xCDW05M7bee364epQ8KlubkrgVR5ZcKDTDFzKdc
+LIfM86DMNhmXd7xJ70X5YFQZmpGuhpZcS21FQl+kNIedJkCVHriYT8/WWnIcdq4S
+DltwdGrr
+=Wmvi
+-----END PGP SIGNATURE-----
