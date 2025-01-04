@@ -1,0 +1,24 @@
+Origin: Acton
+Label: Acton
+Suite: unstable
+Codename: tip
+Date: Sat, 04 Jan 2025 02:07:14 UTC
+Architectures: amd64
+Components: main
+Description: Acton apt tip repository
+MD5Sum:
+ 307755d245e67af736a6ea4768300b4b 14643 main/binary-amd64/Packages
+ 340c6545f25fa3cdcf8381951dd11eec 4234 main/binary-amd64/Packages.gz
+ 3215f5fc7e4ff14eb7e19da61f3cb9ed 119 main/binary-amd64/Release
+SHA1:
+ 68c249434e8d09089c8029d7b90b038e190bf782 14643 main/binary-amd64/Packages
+ 85c618e35bfd38012dcaf937b27e7dc6f7fa7a74 4234 main/binary-amd64/Packages.gz
+ a1b8de048fba62b519525132f390cc544a939139 119 main/binary-amd64/Release
+SHA256:
+ b4ef9d922db6deed4b9bb4423918a7da2ea3df12fc34856f796ca8661c74500f 14643 main/binary-amd64/Packages
+ 594e3c32ef03911e36a265675a71a730fc98b25aa0bd52a4439c8ad60dbd8257 4234 main/binary-amd64/Packages.gz
+ da9844e9de18078cac94be7232b5a69b9ac8931629e7863a34c69f78c68e78e3 119 main/binary-amd64/Release
+SHA512:
+ 6d4b3cb7692dca1332342ff588a01ac1aaadd4a217f37d00c7fab94b49fcf4e93117d5cce0880fbcb5e5e452a624ed1f8f12c90d2ab12a0c93ea2f4efeacf70f 14643 main/binary-amd64/Packages
+ fc67de5da4e66d29ff7cd65bb050fc9df6c5233be31b5827fd1d686277b40654daa32bf4fdcf140161e8ecde1b1534d7eb773a2b9c5e2c90ffc28bb9d95c2f36 4234 main/binary-amd64/Packages.gz
+ e4421238937473b34ccb62096a8967ea60cde17a69ffbde4431180c164620efd6a8f49c40be7258c4c8846bd49f71719e2373fdab5367c050f73500accc33d4d 119 main/binary-amd64/Release
