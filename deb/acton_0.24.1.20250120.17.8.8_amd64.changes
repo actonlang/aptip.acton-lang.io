@@ -1,0 +1,25 @@
+Format: 1.8
+Date: Mon, 13 Sep 2021 22:06:08 +0200
+Source: acton
+Binary: acton
+Architecture: amd64
+Version: 0.24.1.20250120.17.8.8
+Distribution: tip
+Urgency: medium
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Changed-By: Kristian Larsson <kristian@spritelink.net>
+Description:
+ acton      - Acton Programming Language
+Changes:
+ acton (0.24.1.20250120.17.8.8) tip; urgency=medium
+ .
+   * See CHANGELOG.md
+Checksums-Sha1:
+ 8b0e9d9ca7ca659464d822bd4907547df6da2b8b 5185 acton_0.24.1.20250120.17.8.8_amd64.buildinfo
+ 45d40e6537993d74d46f5fffd04a05cbfb557f7d 66087792 acton_0.24.1.20250120.17.8.8_amd64.deb
+Checksums-Sha256:
+ adf59a030b0e81532e253c1b682074910e4f337f5d843535936156af1a916118 5185 acton_0.24.1.20250120.17.8.8_amd64.buildinfo
+ de06912a91636174b89f7248d0accba7081b810c4f6074b1db119802577ea2e0 66087792 acton_0.24.1.20250120.17.8.8_amd64.deb
+Files:
+ 6a620d1d58965c9969b27122542dec20 5185 devel optional acton_0.24.1.20250120.17.8.8_amd64.buildinfo
+ b2c609415d9362fd731941477a126384 66087792 devel optional acton_0.24.1.20250120.17.8.8_amd64.deb
