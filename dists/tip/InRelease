@@ -1,0 +1,41 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Origin: Acton
+Label: Acton
+Suite: unstable
+Codename: tip
+Date: Sat, 01 Feb 2025 23:14:30 UTC
+Architectures: amd64
+Components: main
+Description: Acton apt tip repository
+MD5Sum:
+ b642eb788e201692c03ef275fca29128 14649 main/binary-amd64/Packages
+ 1d74a3db7776dcf913408031152039aa 4330 main/binary-amd64/Packages.gz
+ 3215f5fc7e4ff14eb7e19da61f3cb9ed 119 main/binary-amd64/Release
+SHA1:
+ 09bbe3356ae79ab8245e372df8ee794cb06e6a3a 14649 main/binary-amd64/Packages
+ 10469ee6f92adfe37e6ab3ee1ed9c00ed1b2db32 4330 main/binary-amd64/Packages.gz
+ a1b8de048fba62b519525132f390cc544a939139 119 main/binary-amd64/Release
+SHA256:
+ 266e78608058a8acbcccd2e2c05e34aa5330861a659e9b6ddf8f187422699ab1 14649 main/binary-amd64/Packages
+ a45e7d36ab3d21b1406670a03c8dea893eb5f1734fdde52e7c64f3881758ee20 4330 main/binary-amd64/Packages.gz
+ da9844e9de18078cac94be7232b5a69b9ac8931629e7863a34c69f78c68e78e3 119 main/binary-amd64/Release
+SHA512:
+ bbfd8015371f09ae555056792d68d823a65775e6d9da672a7be78e742e60173612eda5f123850081f3a85ef7ead4926616bfede9460e7fd7f6b3bf419c60d12c 14649 main/binary-amd64/Packages
+ c33d4ba9a4b969ebbe97c1802e6c9c172a3dce320757480053c7ac0d4aa45c9c226dadcec1dcf6e72679ab22655920e58e948562c72ead98ea08c5b1594e9826 4330 main/binary-amd64/Packages.gz
+ e4421238937473b34ccb62096a8967ea60cde17a69ffbde4431180c164620efd6a8f49c40be7258c4c8846bd49f71719e2373fdab5367c050f73500accc33d4d 119 main/binary-amd64/Release
+-----BEGIN PGP SIGNATURE-----
+
+iQGzBAEBCgAdFiEEBbqisxkyppKzt3P4tCu7fdZYLIcFAmeeqtYACgkQtCu7fdZY
+LIdgzgv/T3boODwXBhYSXHh/O2bLUJr1eo8qhhCwppuQG/ipnAhabaN24Ntvpknp
+ZIvCJQRM3LqTLbVgjT73WwvCzOehH3zYOlIImQy+ABH7cEjQzcNBoSxO8faXtg9g
+DR0CQe4aDReWbt1BqJr3QJB92QT9ZnjzNvbgHK/XOrTGmxH5lsjbbYOikblV8PzO
+CyI9tAfaXGON7BZxBO4y05aYxhBOiPNzqXHwUbM5lL/TCfsB/WJ/fd8VZB4e44/O
+tAabqsz7E2rXqNwLMfgFl7RUNN3oCs+yXMtk/B+FzvtTzgXgFiGXbeH3ZD36tBbt
+BWz175arWqoJqbCT1jH9fyqwVxpsdVan5qFHopczVfDSU5Kz2aaJxuiZxiBgXjA/
+L59bbPslBBo5jes03cvOh6/EzhgV8uKHTsbG0a3IlPBhcd9D33WNXnbBVb05nkFA
+d4qU5zYH2LqKWeG/t41VItQ7uQ4UasXDUz346sSW5qeh+kd7ZX3TlLlXEHjjHUO4
+Id6xJl9k
+=jl/a
+-----END PGP SIGNATURE-----

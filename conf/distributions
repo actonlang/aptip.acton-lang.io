@@ -1,0 +1,9 @@
+Origin: Acton
+Label: Acton
+Codename: tip
+Suite: unstable
+Architectures: amd64
+Components: main
+Description: Acton apt tip repository
+SignWith: 99B5FBA7A73EDA225F3DE0EB3B18E472F7BC1F3F
+Limit: 0
