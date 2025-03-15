@@ -1,0 +1,25 @@
+Format: 1.8
+Date: Mon, 13 Sep 2021 22:06:08 +0200
+Source: acton
+Binary: acton
+Architecture: arm64
+Version: 0.24.1.20250315.13.43.55
+Distribution: tip
+Urgency: medium
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Changed-By: Kristian Larsson <kristian@spritelink.net>
+Description:
+ acton      - Acton Programming Language
+Changes:
+ acton (0.24.1.20250315.13.43.55) tip; urgency=medium
+ .
+   * See CHANGELOG.md
+Checksums-Sha1:
+ 91037a2162e5f4f0be761950f53f21215b24e728 5196 acton_0.24.1.20250315.13.43.55_arm64.buildinfo
+ c6b7d2d5c09eef6f2d9868c41b1aab6c7ad17755 64377700 acton_0.24.1.20250315.13.43.55_arm64.deb
+Checksums-Sha256:
+ 97cbbde8b9b07591fc2f8ba42cecfb90cb804526aa3f739e2b3ae7a5b723246e 5196 acton_0.24.1.20250315.13.43.55_arm64.buildinfo
+ 702b45bb3438f7f27a5a30e427a1566d43dcd9274f43c6074e27cf81e033f061 64377700 acton_0.24.1.20250315.13.43.55_arm64.deb
+Files:
+ 9dc0efc94066ec10cf41436951d7ffc0 5196 devel optional acton_0.24.1.20250315.13.43.55_arm64.buildinfo
+ 7d8a14e6ffb9b42a2e5ba1858e25171d 64377700 devel optional acton_0.24.1.20250315.13.43.55_arm64.deb
