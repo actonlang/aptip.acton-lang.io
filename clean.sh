@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set the number of commits to keep
-X=${1:-20}  # Default to keeping the last 5 commits if not specified
+X=${1:-15}  # Default to keeping the last 5 commits if not specified
 
 # Get all commits with the "Add Acton tip" message, in chronological order
 all_commits=$(git log --grep="^Add Acton tip" --pretty=format:"%H")
