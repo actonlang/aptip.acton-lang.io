@@ -1,0 +1,36 @@
+Origin: Acton
+Label: Acton
+Suite: unstable
+Codename: tip
+Date: Sat, 29 Mar 2025 02:20:35 UTC
+Architectures: amd64 arm64
+Components: main
+Description: Acton apt tip repository
+MD5Sum:
+ 9326ec40b75ab1e6610441fddb3defd7 11156 main/binary-amd64/Packages
+ 694cfd2ac13b50cc0b3acfed201337be 3339 main/binary-amd64/Packages.gz
+ 3215f5fc7e4ff14eb7e19da61f3cb9ed 119 main/binary-amd64/Release
+ 46c230dc3064e15151ff0710d027a51e 11154 main/binary-arm64/Packages
+ 512405c290f674d49a0776ff0f7556e5 3335 main/binary-arm64/Packages.gz
+ 08f6cfaf4a1c466688585c58afb450f8 119 main/binary-arm64/Release
+SHA1:
+ 3d53f0560236d5873c612a0dbb72c63fe595bc25 11156 main/binary-amd64/Packages
+ d45bd5494485c27433f44323c2dd469845d02954 3339 main/binary-amd64/Packages.gz
+ a1b8de048fba62b519525132f390cc544a939139 119 main/binary-amd64/Release
+ 85c462b4f3981a19cc7c4ca06063db6d53cdcb66 11154 main/binary-arm64/Packages
+ a71ac1e89ff24a09c6986b21d3ffbe82477db3e3 3335 main/binary-arm64/Packages.gz
+ 22f7fab1e8a12eea43702e056a1d4f83a7de32c8 119 main/binary-arm64/Release
+SHA256:
+ e6d9424042424e476c73cdcfcb796ec014ec04c04afa0964090e44611da1b7fa 11156 main/binary-amd64/Packages
+ 1cd78372a11f045e5b73bbc9f769455be8ff572d8f8c2f127db0679829e05f43 3339 main/binary-amd64/Packages.gz
+ da9844e9de18078cac94be7232b5a69b9ac8931629e7863a34c69f78c68e78e3 119 main/binary-amd64/Release
+ c129524813e281245246a8392c002fa1272faaf796d23e3b23bb8aec2e415787 11154 main/binary-arm64/Packages
+ 2726f3fc95daba2171a4aeac0468c7a3041f56e2b22a835f7055772ee1b2cca5 3335 main/binary-arm64/Packages.gz
+ 28c212e6b9ff9bac8c82ab2be7dd5031658193f859d54c83b69760073b5ea898 119 main/binary-arm64/Release
+SHA512:
+ 2aa1bf68b1ad8ac1882a8f242d9781d6c29cc7eddc82c928ad019f96d0085b886109b9b08074c2401b9372439b319b98d8c959e8246c38539dd4ff7158a0b2e2 11156 main/binary-amd64/Packages
+ e50462a7bffabbafffc74b27e09c4c0d4143c8a98e98ec87c3e683bf4f4620f16382baa84600ddc5562e2731694e0ecdae2c5796a7d7fec852725d4380674367 3339 main/binary-amd64/Packages.gz
+ e4421238937473b34ccb62096a8967ea60cde17a69ffbde4431180c164620efd6a8f49c40be7258c4c8846bd49f71719e2373fdab5367c050f73500accc33d4d 119 main/binary-amd64/Release
+ aa3aae842310c26121a6fecc43e3e5a9267e80a3531ef18b6540f81caee1ac693d2cd885201cb2ec3cef43a44304ffb5a1fec2d489fa29aed38b0200f457b82f 11154 main/binary-arm64/Packages
+ 44151592e0555341ba875863b16bca91dc6486cdb3e2b65031840bbdaae6a20d6ef4d75503a9ab9b6b53f26feaec9744428fedecd9a5304ec8abf3fb81c40270 3335 main/binary-arm64/Packages.gz
+ 29e030c16dcd033d7fd8f60d30eed2476a076622ae83ea1c952125b0f00b0cf72168ceeb918f0dab86c52b4115f143cb3c6b8401455962bfa1752209ddf0e587 119 main/binary-arm64/Release
