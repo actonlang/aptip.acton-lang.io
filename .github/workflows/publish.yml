@@ -1,0 +1,51 @@
+name: Publish gh-pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish-pages:
+    runs-on: ubuntu-latest
+    container:
+      image: debian:experimental
+    permissions:
+      contents: write
+    steps:
+      - name: Install build prerequisites
+        run: |
+          apt-get update
+          apt-get install -qy -t experimental reprepro
+          apt-get install -qy git gnupg
+      - name: "Check out repository code"
+        uses: actions/checkout@v4
+      - name: "Create .gnupg"
+        run: |
+          pwd
+          mkdir -p ${HOME}/.gnupg
+      - name: "Import GPG key"
+        id: import_gpg
+        uses: crazy-max/ghaction-import-gpg@v6
+        with:
+          gpg_private_key: ${{ secrets.APT_GPG_PRIVATE_KEY }}
+      - name: "Configure git"
+        run: |
+          pwd
+          ls -la
+          git config --global --add safe.directory /__w/aptip.acton-lang.io/aptip.acton-lang.io
+          git config user.name "Apt Bot"
+          git config user.email apt@acton-lang.org
+      - name: "Include new deb in Apt repository"
+        run: |
+          for CHANGES_FILE in $(ls deb/*.changes); do
+            reprepro include tip "$CHANGES_FILE"
+          done
+      - name: "Create gh-pages branch from scratch"
+        run: |
+          git status
+          git checkout --orphan gh-pages
+          git add acton.gpg CNAME conf db dists pool README.md
+          git status
+          git commit -a -m "Create APT repo for tip releases"
+          git push --force origin gh-pages
