@@ -1,0 +1,31 @@
+# Clean old tip releases from the repo by running the clean.sh script. Run it once a day.
+# Ensure that the GitHub Actions workflow has enough permissions to push changes to the repo.
+
+name: "Clean old tip releases"
+on:
+  schedule:
+    - cron: '0 4 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: "Check out repository code"
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: "Configure git"
+        run: |
+          pwd
+          ls -la
+          git config --global --add safe.directory /__w/aptip.acton-lang.io/aptip.acton-lang.io
+          git config user.name "Apt Bot"
+          git config user.email apt@acton-lang.org
+      - name: "Run clean.sh"
+        run: bash clean.sh
+      - name: "Push changes"
+        run: |
+          git push --force origin main
