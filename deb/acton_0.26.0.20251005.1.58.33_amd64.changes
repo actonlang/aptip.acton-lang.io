@@ -1,0 +1,25 @@
+Format: 1.8
+Date: Mon, 13 Sep 2021 22:06:08 +0200
+Source: acton
+Binary: acton
+Architecture: amd64
+Version: 0.26.0.20251005.1.58.33
+Distribution: tip
+Urgency: medium
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Changed-By: Kristian Larsson <kristian@spritelink.net>
+Description:
+ acton      - Acton Programming Language
+Changes:
+ acton (0.26.0.20251005.1.58.33) tip; urgency=medium
+ .
+   * See CHANGELOG.md
+Checksums-Sha1:
+ 8172277017d72203640b131170d2b361115dba7a 5366 acton_0.26.0.20251005.1.58.33_amd64.buildinfo
+ 723ce5d66c4076204a3fc134d986cfc8a27be63b 68348892 acton_0.26.0.20251005.1.58.33_amd64.deb
+Checksums-Sha256:
+ 9526120f4fef129cdeba95a6009e1494c4afed3ac00c3f83a50f6018a5d9fc9c 5366 acton_0.26.0.20251005.1.58.33_amd64.buildinfo
+ 53f8efb66e7faa5e5518c9b904ef8e3aa4f038c246ed5b3e07101741e961c53f 68348892 acton_0.26.0.20251005.1.58.33_amd64.deb
+Files:
+ 979c67c8c03528d67807cd496a24fee0 5366 devel optional acton_0.26.0.20251005.1.58.33_amd64.buildinfo
+ de0d71106448938352cee4d60e1caa56 68348892 devel optional acton_0.26.0.20251005.1.58.33_amd64.deb
