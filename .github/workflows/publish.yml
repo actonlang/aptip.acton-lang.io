@@ -19,7 +19,7 @@ jobs:
           apt-get install -qy -t experimental reprepro
           apt-get install -qy git gnupg
       - name: "Check out repository code"
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: "Create .gnupg"
         run: |
           pwd
