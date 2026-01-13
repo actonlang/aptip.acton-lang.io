@@ -4,14 +4,14 @@ Binary: acton
 Architecture: arm64
 Version: 0.26.0.20260113.14.2
 Checksums-Md5:
- a98cc4a67223ced0ea74d495903d8b2e 74698404 acton_0.26.0.20260113.14.2_arm64.deb
+ 4d756de2a524e7522fa7dd5a66740f14 74699536 acton_0.26.0.20260113.14.2_arm64.deb
 Checksums-Sha1:
- 9f3555a73cfb4c791b1e640846d2e9ee0d251f10 74698404 acton_0.26.0.20260113.14.2_arm64.deb
+ 2cb75f9e31161cbdafc73d5d8fce225554850f37 74699536 acton_0.26.0.20260113.14.2_arm64.deb
 Checksums-Sha256:
- b96bcd80d6b5543eeec8fbd7c72400ef2bfa37f82d9066398d763d81ab312298 74698404 acton_0.26.0.20260113.14.2_arm64.deb
+ 29fdca0dfa01c30fbbef8c17aa94cac5a01e0486651fd48636f56488fe41a43c 74699536 acton_0.26.0.20260113.14.2_arm64.deb
 Build-Origin: Debian
 Build-Architecture: arm64
-Build-Date: Tue, 13 Jan 2026 14:08:57 +0000
+Build-Date: Tue, 13 Jan 2026 14:08:52 +0000
 Build-Tainted-By:
  merged-usr-via-aliased-dirs
 Installed-Build-Depends:
