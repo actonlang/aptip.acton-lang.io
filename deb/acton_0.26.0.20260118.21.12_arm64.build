@@ -1,0 +1,2307 @@
+ dpkg-buildpackage -us -uc -ui -i -nc -b
+dpkg-buildpackage: info: source package acton
+dpkg-buildpackage: info: source version 0.26.0.20260118.21.12
+dpkg-buildpackage: info: source distribution tip
+dpkg-buildpackage: info: source changed by Kristian Larsson <kristian@spritelink.net>
+ dpkg-source -i --before-build .
+dpkg-buildpackage: info: host architecture arm64
+ debian/rules binary
+dh binary --parallel --with bash-completion
+   dh_update_autotools_config
+   dh_autoreconf
+   dh_auto_configure
+   dh_auto_build
+	make -j4 "INSTALL=install --strip-program=true"
+make[1]: Entering directory '/__w/acton/acton'
+make dist/zig
+make[2]: Entering directory '/__w/acton/acton'
+mkdir -p deps-download
+curl --fail --location --retry 5 --retry-delay 2 --retry-max-time 120 --retry-all-errors --retry-connrefused -o deps-download/zig-linux-aarch64-0.13.0.tar.xz https://ziglang.org/download/0.13.0/zig-linux-aarch64-0.13.0.tar.xz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0 41.0M    0  335k    0     0   230k      0  0:03:02  0:00:01  0:03:01  230k 22 41.0M   22 9471k    0     0  4020k      0  0:00:10  0:00:02  0:00:08 4020k 70 41.0M   70 29.1M    0     0  8646k      0  0:00:04  0:00:03  0:00:01 8646k100 41.0M  100 41.0M    0     0  10.2M      0  0:00:04  0:00:04 --:--:-- 10.2M
+mkdir -p "dist/zig"
+cd "dist/zig" && tar Jx --strip-components=1 -f "../../deps-download/zig-linux-aarch64-0.13.0.tar.xz"
+rm -rf "dist/zig/doc"
+cp -a deps/zig-extras/* "dist/zig"
+make[2]: Leaving directory '/__w/acton/acton'
+make distribution
+make[2]: Entering directory '/__w/acton/acton'
+mkdir -p dist/bin
+mkdir -p deps-download
+mkdir -p deps-download
+mkdir -p deps-download
+cd compiler && sed 's,^version: BUILD_VERSION,version: "0.26.0",' < lib/package.yaml.in > lib/package.yaml
+curl --fail --location --retry 5 --retry-delay 2 --retry-max-time 120 --retry-all-errors --retry-connrefused -o deps-download/737c3d8e8a9f52c4adaecadb2ecdec3ccab4255d.tar.gz https://github.com/actonlang/mbedtls/archive/737c3d8e8a9f52c4adaecadb2ecdec3ccab4255d.tar.gz
+curl --fail --location --retry 5 --retry-delay 2 --retry-max-time 120 --retry-all-errors --retry-connrefused -o deps-download/a30e99cda3fabc591727a8df3aee5524c2392e15.tar.gz https://github.com/actonlang/argp-standalone/archive/a30e99cda3fabc591727a8df3aee5524c2392e15.tar.gz
+curl --fail --location --retry 5 --retry-delay 2 --retry-max-time 120 --retry-all-errors --retry-connrefused -o deps-download/282f774e1e664ea7c23cc0bb9f313c1054874a97.tar.gz https://github.com/actonlang/bsdnt/archive/282f774e1e664ea7c23cc0bb9f313c1054874a97.tar.gz
+cd compiler && unset CC && unset CXX && unset CFLAGS && stack build actonc lsp-server-acton --dry-run 2>&1 | grep "Nothing to build" || \
+	(sed 's,^version: BUILD_VERSION,version: "0.26.0.20260118.21.12",' < actonc/package.yaml.in > actonc/package.yaml \
+	&& sed 's,^version: BUILD_VERSION,version: "0.26.0.20260118.21.12",' < lsp-server/package.yaml.in > lsp-server/package.yaml \
+	&& stack build actonc lsp-server-acton  --ghc-options='-j4 ')
+    %%  TToottaall        %%  RReecceeiivveedd %  %X fXefredr d  A vAevreargaeg eS pSepeede d    T iTmiem e      T iTmiem e        T iTmiem e  Cu rCruernrte
+n t 
+                                                             D l o aDdl  oUapdl oa dU p l oTaodt a l  T o Stpaeln t    S p eLnetf t     SLpeefetd 
+ Speed 
+ 0       00        0  0        00        0  0        00           00            00   - - : - -0: ---- :----::----: ---- :----::----: ---- : - - : -0-     0  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100 64118    0 64118    0     0   175k      0 --:--:-- --:--:-- --:--:--  175k
+Stack has not been tested with GHC versions above 9.0, and using 9.6.6, this may fail
+mkdir -p deps-download
+curl --fail --location --retry 5 --retry-delay 2 --retry-max-time 120 --retry-all-errors --retry-connrefused -o deps-download/0a23b211b558137de7ee654c5527a54113142517.tar.gz https://github.com/actonlang/bdwgc/archive/0a23b211b558137de7ee654c5527a54113142517.tar.gz
+100 55288    0 55288    0     0   148k      0 --:--:-- --:--:-- --:--:--  148k
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0mkdir -p "/__w/acton/acton/dist/deps/libnetstring"
+cp -a "deps/libnetstring/"* "/__w/acton/acton/dist/deps/libnetstring"
+mkdir -p deps-download
+curl --fail --location --retry 5 --retry-delay 2 --retry-max-time 120 --retry-all-errors --retry-connrefused -o deps-download/e9967bee566dedc213d467660bc25ed495bb693b.tar.gz https://github.com/actonlang/pcre2/archive/e9967bee566dedc213d467660bc25ed495bb693b.tar.gz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0Stack has not been tested with Cabal versions above 3.4, but version 3.10.3.0 was found, this may fail
+100 4839k  100 4839k    0     0  10.4M      0 --:--:-- --:--:-- --:--:-- 10.4M
+mkdir -p deps-download
+curl --fail --location --retry 5 --retry-delay 2 --retry-max-time 120 --retry-all-errors --retry-connrefused -o deps-download/4e4bfc7ec44e6ac746b05f3251f59610822bc95c.tar.gz https://github.com/actonlang/protobuf-c/archive/4e4bfc7ec44e6ac746b05f3251f59610822bc95c.tar.gz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100  844k    0  844k    0     0  1741k      0 --:--:-- --:--:-- --:--:-- 1741k
+100  131k    0  131k    0     0   334k      0 --:--:-- --:--:-- --:--:--  334k
+mkdir -p deps-download
+curl --fail --location --retry 5 --retry-delay 2 --retry-max-time 120 --retry-all-errors --retry-connrefused -o deps-download/8854f5626963e443fd8647793f18173140de6a7e.tar.gz https://github.com/actonlang/tlsuv/archive/8854f5626963e443fd8647793f18173140de6a7e.tar.gz
+mkdir -p deps-download
+curl --fail --location --retry 5 --retry-delay 2 --retry-max-time 120 --retry-all-errors --retry-connrefused -o deps-download/f20620733fb8fb5fb261699bbb858887ac6ec0bb.tar.gz https://github.com/actonlang/libuv/archive/f20620733fb8fb5fb261699bbb858887ac6ec0bb.tar.gz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100 1281k    0 1281k    0     0  1768k      0 --:--:-- --:--:-- --:--:-- 1768k  1  207k    1  3354    0     0  10062      0  0:00:21 --:--:--  0:00:21 10062100  207k  100  207k    0     0   588k      0 --:--:-- --:--:-- --:--:-- 10.5M
+mkdir -p deps-download
+curl --fail --location --retry 5 --retry-delay 2 --retry-max-time 120 --retry-all-errors --retry-connrefused -o deps-download/e914c63b43d5f283090a63a307fccd25acbe37f0.tar.gz https://github.com/actonlang/utf8proc/archive/e914c63b43d5f283090a63a307fccd25acbe37f0.tar.gz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 2869k    0 2869k    0     0  3161k      0 --:--:-- --:--:-- --:--:-- 8676k
+mkdir -p "/__w/acton/acton/dist/deps/libuuid"
+cp -a "deps/libuuid/"* "/__w/acton/acton/dist/deps/libuuid"
+mkdir -p deps-download
+curl --fail --location --retry 5 --retry-delay 2 --retry-max-time 120 --retry-all-errors --retry-connrefused -o deps-download/56e4e62c077b2c5285b0eec4d6d4497f9b2e6e8f.tar.gz https://github.com/actonlang/libxml2/archive/56e4e62c077b2c5285b0eec4d6d4497f9b2e6e8f.tar.gz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 1280k    0 1280k    0     0  2612k      0 --:--:-- --:--:-- --:--:-- 11.2M
+mkdir -p "/__w/acton/acton/dist/deps/libyyjson"
+cp -a "deps/libyyjson/"* "/__w/acton/acton/dist/deps/libyyjson"
+mkdir -p deps-download
+curl --fail --location --retry 5 --retry-delay 2 --retry-max-time 120 --retry-all-errors --retry-connrefused -o deps-download/3f5b95957558a35c2becbe6b628c8219477dd5a4.tar.gz https://github.com/actonlang/snappy/archive/3f5b95957558a35c2becbe6b628c8219477dd5a4.tar.gz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100  186k    0  186k    0     0   417k      0 --:--:-- --:--:-- --:--:--  417k
+mkdir -p "dist/backend/"
+cp -a "backend//build.zig" "dist/backend/build.zig"
+mkdir -p "dist/backend/"
+cp -a "backend//build.zig.zon" "dist/backend/build.zig.zon"
+mkdir -p "dist/backend/"
+cp -a "backend//actondb.c" "dist/backend/actondb.c"
+mkdir -p "dist/backend/"
+cp -a "backend//client_api.c" "dist/backend/client_api.c"
+mkdir -p "dist/backend/"
+100 3694k  100 3694k    0     0  9562k      0 --:--:-- --:--:-- --:--:-- 9562k
+cp -a "backend//comm.c" "dist/backend/comm.c"
+mkdir -p "dist/backend/"
+mkdir -p "dist/backend/"
+cp -a "backend//db.c" "dist/backend/db.c"
+cp -a "backend//hash_ring.c" "dist/backend/hash_ring.c"
+mkdir -p "dist/backend/"
+mkdir -p "dist/backend/"
+cp -a "backend//log.c" "dist/backend/log.c"
+cp -a "backend//queue.c" "dist/backend/queue.c"
+mkdir -p "dist/backend/"
+mkdir -p "dist/backend/"
+cp -a "backend//queue_callback.c" "dist/backend/queue_callback.c"
+cp -a "backend//queue_groups.c" "dist/backend/queue_groups.c"
+mkdir -p "dist/backend/"
+cp -a "backend//skiplist.c" "dist/backend/skiplist.c"
+mkdir -p "dist/backend/"
+mkdir -p "dist/backend/"
+cp -a "backend//txns.c" "dist/backend/txns.c"
+cp -a "backend//txn_state.c" "dist/backend/txn_state.c"
+mkdir -p "dist/backend/"
+mkdir -p "dist/backend/"
+cp -a "backend//client_api.h" "dist/backend/client_api.h"
+cp -a "backend//comm.h" "dist/backend/comm.h"
+mkdir -p "dist/backend/"
+mkdir -p "dist/backend/"
+cp -a "backend//common.h" "dist/backend/common.h"
+cp -a "backend//consumer_state.h" "dist/backend/consumer_state.h"
+mkdir -p "dist/backend/"
+mkdir -p "dist/backend/"
+cp -a "backend//db_client_api.h" "dist/backend/db_client_api.h"
+cp -a "backend//db.h" "dist/backend/db.h"
+mkdir -p "dist/backend/"
+mkdir -p "dist/backend/"
+cp -a "backend//fastrand.h" "dist/backend/fastrand.h"
+cp -a "backend//hashes.h" "dist/backend/hashes.h"
+mkdir -p "dist/backend/"
+mkdir -p "dist/backend/"
+cp -a "backend//hash_ring.h" "dist/backend/hash_ring.h"
+100 1080k  100 1080k    0     0  3125k      0 --:--:-- --:--:-- --:--:-- 3125k
+cp -a "backend//log.h" "dist/backend/log.h"
+mkdir -p "dist/backend/"
+cp -a "backend//queue_callback.h" "dist/backend/queue_callback.h"
+mkdir -p "dist/backend/"
+mkdir -p "dist/backend/"
+mkdir -p "dist/backend/"
+cp -a "backend//queue_groups.h" "dist/backend/queue_groups.h"
+cp -a "backend//skiplist.h" "dist/backend/skiplist.h"
+cp -a "backend//queue.h" "dist/backend/queue.h"
+mkdir -p "dist/backend/"
+mkdir -p "dist/backend/"
+mkdir -p "dist/backend/failure_detector/"
+cp -a "backend//txns.h" "dist/backend/txns.h"
+cp -a "backend//txn_state.h" "dist/backend/txn_state.h"
+cp -a "backend//failure_detector/cells.c" "dist/backend/failure_detector/cells.c"
+mkdir -p "dist/backend/failure_detector/"
+mkdir -p "dist/backend/failure_detector/"
+cp -a "backend//failure_detector/db_messages.pb-c.c" "dist/backend/failure_detector/db_messages.pb-c.c"
+mkdir -p "dist/backend/failure_detector/"
+cp -a "backend//failure_detector/db_messages_test.c" "dist/backend/failure_detector/db_messages_test.c"
+mkdir -p "dist/backend/failure_detector/"
+cp -a "backend//failure_detector/db_queries.c" "dist/backend/failure_detector/db_queries.c"
+cp -a "backend//failure_detector/fd.c" "dist/backend/failure_detector/fd.c"
+mkdir -p "dist/backend/failure_detector/"
+mkdir -p "dist/backend/failure_detector/"
+cp -a "backend//failure_detector/vector_clock.c" "dist/backend/failure_detector/vector_clock.c"
+mkdir -p "dist/backend/failure_detector/"
+cp -a "backend//failure_detector/cells.h" "dist/backend/failure_detector/cells.h"
+cp -a "backend//failure_detector/db_messages.pb-c.h" "dist/backend/failure_detector/db_messages.pb-c.h"
+mkdir -p "dist/backend/failure_detector/"
+mkdir -p "dist/backend/failure_detector/"
+mkdir -p "dist/backend/failure_detector/"
+cp -a "backend//failure_detector/db_queries.h" "dist/backend/failure_detector/db_queries.h"
+cp -a "backend//failure_detector/fd.h" "dist/backend/failure_detector/fd.h"
+cp -a "backend//failure_detector/txns.h" "dist/backend/failure_detector/txns.h"
+mkdir -p "dist/backend/failure_detector/"
+mkdir -p "dist/backend/"
+cp -a "backend//failure_detector/vector_clock.h" "dist/backend/failure_detector/vector_clock.h"
+cp -a "backend//deps" "dist/backend/deps"
+cp -a builder/build.zig builder/build.zig.zon "dist/builder/"
+cp bin/runacton dist/bin/runacton.tmp
+cp -a utils/lldb/acton.py dist/lldb/acton.py
+mv dist/bin/runacton.tmp dist/bin/runacton
+mkdir -p "dist/deps/mbedtls"
+mkdir -p "dist/deps/libargp"
+mkdir -p "dist/deps/libbsdnt"
+cd "dist/deps/mbedtls" && tar zx --strip-components=1 -f "/__w/acton/acton/deps-download/737c3d8e8a9f52c4adaecadb2ecdec3ccab4255d.tar.gz"
+cd "dist/deps/libargp" && tar zx --strip-components=1 -f "/__w/acton/acton/deps-download/a30e99cda3fabc591727a8df3aee5524c2392e15.tar.gz"
+cd "dist/deps/libbsdnt" && tar zx --strip-components=1 -f "/__w/acton/acton/deps-download/282f774e1e664ea7c23cc0bb9f313c1054874a97.tar.gz"
+rm -rf "dist/deps/libargp/testsuite"
+touch "/__w/acton/acton/dist/deps/libargp"
+mkdir -p "dist/deps/libgc"
+touch "/__w/acton/acton/dist/deps/libbsdnt"
+cd "dist/deps/libgc" && tar zx --strip-components=1 -f "/__w/acton/acton/deps-download/0a23b211b558137de7ee654c5527a54113142517.tar.gz"
+mkdir -p "dist/deps/pcre2"
+cd "dist/deps/pcre2" && tar zx --strip-components=1 -f "/__w/acton/acton/deps-download/e9967bee566dedc213d467660bc25ed495bb693b.tar.gz"
+rm -rf "dist/deps/libgc/tests" "dist/deps/libgc/tools"
+touch "/__w/acton/acton/dist/deps/libgc"
+mkdir -p "dist/deps/libprotobuf_c"
+cd "dist/deps/libprotobuf_c" && tar zx --strip-components=1 -f "/__w/acton/acton/deps-download/4e4bfc7ec44e6ac746b05f3251f59610822bc95c.tar.gz"
+touch "/__w/acton/acton/dist/deps/libprotobuf_c"
+mkdir -p "dist/deps/libuv"
+cd "dist/deps/libuv" && tar zx --strip-components=1 -f "/__w/acton/acton/deps-download/f20620733fb8fb5fb261699bbb858887ac6ec0bb.tar.gz" "libuv-f20620733fb8fb5fb261699bbb858887ac6ec0bb/build.zig" "libuv-f20620733fb8fb5fb261699bbb858887ac6ec0bb/include" "libuv-f20620733fb8fb5fb261699bbb858887ac6ec0bb/src"
+touch "/__w/acton/acton/dist/deps/libuv"
+mkdir -p "dist/deps/libutf8proc"
+cd "dist/deps/libutf8proc" && tar zx --strip-components=1 -f "/__w/acton/acton/deps-download/e914c63b43d5f283090a63a307fccd25acbe37f0.tar.gz"
+touch "/__w/acton/acton/dist/deps/libutf8proc"
+mkdir -p "dist/deps/libxml2"
+touch "/__w/acton/acton/dist/deps/pcre2"
+cd "dist/deps/libxml2" && tar zx --strip-components=1 -f "/__w/acton/acton/deps-download/56e4e62c077b2c5285b0eec4d6d4497f9b2e6e8f.tar.gz"
+mkdir -p "dist/deps/libsnappy_c"
+cd "dist/deps/libsnappy_c" && tar zx --strip-components=1 -f "/__w/acton/acton/deps-download/3f5b95957558a35c2becbe6b628c8219477dd5a4.tar.gz"
+touch "/__w/acton/acton/dist/deps/libsnappy_c"
+touch "/__w/acton/acton/dist/deps/mbedtls"
+mkdir -p "dist/deps/tlsuv"
+cd "dist/deps/tlsuv" && tar zx --strip-components=1 -f "/__w/acton/acton/deps-download/8854f5626963e443fd8647793f18173140de6a7e.tar.gz"
+touch "/__w/acton/acton/dist/deps/tlsuv"
+rm -rf "dist/deps/libxml2/doc" "dist/deps/libxml2/example" "dist/deps/libxml2/fuzz" "dist/deps/libxml2/os400" "dist/deps/libxml2/python" dist/deps/libxml2/test*
+touch "/__w/acton/acton/dist/deps/libxml2"
+cd dist/backend && "/__w/acton/acton/dist/zig/zig" build -Donly_actondb --prefix "/__w/acton/acton/dist"
+Threads enabled
+appar                  > configure
+appar                  > Warning: appar.cabal:20:37: version operators used. To use version operators
+appar                  > the package needs to specify at least 'cabal-version: >= 1.8'.
+appar                  > Configuring appar-0.1.8...
+appar                  > build
+attoparsec-aeson       > configure
+attoparsec-aeson       > Configuring attoparsec-aeson-2.1.0.0...
+appar                  > Preprocessing library for appar-0.1.8..
+appar                  > Building library for appar-0.1.8..
+appar                  > 
+appar                  > on the commandline: warning: [-Wdeprecated-flags]
+appar                  >     -Wnoncanonical-monadfail-instances is deprecated: fail is no longer a method of Monad
+appar                  > [1 of 5] Compiling Text.Appar.Input
+appar                  > [2 of 5] Compiling Text.Appar.Parser
+appar                  > 
+appar                  > /tmp/stack-f20e5dbac700eb29/appar-0.1.8/Text/Appar/Parser.hs:59:1: warning: [-Wunused-imports]
+appar                  >     The import of ‘Control.Monad.Fail’ is redundant
+appar                  >       except perhaps to import instances from ‘Control.Monad.Fail’
+appar                  >     To import instances alone, use: import Control.Monad.Fail()
+appar                  >    |
+appar                  > 59 | import Control.Monad.Fail as Fail
+appar                  >    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+appar                  > [3 of 5] Compiling Text.Appar.LazyByteString
+appar                  > [4 of 5] Compiling Text.Appar.ByteString
+appar                  > [5 of 5] Compiling Text.Appar.String
+appar                  > copy/register
+appar                  > Installing library in /__w/acton/acton/debian/.debhelper/generated/_source/home/.stack/snapshots/aarch64-linux-tinfo6/990d0064a92c190cbad3a4d8701c3ff3a8c550fa15bdd2f1f8ea30b991dffd81/9.6.6/lib/aarch64-linux-ghc-9.6.6/appar-0.1.8-35VNf41Gyn3ISAkAVOl5KW
+attoparsec-aeson       > build
+base64-bytestring      > configure
+base64-bytestring      > Configuring base64-bytestring-1.2.1.0...
+attoparsec-aeson       > Preprocessing library for attoparsec-aeson-2.1.0.0..
+attoparsec-aeson       > Building library for attoparsec-aeson-2.1.0.0..
+appar                  > Registering library for appar-0.1.8..
+attoparsec-aeson       > copy/register
+attoparsec-aeson       > Installing library in /__w/acton/acton/debian/.debhelper/generated/_source/home/.stack/snapshots/aarch64-linux-tinfo6/990d0064a92c190cbad3a4d8701c3ff3a8c550fa15bdd2f1f8ea30b991dffd81/9.6.6/lib/aarch64-linux-ghc-9.6.6/attoparsec-aeson-2.1.0.0-8gk0Fn4Lnss5t7D8GIYD8y
+attoparsec-aeson       > Registering library for attoparsec-aeson-2.1.0.0..
+base64-bytestring      > build
+basement               > configure
+basement               > Configuring basement-0.0.16...
+base64-bytestring      > Preprocessing library for base64-bytestring-1.2.1.0..
+base64-bytestring      > Building library for base64-bytestring-1.2.1.0..
+base64-bytestring      > [1 of 5] Compiling Data.ByteString.Base64.Internal
+base64-bytestring      > [2 of 5] Compiling Data.ByteString.Base64
+base64-bytestring      > [3 of 5] Compiling Data.ByteString.Base64.Lazy
+basement               > build
+byteorder              > configure
+byteorder              > Configuring byteorder-1.0.4...
+base64-bytestring      > [4 of 5] Compiling Data.ByteString.Base64.URL
+basement               > Preprocessing library for basement-0.0.16..
+base64-bytestring      > [5 of 5] Compiling Data.ByteString.Base64.URL.Lazy
+basement               > Building library for basement-0.0.16..
+base64-bytestring      > copy/register
+base64-bytestring      > Installing library in /__w/acton/acton/debian/.debhelper/generated/_source/home/.stack/snapshots/aarch64-linux-tinfo6/990d0064a92c190cbad3a4d8701c3ff3a8c550fa15bdd2f1f8ea30b991dffd81/9.6.6/lib/aarch64-linux-ghc-9.6.6/base64-bytestring-1.2.1.0-2n37CC8Eq7mGHxpF66Eiye
+base64-bytestring      > Registering library for base64-bytestring-1.2.1.0..
+basement               > 
+basement               > /tmp/stack-f20e5dbac700eb29/basement-0.0.16/Basement/Error.hs:7:14: warning: [-Wdeprecated-flags]
+basement               >     -XTypeInType is deprecated: use -XDataKinds and -XPolyKinds instead
+basement               >   |
+basement               > 7 | {-# LANGUAGE TypeInType #-}
+basement               >   |              ^^^^^^^^^^
+basement               > [ 1 of 84] Compiling Basement.Compat.Bifunctor
+basement               > [ 2 of 84] Compiling Basement.Compat.C.Types
+byteorder              > build
+cereal                 > configure
+basement               > [ 3 of 84] Compiling Basement.Compat.CallStack
+cereal                 > Configuring cereal-0.5.8.3...
+byteorder              > Preprocessing library for byteorder-1.0.4..
+byteorder              > Building library for byteorder-1.0.4..
+basement               > [ 4 of 84] Compiling Basement.Compat.Identity
+basement               > [ 5 of 84] Compiling Basement.Compat.IsList
+basement               > [ 6 of 84] Compiling Basement.Compat.Natural
+basement               > [ 7 of 84] Compiling Basement.Compat.NumLiteral
+byteorder              > [1 of 1] Compiling System.ByteOrder
+basement               > [ 8 of 84] Compiling Basement.Compat.PrimTypes
+basement               > [ 9 of 84] Compiling Basement.Compat.Primitive
+basement               > [10 of 84] Compiling Basement.Compat.Semigroup
+basement               > [11 of 84] Compiling Basement.Compat.Typeable
+basement               > [12 of 84] Compiling Basement.Compat.Base
+basement               > [13 of 84] Compiling Basement.Compat.MonadTrans
+basement               > [14 of 84] Compiling Basement.Compat.AMP
+basement               > [15 of 84] Compiling Basement.Endianness
+byteorder              > copy/register
+byteorder              > Installing library in /__w/acton/acton/debian/.debhelper/generated/_source/home/.stack/snapshots/aarch64-linux-tinfo6/990d0064a92c190cbad3a4d8701c3ff3a8c550fa15bdd2f1f8ea30b991dffd81/9.6.6/lib/aarch64-linux-ghc-9.6.6/byteorder-1.0.4-IFlP2E44NdRWUzguGw0c2
+byteorder              > Registering library for byteorder-1.0.4..
+basement               > [16 of 84] Compiling Basement.Floating
+basement               > [17 of 84] Compiling Basement.Monad
+basement               > 
+basement               > /tmp/stack-f20e5dbac700eb29/basement-0.0.16/Basement/Monad.hs:47:23: warning: [GHC-39567] [-Wstar-is-type]
+basement               >     Using ‘*’ (or its Unicode variant) to mean ‘Data.Kind.Type’
+cereal                 > build
+basement               >     relies on the StarIsType extension, which will become
+basement               >     deprecated in the future.
+basement               >     Suggested fix: Use ‘Type’ from ‘Data.Kind’ instead.
+basement               >    |
+basement               > 47 |     type PrimVar m :: * -> *
+basement               >    |                       ^
+basement               > 
+basement               > /tmp/stack-f20e5dbac700eb29/basement-0.0.16/Basement/Monad.hs:47:28: warning: [GHC-39567] [-Wstar-is-type]
+basement               >     Using ‘*’ (or its Unicode variant) to mean ‘Data.Kind.Type’
+basement               >     relies on the StarIsType extension, which will become
+basement               >     deprecated in the future.
+basement               >     Suggested fix: Use ‘Type’ from ‘Data.Kind’ instead.
+basement               >    |
+basement               > 47 |     type PrimVar m :: * -> *
+basement               >    |                            ^
+cmdargs                > configure
+cmdargs                > Configuring cmdargs-0.10.22...
+cereal                 > Preprocessing library for cereal-0.5.8.3..
+cereal                 > Building library for cereal-0.5.8.3..
+basement               > [18 of 84] Compiling Basement.FinalPtr
+basement               > [19 of 84] Compiling Basement.Numerical.Conversion
+cereal                 > [1 of 4] Compiling Data.Serialize.Get
+basement               > [20 of 84] Compiling Basement.Numerical.Number
+basement               > [21 of 84] Compiling Basement.IntegralConv
+basement               > [22 of 84] Compiling Basement.Types.Char7
+basement               > [23 of 84] Compiling Basement.Base16
+basement               > [24 of 84] Compiling Basement.Types.Word128
+cmdargs                > build
+cookie                 > configure
+cookie                 > Configuring cookie-0.4.6...
+cmdargs                > Preprocessing library for cmdargs-0.10.22..
+cmdargs                > Building library for cmdargs-0.10.22..
+cmdargs                > [ 1 of 25] Compiling Data.Generics.Any
+basement               > [25 of 84] Compiling Basement.Types.Word256
+cmdargs                > [ 2 of 25] Compiling Data.Generics.Any.Prelude
+cmdargs                > [ 3 of 25] Compiling System.Console.CmdArgs.Annotate
+basement               > [26 of 84] Compiling Basement.Nat
+basement               > [27 of 84] Compiling Basement.Bounded
+cookie                 > build
+cookie                 > Preprocessing library for cookie-0.4.6..
+cookie                 > Building library for cookie-0.4.6..
+basement               > [28 of 84] Compiling Basement.Numerical.Subtractive
+cookie                 > [1 of 1] Compiling Web.Cookie
+basement               > [29 of 84] Compiling Basement.Numerical.Additive
+cmdargs                > [ 4 of 25] Compiling System.Console.CmdArgs.Default
+cmdargs                > [ 5 of 25] Compiling System.Console.CmdArgs.Explicit.ExpandArgsAt
+cmdargs                > [ 6 of 25] Compiling System.Console.CmdArgs.Explicit.SplitJoin
+basement               > [30 of 84] Compiling Basement.Numerical.Multiplicative
+cmdargs                > [ 7 of 25] Compiling System.Console.CmdArgs.Explicit.Type
+basement               > [31 of 84] Compiling Basement.Types.OffsetSize
+cmdargs                > [ 8 of 25] Compiling System.Console.CmdArgs.Explicit.Process
+basement               > [32 of 84] Compiling Basement.Types.Ptr
+basement               > [33 of 84] Compiling Basement.Terminal.Size
+cereal                 > [2 of 4] Compiling Data.Serialize.Put
+basement               > [34 of 84] Compiling Basement.Terminal
+basement               > [35 of 84] Compiling Basement.Runtime
+basement               > [36 of 84] Compiling Basement.PrimType
+cmdargs                > [ 9 of 25] Compiling System.Console.CmdArgs.Explicit.Complete
+cookie                 > copy/register
+cookie                 > Installing library in /__w/acton/acton/debian/.debhelper/generated/_source/home/.stack/snapshots/aarch64-linux-tinfo6/990d0064a92c190cbad3a4d8701c3ff3a8c550fa15bdd2f1f8ea30b991dffd81/9.6.6/lib/aarch64-linux-ghc-9.6.6/cookie-0.4.6-6hBbe4rMpRvH4WUYSzGXRy
+cookie                 > Registering library for cookie-0.4.6..
+cmdargs                > [10 of 25] Compiling System.Console.CmdArgs.Helper
+basement               > [37 of 84] Compiling Basement.MutableBuilder
+basement               > [38 of 84] Compiling Basement.Exception
+basement               > [39 of 84] Compiling Basement.NonEmpty
+basement               > [40 of 84] Compiling Basement.Bindings.Memory
+basement               > [41 of 84] Compiling Basement.Alg.Class
+basement               > [42 of 84] Compiling Basement.Compat.ExtList
+cereal                 > [3 of 4] Compiling Data.Serialize.IEEE754
+hourglass              > configure
+basement               > [43 of 84] Compiling Basement.Alg.XorShift
+hourglass              > Configuring hourglass-0.2.12...
+basement               > [44 of 84] Compiling Basement.Alg.PrimArray
+basement               > [45 of 84] Compiling Basement.Alg.Mutable
+basement               > [46 of 84] Compiling Basement.NormalForm
+cereal                 > [4 of 4] Compiling Data.Serialize
+cmdargs                > [11 of 25] Compiling System.Console.CmdArgs.Implicit.Ann
+basement               > [47 of 84] Compiling Basement.These
+cereal                 > 
+cereal                 > /tmp/stack-f20e5dbac700eb29/cereal-0.5.8.3/src/Data/Serialize.hs:702:22: warning: [GHC-39567] [-Wstar-is-type]
+cereal                 >     Using ‘*’ (or its Unicode variant) to mean ‘Data.Kind.Type’
+cereal                 >     relies on the StarIsType extension, which will become
+cereal                 >     deprecated in the future.
+cereal                 >     Suggested fix: Use ‘Type’ from ‘Data.Kind’ instead.
+cereal                 >     |
+cereal                 > 702 | newtype Tagged (s :: * -> *) b = Tagged {unTagged :: b}
+cereal                 >     |                      ^
+cereal                 > 
+cereal                 > /tmp/stack-f20e5dbac700eb29/cereal-0.5.8.3/src/Data/Serialize.hs:702:27: warning: [GHC-39567] [-Wstar-is-type]
+cereal                 >     Using ‘*’ (or its Unicode variant) to mean ‘Data.Kind.Type’
+cereal                 >     relies on the StarIsType extension, which will become
+cereal                 >     deprecated in the future.
+cereal                 >     Suggested fix: Use ‘Type’ from ‘Data.Kind’ instead.
+cereal                 >     |
+cereal                 > 702 | newtype Tagged (s :: * -> *) b = Tagged {unTagged :: b}
+cereal                 >     |                           ^
+basement               > [48 of 84] Compiling Basement.Sized.List
+cmdargs                > [12 of 25] Compiling System.Console.CmdArgs.Implicit.UI
+cmdargs                > [13 of 25] Compiling System.Console.CmdArgs.Text
+basement               > [49 of 84] Compiling Basement.Block.Base
+hourglass              > build
+hourglass              > Preprocessing library for hourglass-0.2.12..
+hourglass              > Building library for hourglass-0.2.12..
+hourglass              > [ 1 of 17] Compiling Data.Hourglass.Utils
+cmdargs                > [14 of 25] Compiling System.Console.CmdArgs.Explicit.Help
+hourglass              > [ 2 of 17] Compiling Data.Hourglass.Zone
+hourglass              > [ 3 of 17] Compiling Time.Types
+basement               > [50 of 84] Compiling Basement.Cast
+basement               > [51 of 84] Compiling Basement.Block.Mutable
+basement               > [52 of 84] Compiling Basement.Block
+cmdargs                > [15 of 25] Compiling System.Console.CmdArgs.Verbosity
+cmdargs                > [16 of 25] Compiling System.Console.CmdArgs.Implicit.Type
+basement               > [53 of 84] Compiling Basement.Sized.Block
+cmdargs                > [17 of 25] Compiling System.Console.CmdArgs.Explicit
+cmdargs                > [18 of 25] Compiling System.Console.CmdArgs.Implicit.Reader
+basement               > [54 of 84] Compiling Basement.BlockN
+basement               > [55 of 84] Compiling Basement.Bits
+cmdargs                > [19 of 25] Compiling System.Console.CmdArgs.Implicit.Local
+basement               > [56 of 84] Compiling Basement.UArray.Base
+cmdargs                > [20 of 25] Compiling System.Console.CmdArgs.Implicit.Reform
+cmdargs                > [21 of 25] Compiling System.Console.CmdArgs.Implicit.Global
+hourglass              > [ 4 of 17] Compiling Data.Hourglass.Types
+hourglass              > [ 5 of 17] Compiling Data.Hourglass.Internal.Unix
+hourglass              > 
+hourglass              > /tmp/stack-f20e5dbac700eb29/hourglass-0.2.12/Data/Hourglass/Internal/Unix.hs:24:1: warning: [-Wunused-imports]
+hourglass              >     The import of ‘Control.Applicative’ is redundant
+hourglass              >       except perhaps to import instances from ‘Control.Applicative’
+hourglass              >     To import instances alone, use: import Control.Applicative()
+hourglass              >    |
+hourglass              > 24 | import Control.Applicative
+hourglass              >    | ^^^^^^^^^^^^^^^^^^^^^^^^^^
+cmdargs                > [22 of 25] Compiling System.Console.CmdArgs.Implicit
+cmdargs                > [23 of 25] Compiling System.Console.CmdArgs.Quote
+hourglass              > [ 6 of 17] Compiling Data.Hourglass.Internal
+basement               > [57 of 84] Compiling Basement.BoxedArray
+hourglass              > [ 7 of 17] Compiling Data.Hourglass.Calendar
+hourglass              > [ 8 of 17] Compiling Data.Hourglass.Diff
+hourglass              > 
+hourglass              > /tmp/stack-f20e5dbac700eb29/hourglass-0.2.12/Data/Hourglass/Diff.hs:23:1: warning: [-Wunused-imports]
+hourglass              >     The import of ‘Data.Monoid’ is redundant
+hourglass              >       except perhaps to import instances from ‘Data.Monoid’
+hourglass              >     To import instances alone, use: import Data.Monoid()
+hourglass              >    |
+hourglass              > 23 | import Data.Monoid
+hourglass              >    | ^^^^^^^^^^^^^^^^^^
+hourglass              > 
+hourglass              > /tmp/stack-f20e5dbac700eb29/hourglass-0.2.12/Data/Hourglass/Diff.hs:49:5: warning: [-Wnoncanonical-monoid-instances]
+hourglass              >     Noncanonical ‘mappend’ definition detected
+hourglass              >     in the instance declaration for ‘Monoid Period’.
+hourglass              >     ‘mappend’ will eventually be removed in favour of ‘(<>)’
+hourglass              >     Either remove definition for ‘mappend’ (recommended) or define as ‘mappend = (<>)’
+hourglass              >     See also: https://gitlab.haskell.org/ghc/ghc/-/wikis/proposal/semigroup-monoid
+hourglass              >    |
+hourglass              > 49 |     mappend (Period y1 m1 d1) (Period y2 m2 d2) =
+hourglass              >    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^...
+hourglass              > 
+hourglass              > /tmp/stack-f20e5dbac700eb29/hourglass-0.2.12/Data/Hourglass/Diff.hs:70:5: warning: [-Wnoncanonical-monoid-instances]
+hourglass              >     Noncanonical ‘mappend’ definition detected
+hourglass              >     in the instance declaration for ‘Monoid Duration’.
+hourglass              >     ‘mappend’ will eventually be removed in favour of ‘(<>)’
+hourglass              >     Either remove definition for ‘mappend’ (recommended) or define as ‘mappend = (<>)’
+hourglass              >     See also: https://gitlab.haskell.org/ghc/ghc/-/wikis/proposal/semigroup-monoid
+hourglass              >    |
+hourglass              > 70 |     mappend (Duration h1 m1 s1 ns1) (Duration h2 m2 s2 ns2) =
+hourglass              >    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^...
+cmdargs                > [24 of 25] Compiling System.Console.CmdArgs
+cmdargs                > [25 of 25] Compiling System.Console.CmdArgs.GetOpt
+cmdargs                > copy/register
+hourglass              > [ 9 of 17] Compiling Data.Hourglass.Time
+cmdargs                > Installing library in /__w/acton/acton/debian/.debhelper/generated/_source/home/.stack/snapshots/aarch64-linux-tinfo6/990d0064a92c190cbad3a4d8701c3ff3a8c550fa15bdd2f1f8ea30b991dffd81/9.6.6/lib/aarch64-linux-ghc-9.6.6/cmdargs-0.10.22-AjclSlM6FdP32276ikr1zb
+hourglass              > [10 of 17] Compiling Data.Hourglass.Epoch
+cmdargs                > Registering library for cmdargs-0.10.22..
+basement               > [58 of 84] Compiling Basement.Sized.Vect
+cereal                 > copy/register
+cereal                 > Installing library in /__w/acton/acton/debian/.debhelper/generated/_source/home/.stack/snapshots/aarch64-linux-tinfo6/990d0064a92c190cbad3a4d8701c3ff3a8c550fa15bdd2f1f8ea30b991dffd81/9.6.6/lib/aarch64-linux-ghc-9.6.6/cereal-0.5.8.3-7PSvBwubtcNA2qTQig3ex0
+cereal                 > Registering library for cereal-0.5.8.3..
+basement               > [59 of 84] Compiling Basement.UArray.Mutable
+hourglass              > [11 of 17] Compiling Data.Hourglass.Local
+hourglass              > [12 of 17] Compiling Time.System
+hourglass              > 
+hourglass              > /tmp/stack-f20e5dbac700eb29/hourglass-0.2.12/Time/System.hs:23:1: warning: [-Wunused-imports]
+hourglass              >     The import of ‘Control.Applicative’ is redundant
+hourglass              >       except perhaps to import instances from ‘Control.Applicative’
+hourglass              >     To import instances alone, use: import Control.Applicative()
+hourglass              >    |
+hourglass              > 23 | import Control.Applicative
+hourglass              >    | ^^^^^^^^^^^^^^^^^^^^^^^^^^
+basement               > [60 of 84] Compiling Basement.UArray
+hourglass              > [13 of 17] Compiling System.Hourglass
+hourglass              > [14 of 17] Compiling Data.Hourglass.Format
+aeson-pretty           > configure
+aeson-pretty           > Configuring aeson-pretty-0.8.10...
+hourglass              > [15 of 17] Compiling Data.Hourglass
+hourglass              > [16 of 17] Compiling Time.Compat
+hourglass              > [17 of 17] Compiling Data.Hourglass.Compat
+hourglass              > copy/register
+hourglass              > Installing library in /__w/acton/acton/debian/.debhelper/generated/_source/home/.stack/snapshots/aarch64-linux-tinfo6/990d0064a92c190cbad3a4d8701c3ff3a8c550fa15bdd2f1f8ea30b991dffd81/9.6.6/lib/aarch64-linux-ghc-9.6.6/hourglass-0.2.12-7hsf1xsQKlX3FSVWblNjAE
+hourglass              > Registering library for hourglass-0.2.12..
+aeson-pretty           > build
+http-types             > configure
+http-types             > Configuring http-types-0.12.4...
+aeson-pretty           > Preprocessing library for aeson-pretty-0.8.10..
+aeson-pretty           > Building library for aeson-pretty-0.8.10..
+aeson-pretty           > [1 of 1] Compiling Data.Aeson.Encode.Pretty
+basement               > [61 of 84] Compiling Basement.Types.AsciiString
+http-types             > build
+iproute                > configure
+iproute                > Configuring iproute-1.7.14...
+http-types             > Preprocessing library for http-types-0.12.4..
+http-types             > Building library for http-types-0.12.4..
+basement               > [62 of 84] Compiling Basement.String.Encoding.Encoding
+basement               > [63 of 84] Compiling Basement.String.Encoding.UTF32
+http-types             > [1 of 7] Compiling Network.HTTP.Types.Header
+basement               > [64 of 84] Compiling Basement.String.Encoding.UTF16
+basement               > [65 of 84] Compiling Basement.String.Encoding.ISO_8859_1
+aeson-pretty           > Preprocessing executable 'aeson-pretty' for aeson-pretty-0.8.10..
+aeson-pretty           > Building executable 'aeson-pretty' for aeson-pretty-0.8.10..
+basement               > [66 of 84] Compiling Basement.String.Encoding.ASCII7
+basement               > [67 of 84] Compiling Basement.Sized.UVect
+aeson-pretty           > [1 of 2] Compiling Paths_aeson_pretty
+aeson-pretty           > [2 of 2] Compiling Main
+basement               > [68 of 84] Compiling Basement.UTF8.Types
+basement               > [69 of 84] Compiling Basement.UTF8.Table
+iproute                > build
+basement               > [70 of 84] Compiling Basement.UTF8.Helper
+iproute                > Preprocessing library for iproute-1.7.14..
+iproute                > Building library for iproute-1.7.14..
+basement               > [71 of 84] Compiling Basement.Types.CharUTF8
+basement               > [72 of 84] Compiling Basement.String.CaseMapping
+http-types             > [2 of 7] Compiling Network.HTTP.Types.Method
+iproute                > [1 of 9] Compiling Data.IP.Addr
+aeson-pretty           > [3 of 3] Linking .stack-work/dist/aarch64-linux-tinfo6/Cabal-3.10.3.0/build/aeson-pretty/aeson-pretty
+iproute                > 
+iproute                > /tmp/stack-f20e5dbac700eb29/iproute-1.7.14/Data/IP/Addr.hs:635:5: warning: [GHC-62161] [-Wincomplete-uni-patterns]
+iproute                >     Pattern match(es) are non-exhaustive
+iproute                >     In a pattern binding:
+iproute                >         Patterns of type ‘[Int]’ not matched:
+iproute                >             []
+iproute                >             [_]
+iproute                >             [_, _]
+iproute                >             [_, _, _]
+iproute                >             ...
+iproute                >     |
+iproute                > 635 |     [i1,i2,i3,i4] = fromIPv4 ip
+iproute                >     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+http-types             > [3 of 7] Compiling Network.HTTP.Types.Status
+aeson-pretty           > copy/register
+basement               > [73 of 84] Compiling Basement.Alg.UTF8
+http-types             > [4 of 7] Compiling Network.HTTP.Types.URI
+aeson-pretty           > Installing library in /__w/acton/acton/debian/.debhelper/generated/_source/home/.stack/snapshots/aarch64-linux-tinfo6/990d0064a92c190cbad3a4d8701c3ff3a8c550fa15bdd2f1f8ea30b991dffd81/9.6.6/lib/aarch64-linux-ghc-9.6.6/aeson-pretty-0.8.10-4OvySN4dxd89O81CyEkW3M
+aeson-pretty           > Installing executable aeson-pretty in /__w/acton/acton/debian/.debhelper/generated/_source/home/.stack/snapshots/aarch64-linux-tinfo6/990d0064a92c190cbad3a4d8701c3ff3a8c550fa15bdd2f1f8ea30b991dffd81/9.6.6/bin
+aeson-pretty           > Registering library for aeson-pretty-0.8.10..
+basement               > [74 of 84] Compiling Basement.UTF8.Base
+acton                  > configure (lib)
+acton                  > Configuring acton-0.26.0...
+http-types             > [5 of 7] Compiling Network.HTTP.Types.QueryLike
+http-types             > [6 of 7] Compiling Network.HTTP.Types.Version
+http-types             > [7 of 7] Compiling Network.HTTP.Types
+basement               > [75 of 84] Compiling Basement.Show
+basement               > [76 of 84] Compiling Basement.Error
+basement               > [77 of 84] Compiling Basement.Imports
+basement               > [78 of 84] Compiling Basement.Environment
+basement               > [79 of 84] Compiling Basement.Alg.String
+iproute                > [2 of 9] Compiling Data.IP.Builder
+http-types             > copy/register
+http-types             > Installing library in /__w/acton/acton/debian/.debhelper/generated/_source/home/.stack/snapshots/aarch64-linux-tinfo6/990d0064a92c190cbad3a4d8701c3ff3a8c550fa15bdd2f1f8ea30b991dffd81/9.6.6/lib/aarch64-linux-ghc-9.6.6/http-types-0.12.4-IdnDM2QP64LHr5JfSEQ6zI
+basement               > [80 of 84] Compiling Basement.String
+http-types             > Registering library for http-types-0.12.4..
+acton                  > build (lib)
+iproute                > [3 of 9] Compiling Data.IP.Mask
+acton                  > Preprocessing library for acton-0.26.0..
+acton                  > Building library for acton-0.26.0..
+iproute                > [4 of 9] Compiling Data.IP.Range
+acton                  > [ 1 of 37] Compiling Acton.CommandLineParser
+mime-types             > configure
+mime-types             > Configuring mime-types-0.1.2.0...
+iproute                > [5 of 9] Compiling Data.IP.Op
+iproute                > 
+iproute                > /tmp/stack-f20e5dbac700eb29/iproute-1.7.14/Data/IP/Op.hs:109:5: warning: [GHC-62161] [-Wincomplete-uni-patterns]
+iproute                >     Pattern match(es) are non-exhaustive
+iproute                >     In a pattern binding:
+iproute                >         Patterns of type ‘[Int]’ not matched:
+iproute                >             []
+iproute                >             [_]
+iproute                >             [_, _]
+iproute                >             [_, _, _]
+iproute                >             ...
+iproute                >     |
+iproute                > 109 |     [i1,i2,i3,i4] = fromIPv4 ip
+iproute                >     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+iproute                > [6 of 9] Compiling Data.IP.Internal
+iproute                > [7 of 9] Compiling Data.IP
+iproute                > [8 of 9] Compiling Data.IP.RouteTable.Internal
+mime-types             > build
+mime-types             > Preprocessing library for mime-types-0.1.2.0..
+mime-types             > Building library for mime-types-0.1.2.0..
+iproute                > [9 of 9] Compiling Data.IP.RouteTable
+mime-types             > [1 of 1] Compiling Network.Mime
+iproute                > copy/register
+iproute                > Installing library in /__w/acton/acton/debian/.debhelper/generated/_source/home/.stack/snapshots/aarch64-linux-tinfo6/990d0064a92c190cbad3a4d8701c3ff3a8c550fa15bdd2f1f8ea30b991dffd81/9.6.6/lib/aarch64-linux-ghc-9.6.6/iproute-1.7.14-AqqrRrfPR2m1Xe1b9aJBEp
+iproute                > Registering library for iproute-1.7.14..
+unix-time              > configure
+acton                  > [ 2 of 37] Compiling Acton.SourceProvider
+acton                  > [ 3 of 37] Compiling Paths_acton
+acton                  > [ 4 of 37] Compiling Pretty
+acton                  > [ 5 of 37] Compiling SrcLocation
+acton                  > [ 6 of 37] Compiling Text_Megaparsec_Expr
+acton                  > [ 7 of 37] Compiling Utils
+unix-time              > [1 of 3] Compiling Main             ( /tmp/stack-f20e5dbac700eb29/unix-time-0.4.15/Setup.hs, /tmp/stack-f20e5dbac700eb29/unix-time-0.4.15/.stack-work/dist/aarch64-linux-tinfo6/Cabal-3.10.3.0/setup/Main.o )
+basement               > [81 of 84] Compiling Basement.Terminal.ANSI
+unix-time              > [2 of 3] Compiling StackSetupShim   ( /__w/acton/acton/debian/.debhelper/generated/_source/home/.stack/setup-exe-src/setup-shim-mPHDZzAJ.hs, /tmp/stack-f20e5dbac700eb29/unix-time-0.4.15/.stack-work/dist/aarch64-linux-tinfo6/Cabal-3.10.3.0/setup/StackSetupShim.o )
+acton                  > [ 8 of 37] Compiling Acton.Syntax
+unix-time              > [3 of 3] Linking /tmp/stack-f20e5dbac700eb29/unix-time-0.4.15/.stack-work/dist/aarch64-linux-tinfo6/Cabal-3.10.3.0/setup/setup
+basement               > [82 of 84] Compiling Basement.From
+basement               > [83 of 84] Compiling Basement.Block.Builder
+basement               > [84 of 84] Compiling Basement.String.Builder
+unix-time              > Configuring unix-time-0.4.15...
+basement               > copy/register
+basement               > Installing library in /__w/acton/acton/debian/.debhelper/generated/_source/home/.stack/snapshots/aarch64-linux-tinfo6/990d0064a92c190cbad3a4d8701c3ff3a8c550fa15bdd2f1f8ea30b991dffd81/9.6.6/lib/aarch64-linux-ghc-9.6.6/basement-0.0.16-HvTgG10TboKKpCgs2TlMDx
+basement               > Registering library for basement-0.0.16..
+unix-time              > checking for gcc... /usr/bin/gcc
+unix-time              > checking whether the C compiler works... yes
+unix-time              > checking for C compiler default output file name... a.out
+unix-time              > checking for suffix of executables... 
+unix-time              > checking whether we are cross compiling... no
+unix-time              > checking for suffix of object files... o
+unix-time              > checking whether we are using the GNU C compiler... yes
+unix-time              > checking whether /usr/bin/gcc accepts -g... yes
+unix-time              > checking for /usr/bin/gcc option to accept ISO C89... none needed
+unix-time              > checking how to run the C preprocessor... /usr/bin/gcc -E
+unix-time              > checking for grep that handles long lines and -e... /usr/bin/grep
+unix-time              > checking for egrep... /usr/bin/grep -E
+unix-time              > checking for ANSI C header files... yes
+unix-time              > checking for sys/types.h... yes
+unix-time              > checking for sys/stat.h... yes
+unix-time              > checking for stdlib.h... yes
+unix-time              > checking for string.h... yes
+unix-time              > checking for memory.h... yes
+unix-time              > checking for strings.h... yes
+unix-time              > checking for inttypes.h... yes
+unix-time              > checking for stdint.h... yes
+unix-time              > checking for unistd.h... yes
+unix-time              > checking xlocale.h usability... no
+unix-time              > checking xlocale.h presence... no
+unix-time              > checking for xlocale.h... no
+unix-time              > checking for strptime_l... yes
+unix-time              > checking for timegm... yes
+unix-time              > checking whether _mkgmtime is declared... no
+unix-time              > checking for _get_current_locale... no
+unix-time              > checking for _create_locale... no
+unix-time              > checking for strtol_l... yes
+unix-time              > checking for strtoll_l... yes
+unix-time              > checking for _isspace_l... no
+unix-time              > checking for _isupper_l... no
+unix-time              > checking for _isdigit_l... no
+unix-time              > checking for _isblank_l... no
+unix-time              > configure: creating ./config.status
+unix-time              > config.status: creating cbits/config.h
+unix-time              > build
+memory                 > configure
+memory                 > Configuring memory-0.18.0...
+unix-time              > Preprocessing library for unix-time-0.4.15..
+mime-types             > copy/register
+mime-types             > Installing library in /__w/acton/acton/debian/.debhelper/generated/_source/home/.stack/snapshots/aarch64-linux-tinfo6/990d0064a92c190cbad3a4d8701c3ff3a8c550fa15bdd2f1f8ea30b991dffd81/9.6.6/lib/aarch64-linux-ghc-9.6.6/mime-types-0.1.2.0-EdJNkFZnuZbLAquqWKP3Bz
+mime-types             > Registering library for mime-types-0.1.2.0..
+unix-time              > Building library for unix-time-0.4.15..
+memory                 > build
+memory                 > Preprocessing library for memory-0.18.0..
+unix-time              > [1 of 5] Compiling Data.UnixTime.Types
+memory                 > Building library for memory-0.18.0..
+unix-time              > 
+unix-time              > /tmp/stack-f20e5dbac700eb29/unix-time-0.4.15/Data/UnixTime/Types.hsc:5:1: warning: [-Wunused-imports]
+unix-time              >     The import of ‘Control.Applicative’ is redundant
+unix-time              >       except perhaps to import instances from ‘Control.Applicative’
+unix-time              >     To import instances alone, use: import Control.Applicative()
+unix-time              >   |
+unix-time              > 5 | import Control.Applicative ((<$>), (<*>))
+unix-time              >   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+memory                 > [ 1 of 28] Compiling Data.Memory.ExtendedWords
+memory                 > [ 2 of 28] Compiling Data.Memory.Internal.Compat
+memory                 > [ 3 of 28] Compiling Data.Memory.Endian
+unix-time              > [2 of 5] Compiling Data.UnixTime.Sys
+memory                 > [ 4 of 28] Compiling Data.Memory.Hash.SipHash
+socks                  > configure
+socks                  > Configuring socks-0.6.1...
+unix-time              > [3 of 5] Compiling Data.UnixTime.Diff
+unix-time              > 
+unix-time              > /tmp/stack-f20e5dbac700eb29/unix-time-0.4.15/Data/UnixTime/Diff.hs:48:11: warning: [GHC-95396] [-Winline-rule-shadowing]
+unix-time              >     Rule "Integral->UnixDiffTime" may never fire
+unix-time              >       because ‘fromIntegral’ might inline first
+unix-time              >     Suggested fix:
+unix-time              >       Add an INLINE[n] or NOINLINE[n] pragma for ‘fromIntegral’
+unix-time              >    |
+unix-time              > 48 | {-# RULES "Integral->UnixDiffTime" fromIntegral = secondsToUnixDiffTime #-}
+unix-time              >    |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+unix-time              > [4 of 5] Compiling Data.UnixTime.Conv
+unix-time              > 
+unix-time              > /tmp/stack-f20e5dbac700eb29/unix-time-0.4.15/Data/UnixTime/Conv.hs:17:1: warning: [-Wunused-imports]
+unix-time              >     The import of ‘Control.Applicative’ is redundant
+unix-time              >       except perhaps to import instances from ‘Control.Applicative’
+unix-time              >     To import instances alone, use: import Control.Applicative()
+unix-time              >    |
+unix-time              > 17 | import Control.Applicative
+unix-time              >    | ^^^^^^^^^^^^^^^^^^^^^^^^^^
+memory                 > [ 5 of 28] Compiling Data.Memory.Encoding.Base32
+unix-time              > [5 of 5] Compiling Data.UnixTime
+memory                 > [ 6 of 28] Compiling Data.Memory.Encoding.Base16
+memory                 > [ 7 of 28] Compiling Data.Memory.Internal.CompatPrim
+memory                 > [ 8 of 28] Compiling Data.Memory.Internal.CompatPrim64
+memory                 > 
+memory                 > /tmp/stack-f20e5dbac700eb29/memory-0.18.0/Data/Memory/Internal/CompatPrim64.hs:58:1: warning: [-Wunused-top-binds]
+memory                 >     Defined but not used: type constructor or class ‘OutBool’
+memory                 >    |
+memory                 > 58 | type OutBool = Int#
+memory                 >    | ^^^^^^^^^^^^^^^^^^^
+memory                 > [ 9 of 28] Compiling Data.Memory.Internal.DeepSeq
+memory                 > [10 of 28] Compiling Data.Memory.Internal.Imports
+memory                 > [11 of 28] Compiling Data.Memory.Hash.FNV
+memory                 > [12 of 28] Compiling Data.Memory.Encoding.Base64
+unix-time              > copy/register
+socks                  > build
+unix-time              > Installing library in /__w/acton/acton/debian/.debhelper/generated/_source/home/.stack/snapshots/aarch64-linux-tinfo6/990d0064a92c190cbad3a4d8701c3ff3a8c550fa15bdd2f1f8ea30b991dffd81/9.6.6/lib/aarch64-linux-ghc-9.6.6/unix-time-0.4.15-4oVCQxxtOW0BlVuCikeRHh
+socks                  > Preprocessing library for socks-0.6.1..
+socks                  > Building library for socks-0.6.1..
+unix-time              > Registering library for unix-time-0.4.15..
+socks                  > [1 of 7] Compiling Network.Socks5.Parse
+memory                 > [13 of 28] Compiling Data.Memory.MemMap.Posix
+socks                  > 
+socks                  > /tmp/stack-f20e5dbac700eb29/socks-0.6.1/Network/Socks5/Parse.hs:75:5: warning: [-Wnoncanonical-monad-instances]
+socks                  >     Noncanonical ‘return’ definition detected
+socks                  >     in the instance declaration for ‘Monad Parser’.
+socks                  >     ‘return’ will eventually be removed in favour of ‘pure’
+socks                  >     Either remove definition for ‘return’ (recommended) or define as ‘return = pure’
+socks                  >     See also: https://gitlab.haskell.org/ghc/ghc/-/wikis/proposal/monad-of-no-return
+socks                  >    |
+socks                  > 75 |     return v = Parser $ \buf _ ok -> ok buf v
+socks                  >    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socks                  > 
+socks                  > /tmp/stack-f20e5dbac700eb29/socks-0.6.1/Network/Socks5/Parse.hs:91:5: warning: [-Wnoncanonical-monad-instances]
+socks                  >     Noncanonical ‘pure = return’ definition detected
+socks                  >     in the instance declaration for ‘Applicative Parser’.
+socks                  >     Move definition from ‘return’ to ‘pure’
+socks                  >     See also: https://gitlab.haskell.org/ghc/ghc/-/wikis/proposal/monad-of-no-return
+socks                  >    |
+socks                  > 91 |     pure      = return
+socks                  >    |     ^^^^^^^^^^^^^^^^^^
+memory                 > [14 of 28] Compiling Data.Memory.PtrMethods
+socks                  > [2 of 7] Compiling Network.Socks5.Types
+memory                 > [15 of 28] Compiling Data.ByteArray.Types
+memory                 > [16 of 28] Compiling Data.ByteArray.MemView
+memory                 > [17 of 28] Compiling Data.ByteArray.Pack.Internal
+memory                 > [18 of 28] Compiling Data.ByteArray.Hash
+memory                 > [19 of 28] Compiling Data.ByteArray.Sized
+zlib                   > configure
+zlib                   > Configuring zlib-0.6.3.0...
+memory                 > [20 of 28] Compiling Data.ByteArray.ScrubbedBytes
+memory                 > [21 of 28] Compiling Data.ByteArray.Methods
+memory                 > [22 of 28] Compiling Data.ByteArray.View
+memory                 > [23 of 28] Compiling Data.ByteArray.Parse
+zlib                   > build
+zlib                   > Preprocessing library for zlib-0.6.3.0..
+memory                 > [24 of 28] Compiling Data.ByteArray.Mapping
+zlib                   > Building library for zlib-0.6.3.0..
+memory                 > [25 of 28] Compiling Data.ByteArray.Encoding
+zlib                   > [1 of 6] Compiling Codec.Compression.Zlib.ByteStringCompat
+zlib                   > [2 of 6] Compiling Codec.Compression.Zlib.Stream
+memory                 > [26 of 28] Compiling Data.ByteArray.Bytes
+socks                  > [3 of 7] Compiling Network.Socks5.Conf
+socks                  > [4 of 7] Compiling Network.Socks5.Wire
+memory                 > [27 of 28] Compiling Data.ByteArray
+memory                 > [28 of 28] Compiling Data.ByteArray.Pack
+memory                 > copy/register
+memory                 > Installing library in /__w/acton/acton/debian/.debhelper/generated/_source/home/.stack/snapshots/aarch64-linux-tinfo6/990d0064a92c190cbad3a4d8701c3ff3a8c550fa15bdd2f1f8ea30b991dffd81/9.6.6/lib/aarch64-linux-ghc-9.6.6/memory-0.18.0-1WpDueBt7uE65CGObfwaOX
+memory                 > Registering library for memory-0.18.0..
+socks                  > [5 of 7] Compiling Network.Socks5.Command
+socks                  > [6 of 7] Compiling Network.Socks5.Lowlevel
+socks                  > [7 of 7] Compiling Network.Socks5
+asn1-types             > configure
+asn1-types             > Warning: asn1-types.cabal:17:34: version operators used. To use version
+asn1-types             > Configuring asn1-types-0.3.4...
+asn1-types             > operators the package needs to specify at least 'cabal-version: >= 1.8'.
+socks                  > copy/register
+socks                  > Installing library in /__w/acton/acton/debian/.debhelper/generated/_source/home/.stack/snapshots/aarch64-linux-tinfo6/990d0064a92c190cbad3a4d8701c3ff3a8c550fa15bdd2f1f8ea30b991dffd81/9.6.6/lib/aarch64-linux-ghc-9.6.6/socks-0.6.1-7BaY04Ytyyp20qNYLGM9ps
+socks                  > Registering library for socks-0.6.1..
+zlib                   > [3 of 6] Compiling Codec.Compression.Zlib.Internal
+zlib                   > 
+zlib                   > /tmp/stack-f20e5dbac700eb29/zlib-0.6.3.0/Codec/Compression/Zlib/Internal.hs:929:17: warning: [GHC-62161] [-Wincomplete-uni-patterns]
+zlib                   >     Pattern match(es) are non-exhaustive
+zlib                   >     In a pattern binding:
+zlib                   >         Patterns of type ‘(DecompressStream Stream,
+zlib                   >                            Stream.State s)’ not matched:
+zlib                   >             ((DecompressOutputAvailable _ _), _)
+zlib                   >             ((DecompressStreamEnd _), _)
+zlib                   >             ((DecompressStreamError _), _)
+zlib                   >     |
+zlib                   > 929 |             let (DecompressInputRequired next, zstate') = x
+zlib                   >     |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+asn1-types             > build
+asn1-types             > Preprocessing library for asn1-types-0.3.4..
+asn1-types             > Building library for asn1-types-0.3.4..
+asn1-types             > [1 of 6] Compiling Data.ASN1.BitArray
+asn1-types             > [2 of 6] Compiling Data.ASN1.OID
+asn1-types             > [3 of 6] Compiling Data.ASN1.Types.Lowlevel
+asn1-types             > [4 of 6] Compiling Data.ASN1.Types.String
+zlib                   > [4 of 6] Compiling Codec.Compression.Zlib.Raw
+zlib                   > [5 of 6] Compiling Codec.Compression.Zlib
+zlib                   > [6 of 6] Compiling Codec.Compression.GZip
+asn1-types             > [5 of 6] Compiling Data.ASN1.Types
+zlib                   > copy/register
+zlib                   > Installing library in /__w/acton/acton/debian/.debhelper/generated/_source/home/.stack/snapshots/aarch64-linux-tinfo6/990d0064a92c190cbad3a4d8701c3ff3a8c550fa15bdd2f1f8ea30b991dffd81/9.6.6/lib/aarch64-linux-ghc-9.6.6/zlib-0.6.3.0-JUxGbqjsKXnBaLmHE8VeIG
+zlib                   > Registering library for zlib-0.6.3.0..
+asn1-types             > [6 of 6] Compiling Data.ASN1.Pretty
+crypton                > configure
+crypton                > Configuring crypton-0.34...
+asn1-types             > copy/register
+asn1-types             > Installing library in /__w/acton/acton/debian/.debhelper/generated/_source/home/.stack/snapshots/aarch64-linux-tinfo6/990d0064a92c190cbad3a4d8701c3ff3a8c550fa15bdd2f1f8ea30b991dffd81/9.6.6/lib/aarch64-linux-ghc-9.6.6/asn1-types-0.3.4-IzufoS5T9ujKGz4DFQBdr2
+asn1-types             > Registering library for asn1-types-0.3.4..
+crypton                > build
+crypton                > Preprocessing library for crypton-0.34..
+crypton                > Building library for crypton-0.34..
+pem                    > configure
+pem                    > Configuring pem-0.2.4...
+crypton                > [  1 of 137] Compiling Crypto.Cipher.DES.Primitive
+pem                    > build
+asn1-encoding          > configure
+asn1-encoding          > Configuring asn1-encoding-0.9.6...
+pem                    > Preprocessing library for pem-0.2.4..
+pem                    > Building library for pem-0.2.4..
+pem                    > [1 of 4] Compiling Data.PEM.Types
+crypton                > [  2 of 137] Compiling Crypto.Data.Padding
+pem                    > [2 of 4] Compiling Data.PEM.Parser
+crypton                > [  3 of 137] Compiling Crypto.Error.Types
+pem                    > [3 of 4] Compiling Data.PEM.Writer
+pem                    > [4 of 4] Compiling Data.PEM
+pem                    > copy/register
+pem                    > Installing library in /__w/acton/acton/debian/.debhelper/generated/_source/home/.stack/snapshots/aarch64-linux-tinfo6/990d0064a92c190cbad3a4d8701c3ff3a8c550fa15bdd2f1f8ea30b991dffd81/9.6.6/lib/aarch64-linux-ghc-9.6.6/pem-0.2.4-HRJQEY87CSLwvTx7x879W
+crypton                > [  4 of 137] Compiling Crypto.Error
+asn1-encoding          > build
+crypton                > [  5 of 137] Compiling Crypto.Internal.Compat
+crypton                > [  6 of 137] Compiling Crypto.Internal.ByteArray
+asn1-encoding          > Preprocessing library for asn1-encoding-0.9.6..
+asn1-encoding          > Building library for asn1-encoding-0.9.6..
+crypton                > [  7 of 137] Compiling Crypto.Cipher.Types.Utils
+pem                    > Registering library for pem-0.2.4..
+crypton                > [  8 of 137] Compiling Crypto.Internal.CompatPrim
+crypton                > [  9 of 137] Compiling Crypto.Internal.DeepSeq
+crypton                > [ 10 of 137] Compiling Crypto.Cipher.Types.Base
+asn1-encoding          > [ 1 of 12] Compiling Data.ASN1.Error
+asn1-encoding          > [ 2 of 12] Compiling Data.ASN1.Get
+asn1-encoding          > 
+asn1-encoding          > /tmp/stack-f20e5dbac700eb29/asn1-encoding-0.9.6/Data/ASN1/Get.hs:31:29: warning: [-Wunused-imports]
+asn1-encoding          >     The import of ‘Applicative’
+asn1-encoding          >     from module ‘Control.Applicative’ is redundant
+asn1-encoding          >    |
+asn1-encoding          > 31 | import Control.Applicative (Applicative(..),Alternative(..))
+asn1-encoding          >    |                             ^^^^^^^^^^^^^^^
+asn1-encoding          > 
+asn1-encoding          > /tmp/stack-f20e5dbac700eb29/asn1-encoding-0.9.6/Data/ASN1/Get.hs:92:5: warning: [-Wnoncanonical-monad-instances]
+asn1-encoding          >     Noncanonical ‘pure = return’ definition detected
+asn1-encoding          >     in the instance declaration for ‘Applicative Get’.
+asn1-encoding          >     Move definition from ‘return’ to ‘pure’
+asn1-encoding          >     See also: https://gitlab.haskell.org/ghc/ghc/-/wikis/proposal/monad-of-no-return
+asn1-encoding          >    |
+asn1-encoding          > 92 |     pure  = return
+asn1-encoding          >    |     ^^^^^^^^^^^^^^
+asn1-encoding          > 
+asn1-encoding          > /tmp/stack-f20e5dbac700eb29/asn1-encoding-0.9.6/Data/ASN1/Get.hs:101:5: warning: [-Wnoncanonical-monad-instances]
+asn1-encoding          >     Noncanonical ‘return’ definition detected
+asn1-encoding          >     in the instance declaration for ‘Monad Get’.
+asn1-encoding          >     ‘return’ will eventually be removed in favour of ‘pure’
+asn1-encoding          >     Either remove definition for ‘return’ (recommended) or define as ‘return = pure’
+asn1-encoding          >     See also: https://gitlab.haskell.org/ghc/ghc/-/wikis/proposal/monad-of-no-return
+asn1-encoding          >     |
+asn1-encoding          > 101 |     return a = Get $ \ s0 b0 m0 p0 _ ks -> ks s0 b0 m0 p0 a
+asn1-encoding          >     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+crypton                > [ 11 of 137] Compiling Crypto.Cipher.Types.Stream
+crypton                > [ 12 of 137] Compiling Crypto.Internal.Imports
+crypton                > [ 13 of 137] Compiling Crypto.Internal.Builder
+crypton                > [ 14 of 137] Compiling Crypto.Hash.Types
+asn1-encoding          > [ 3 of 12] Compiling Data.ASN1.Internal
+crypton                > [ 15 of 137] Compiling Crypto.Hash.Whirlpool
+asn1-encoding          > [ 4 of 12] Compiling Data.ASN1.Object
+asn1-encoding          > [ 5 of 12] Compiling Data.ASN1.Serialize
+asn1-encoding          > 
+asn1-encoding          > /tmp/stack-f20e5dbac700eb29/asn1-encoding-0.9.6/Data/ASN1/Serialize.hs:17:1: warning: [-Wunused-imports]
+asn1-encoding          >     The import of ‘Control.Applicative’ is redundant
+asn1-encoding          >       except perhaps to import instances from ‘Control.Applicative’
+asn1-encoding          >     To import instances alone, use: import Control.Applicative()
+asn1-encoding          >    |
+asn1-encoding          > 17 | import Control.Applicative ((<$>))
+asn1-encoding          >    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+crypton                > [ 16 of 137] Compiling Crypto.Hash.Tiger
+asn1-encoding          > [ 6 of 12] Compiling Data.ASN1.BinaryEncoding.Writer
+crypton                > [ 17 of 137] Compiling Crypto.Hash.Skein512
+asn1-encoding          > [ 7 of 12] Compiling Data.ASN1.BinaryEncoding.Parse
+asn1-encoding          > [ 8 of 12] Compiling Data.ASN1.BinaryEncoding.Raw
+asn1-encoding          > [ 9 of 12] Compiling Data.ASN1.Stream
+asn1-encoding          > [10 of 12] Compiling Data.ASN1.Prim
+crypton                > [ 18 of 137] Compiling Crypto.Hash.Skein256
+asn1-encoding          > 
+asn1-encoding          > /tmp/stack-f20e5dbac700eb29/asn1-encoding-0.9.6/Data/ASN1/Prim.hs:55:1: warning: [-Wunused-imports]
+asn1-encoding          >     The import of ‘Data.Monoid’ is redundant
+asn1-encoding          >       except perhaps to import instances from ‘Data.Monoid’
+asn1-encoding          >     To import instances alone, use: import Data.Monoid()
+asn1-encoding          >    |
+asn1-encoding          > 55 | import Data.Monoid
+asn1-encoding          >    | ^^^^^^^^^^^^^^^^^^
+asn1-encoding          > 
+asn1-encoding          > /tmp/stack-f20e5dbac700eb29/asn1-encoding-0.9.6/Data/ASN1/Prim.hs:65:1: warning: [-Wunused-imports]
+asn1-encoding          >     The import of ‘Control.Applicative’ is redundant
+asn1-encoding          >       except perhaps to import instances from ‘Control.Applicative’
+asn1-encoding          >     To import instances alone, use: import Control.Applicative()
+asn1-encoding          >    |
+asn1-encoding          > 65 | import Control.Applicative
+asn1-encoding          >    | ^^^^^^^^^^^^^^^^^^^^^^^^^^
+asn1-encoding          > 
+asn1-encoding          > /tmp/stack-f20e5dbac700eb29/asn1-encoding-0.9.6/Data/ASN1/Prim.hs:259:11: warning: [GHC-63397] [-Wname-shadowing]
+asn1-encoding          >     This binding for ‘exponent’ shadows the existing binding
+asn1-encoding          >       imported from ‘Prelude’ at Data/ASN1/Prim.hs:13:8-21
+asn1-encoding          >       (and originally defined in ‘GHC.Float’)
+asn1-encoding          >     |
+asn1-encoding          > 259 |           exponent = exp' - fromIntegral scaleFactor
+asn1-encoding          >     |           ^^^^^^^^
+asn1-encoding          > 
+asn1-encoding          > /tmp/stack-f20e5dbac700eb29/asn1-encoding-0.9.6/Data/ASN1/Prim.hs:296:9: warning: [GHC-62161] [-Wincomplete-uni-patterns]
+asn1-encoding          >     Pattern match(es) are non-exhaustive
+asn1-encoding          >     In a pattern binding: Patterns of type ‘[Word8]’ not matched: []
+asn1-encoding          >     |
+asn1-encoding          > 296 |         (x:xs) = B.unpack s
+asn1-encoding          >     |         ^^^^^^^^^^^^^^^^^^^
+asn1-encoding          > 
+asn1-encoding          > /tmp/stack-f20e5dbac700eb29/asn1-encoding-0.9.6/Data/ASN1/Prim.hs:428:9: warning: [GHC-63397] [-Wname-shadowing]
+asn1-encoding          >     This binding for ‘exp’ shadows the existing binding
+asn1-encoding          >       imported from ‘Prelude’ at Data/ASN1/Prim.hs:13:8-21
+asn1-encoding          >       (and originally defined in ‘GHC.Float’)
+asn1-encoding          >     |
+asn1-encoding          > 428 |   (man, exp) = decodeFloat d
+asn1-encoding          >     |         ^^^
+asn1-encoding          > 
+asn1-encoding          > /tmp/stack-f20e5dbac700eb29/asn1-encoding-0.9.6/Data/ASN1/Prim.hs:429:14: warning: [GHC-63397] [-Wname-shadowing]
+asn1-encoding          >     This binding for ‘exponent’ shadows the existing binding
+asn1-encoding          >       imported from ‘Prelude’ at Data/ASN1/Prim.hs:13:8-21
+asn1-encoding          >       (and originally defined in ‘GHC.Float’)
+asn1-encoding          >     |
+asn1-encoding          > 429 |   (mantissa, exponent) = normalize (fromIntegral $ mkUnsigned man, exp)
+asn1-encoding          >     |              ^^^^^^^^
+asn1-encoding          > 
+asn1-encoding          > /tmp/stack-f20e5dbac700eb29/asn1-encoding-0.9.6/Data/ASN1/Prim.hs:441:22: warning: [GHC-63397] [-Wname-shadowing]
+asn1-encoding          >     This binding for ‘exponent’ shadows the existing binding
+asn1-encoding          >       imported from ‘Prelude’ at Data/ASN1/Prim.hs:13:8-21
+asn1-encoding          >       (and originally defined in ‘GHC.Float’)
+asn1-encoding          >     |
+asn1-encoding          > 441 | normalize (mantissa, exponent) = (mantissa `shiftR` sh, exponent + sh)
+asn1-encoding          >     |                      ^^^^^^^^
+crypton                > [ 19 of 137] Compiling Crypto.Hash.SHA512t
+streaming-commons      > configure
+streaming-commons      > Configuring streaming-commons-0.2.2.6...
+crypton                > [ 20 of 137] Compiling Crypto.Hash.SHA512
+crypton                > [ 21 of 137] Compiling Crypto.Hash.SHA384
+crypton                > [ 22 of 137] Compiling Crypto.Hash.SHA3
+crypton                > [ 23 of 137] Compiling Crypto.Hash.SHA256
+crypton                > [ 24 of 137] Compiling Crypto.Hash.SHA224
+asn1-encoding          > [11 of 12] Compiling Data.ASN1.Encoding
+asn1-encoding          > [12 of 12] Compiling Data.ASN1.BinaryEncoding
+crypton                > [ 25 of 137] Compiling Crypto.Hash.SHA1
+crypton                > [ 26 of 137] Compiling Crypto.Hash.RIPEMD160
+crypton                > [ 27 of 137] Compiling Crypto.Hash.MD5
+streaming-commons      > build
+crypton                > [ 28 of 137] Compiling Crypto.Hash.MD4
+streaming-commons      > Preprocessing library for streaming-commons-0.2.2.6..
+streaming-commons      > Building library for streaming-commons-0.2.2.6..
+crypton                > [ 29 of 137] Compiling Crypto.Hash.MD2
+crypton                > [ 30 of 137] Compiling Crypto.Hash.Keccak
+asn1-encoding          > copy/register
+asn1-encoding          > Installing library in /__w/acton/acton/debian/.debhelper/generated/_source/home/.stack/snapshots/aarch64-linux-tinfo6/990d0064a92c190cbad3a4d8701c3ff3a8c550fa15bdd2f1f8ea30b991dffd81/9.6.6/lib/aarch64-linux-ghc-9.6.6/asn1-encoding-0.9.6-5NgyDaCBBdqC2PjOIZeNI
+streaming-commons      > [ 1 of 11] Compiling Data.Streaming.ByteString.Builder.Buffer
+asn1-encoding          > Registering library for asn1-encoding-0.9.6..
+crypton                > [ 31 of 137] Compiling Crypto.Hash.IO
+streaming-commons      > [ 2 of 11] Compiling Data.Streaming.ByteString.Builder
+crypton                > [ 32 of 137] Compiling Crypto.Hash.Blake2sp
+streaming-commons      > [ 3 of 11] Compiling Data.Streaming.FileRead
+crypton                > [ 33 of 137] Compiling Crypto.Hash.Blake2s
+streaming-commons      > [ 4 of 11] Compiling Data.Streaming.Filesystem
+streaming-commons      > [ 5 of 11] Compiling Data.Streaming.Network.Internal
+crypton                > [ 34 of 137] Compiling Crypto.Hash.Blake2bp
+crypton                > [ 35 of 137] Compiling Crypto.Hash.Blake2b
+streaming-commons      > [ 6 of 11] Compiling Data.Streaming.Network
+crypton                > [ 36 of 137] Compiling Crypto.Cipher.Types.GF
+asn1-parse             > configure
+asn1-parse             > Warning: asn1-parse.cabal:17:34: version operators used. To use version
+asn1-parse             > operators the package needs to specify at least 'cabal-version: >= 1.8'.
+asn1-parse             > Warning: asn1-parse.cabal:19:42: version operators used. To use version
+asn1-parse             > operators the package needs to specify at least 'cabal-version: >= 1.8'.
+asn1-parse             > Configuring asn1-parse-0.9.5...
+crypton                > [ 37 of 137] Compiling Crypto.Cipher.Types.AEAD
+crypton                > [ 38 of 137] Compiling Crypto.Cipher.Types.Block
+crypton                > [ 39 of 137] Compiling Crypto.Cipher.Types
+crypton                > [ 40 of 137] Compiling Crypto.ConstructHash.MiyaguchiPreneel
+crypton                > [ 41 of 137] Compiling Crypto.Cipher.Utils
+crypton                > [ 42 of 137] Compiling Crypto.Cipher.TripleDES
+crypton                > [ 43 of 137] Compiling Crypto.Cipher.DES
+crypton                > [ 44 of 137] Compiling Crypto.Cipher.Salsa
+crypton                > [ 45 of 137] Compiling Crypto.Cipher.XSalsa
+crypton                > [ 46 of 137] Compiling Crypto.Cipher.RC4
+asn1-parse             > build
+crypton                > [ 47 of 137] Compiling Crypto.Cipher.ChaCha
+asn1-parse             > Preprocessing library for asn1-parse-0.9.5..
+asn1-parse             > Building library for asn1-parse-0.9.5..
+crypton                > [ 48 of 137] Compiling Crypto.Cipher.AES.Primitive
+asn1-parse             > [1 of 1] Compiling Data.ASN1.Parse
+asn1-parse             > 
+asn1-parse             > /tmp/stack-f20e5dbac700eb29/asn1-parse-0.9.5/Data/ASN1/Parse.hs:35:1: warning: [-Wunused-imports]
+asn1-parse             >     The import of ‘Control.Monad.Fail’ is redundant
+asn1-parse             >       except perhaps to import instances from ‘Control.Monad.Fail’
+asn1-parse             >     To import instances alone, use: import Control.Monad.Fail()
+asn1-parse             >    |
+asn1-parse             > 35 | import Control.Monad.Fail
+asn1-parse             >    | ^^^^^^^^^^^^^^^^^^^^^^^^^
+asn1-parse             > 
+asn1-parse             > /tmp/stack-f20e5dbac700eb29/asn1-parse-0.9.5/Data/ASN1/Parse.hs:52:5: warning: [-Wnoncanonical-monad-instances]
+asn1-parse             >     Noncanonical ‘return’ definition detected
+asn1-parse             >     in the instance declaration for ‘Monad ParseASN1’.
+asn1-parse             >     ‘return’ will eventually be removed in favour of ‘pure’
+asn1-parse             >     Either remove definition for ‘return’ (recommended) or define as ‘return = pure’
+asn1-parse             >     See also: https://gitlab.haskell.org/ghc/ghc/-/wikis/proposal/monad-of-no-return
+asn1-parse             >    |
+asn1-parse             > 52 |     return a    = pure a
+asn1-parse             >    |     ^^^^^^^^^^^^^^^^^^^^
+streaming-commons      > [ 7 of 11] Compiling Data.Streaming.Process.Internal
+streaming-commons      > [ 8 of 11] Compiling Data.Streaming.Process
+streaming-commons      > [ 9 of 11] Compiling Data.Streaming.Text
+asn1-parse             > copy/register
+asn1-parse             > Installing library in /__w/acton/acton/debian/.debhelper/generated/_source/home/.stack/snapshots/aarch64-linux-tinfo6/990d0064a92c190cbad3a4d8701c3ff3a8c550fa15bdd2f1f8ea30b991dffd81/9.6.6/lib/aarch64-linux-ghc-9.6.6/asn1-parse-0.9.5-9QTN6JCUYnUBe18Pay090I
+asn1-parse             > Registering library for asn1-parse-0.9.5..
+crypton                > [ 49 of 137] Compiling Crypto.Cipher.AES
+crypton                > [ 50 of 137] Compiling Crypto.Internal.Nat
+crypton                > [ 51 of 137] Compiling Crypto.Hash.SHAKE
+crypton                > [ 52 of 137] Compiling Crypto.Hash.Blake2
+crypton                > [ 53 of 137] Compiling Crypto.Hash.Algorithms
+crypton                > [ 54 of 137] Compiling Crypto.Hash
+crypton                > [ 55 of 137] Compiling Crypto.Internal.WordArray
+crypton                > [ 56 of 137] Compiling Crypto.Cipher.Twofish.Primitive
+streaming-commons      > [10 of 11] Compiling Data.Streaming.Zlib.Lowlevel
+crypton                > 
+crypton                > /tmp/stack-f20e5dbac700eb29/crypton-0.34/Crypto/Cipher/Twofish/Primitive.hs:84:19: warning: [GHC-62161] [-Wincomplete-uni-patterns]
+crypton                >     Pattern match(es) are non-exhaustive
+crypton                >     In a pattern binding:
+crypton                >         Patterns of type ‘[Word32]’ not matched:
+crypton                >             []
+crypton                >             [_]
+crypton                >             [_, _]
+crypton                >             [_, _, _]
+crypton                >             ...
+crypton                >    |
+crypton                > 84 |             where [k0, k1, k2, k3] = fmap (\offset -> arrayRead32 ks $ (8 + 4 * ind) + offset) [0..3]
+crypton                >    |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+crypton                > 
+crypton                > /tmp/stack-f20e5dbac700eb29/crypton-0.34/Crypto/Cipher/Twofish/Primitive.hs:119:19: warning: [GHC-62161] [-Wincomplete-uni-patterns]
+crypton                >     Pattern match(es) are non-exhaustive
+crypton                >     In a pattern binding:
+crypton                >         Patterns of type ‘[Word32]’ not matched:
+crypton                >             []
+crypton                >             [_]
+crypton                >             [_, _]
+crypton                >             [_, _, _]
+crypton                >             ...
+crypton                >     |
+crypton                > 119 |             where [k0, k1, k2, k3] = fmap (\offset -> arrayRead32 ks $ (4 + 4 * ind) + offset) [0..3]
+crypton                >     |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+crypton                > 
+crypton                > /tmp/stack-f20e5dbac700eb29/crypton-0.34/Crypto/Cipher/Twofish/Primitive.hs:210:11: warning: [GHC-62161] [-Wincomplete-uni-patterns]
+crypton                >     Pattern match(es) are non-exhaustive
+crypton                >     In a pattern binding:
+crypton                >         Patterns of type ‘[Word8]’ not matched:
+crypton                >             []
+crypton                >             [_]
+crypton                >             [_, _]
+crypton                >             [_, _, _]
+crypton                >             ...
+crypton                >     |
+crypton                > 210 |           [w0, w1, w2, w3, w4, w5, w6, w7, w8, w9, w10, w11, w12, w13, w14, w15] = take 16 ws
+crypton                >     |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+crypton                > 
+crypton                > /tmp/stack-f20e5dbac700eb29/crypton-0.34/Crypto/Cipher/Twofish/Primitive.hs:258:11: warning: [GHC-62161] [-Wincomplete-uni-patterns]
+crypton                >     Pattern match(es) are non-exhaustive
+crypton                >     In a pattern binding:
+crypton                >         Patterns of type ‘[Word8]’ not matched:
+crypton                >             []
+crypton                >             [_]
+crypton                >             [_, _]
+crypton                >             [_, _, _]
+crypton                >             ...
+crypton                >     |
+crypton                > 258 |           [y0, y1, y2, y3] = take 4 input
+crypton                >     |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+streaming-commons      > [11 of 11] Compiling Data.Streaming.Zlib
+crypton                > [ 57 of 137] Compiling Crypto.Cipher.Twofish
+crypton                > [ 58 of 137] Compiling Crypto.Cipher.CAST5.Primitive
+streaming-commons      > copy/register
+streaming-commons      > Installing library in /__w/acton/acton/debian/.debhelper/generated/_source/home/.stack/snapshots/aarch64-linux-tinfo6/990d0064a92c190cbad3a4d8701c3ff3a8c550fa15bdd2f1f8ea30b991dffd81/9.6.6/lib/aarch64-linux-ghc-9.6.6/streaming-commons-0.2.2.6-111CibUuOJBALsofD2sVhW
+streaming-commons      > Registering library for streaming-commons-0.2.2.6..
+crypton                > [ 59 of 137] Compiling Crypto.Cipher.CAST5
+crypton                > [ 60 of 137] Compiling Crypto.Cipher.Blowfish.Box
+crypton                > [ 61 of 137] Compiling Crypto.Cipher.Blowfish.Primitive
+crypton                > [ 62 of 137] Compiling Crypto.Cipher.Blowfish
+crypton                > [ 63 of 137] Compiling Crypto.Internal.Words
+crypton                > [ 64 of 137] Compiling Crypto.Cipher.Camellia.Primitive
+acton                  > [ 9 of 37] Compiling Acton.Printer
+crypton                > [ 65 of 137] Compiling Crypto.Cipher.Camellia
+crypton                > [ 66 of 137] Compiling Crypto.KDF.Argon2
+http-client            > configure
+http-client            > Configuring http-client-0.7.17...
+crypton                > [ 67 of 137] Compiling Crypto.KDF.BCryptPBKDF
+crypton                > [ 68 of 137] Compiling Crypto.MAC.CMAC
+crypton                > [ 69 of 137] Compiling Crypto.MAC.HMAC
+crypton                > [ 70 of 137] Compiling Crypto.KDF.PBKDF2
+http-client            > build
+crypton                > [ 71 of 137] Compiling Crypto.KDF.Scrypt
+http-client            > Preprocessing library for http-client-0.7.17..
+http-client            > Building library for http-client-0.7.17..
+crypton                > [ 72 of 137] Compiling Crypto.KDF.HKDF
+crypton                > [ 73 of 137] Compiling Crypto.MAC.KMAC
+http-client            > [ 1 of 19] Compiling Data.KeyedPool
+crypton                > [ 74 of 137] Compiling Crypto.MAC.KeyedBlake2
+crypton                > [ 75 of 137] Compiling Crypto.MAC.Poly1305
+crypton                > [ 76 of 137] Compiling Crypto.Cipher.ChaChaPoly1305
+crypton                > [ 77 of 137] Compiling Crypto.Number.Compat
+crypton                > 
+crypton                > /tmp/stack-f20e5dbac700eb29/crypton-0.34/Crypto/Number/Compat.hs:57:22: warning: [GHC-68441] [-Wdeprecations]
+crypton                >     In the use of ‘gcdExtInteger’
+crypton                >     (imported from GHC.Integer.GMP.Internals):
+crypton                >     Deprecated: "Use integerGcde instead"
+crypton                >    |
+crypton                > 57 |   where (# g, s #) = gcdExtInteger a b
+crypton                >    |                      ^^^^^^^^^^^^^
+crypton                > 
+crypton                > /tmp/stack-f20e5dbac700eb29/crypton-0.34/Crypto/Number/Compat.hs:90:40: warning: [GHC-68441] [-Wdeprecations]
+crypton                >     In the use of ‘powModInteger’
+crypton                >     (imported from GHC.Integer.GMP.Internals):
+crypton                >     Deprecated: "Use integerPowMod# instead"
+crypton                >    |
+crypton                > 90 | gmpPowModInteger b e m = GmpSupported (powModInteger b e m)
+crypton                >    |                                        ^^^^^^^^^^^^^
+crypton                > 
+crypton                > /tmp/stack-f20e5dbac700eb29/crypton-0.34/Crypto/Number/Compat.hs:101:13: warning: [GHC-68441] [-Wdeprecations]
+crypton                >     In the use of ‘recipModInteger’
+crypton                >     (imported from GHC.Integer.GMP.Internals):
+crypton                >     Deprecated: "Use integerRecipMod# instead"
+crypton                >     |
+crypton                > 101 |   where r = recipModInteger g m
+crypton                >     |             ^^^^^^^^^^^^^^^
+crypton                > 
+crypton                > /tmp/stack-f20e5dbac700eb29/crypton-0.34/Crypto/Number/Compat.hs:132:49: warning: [GHC-68441] [-Wdeprecations]
+crypton                >     In the use of ‘sizeInBaseInteger’
+crypton                >     (imported from GHC.Integer.GMP.Internals):
+crypton                >     Deprecated: "Use integerSizeInBase# instead"
+crypton                >     |
+crypton                > 132 | gmpSizeInBytes n = GmpSupported (I# (word2Int# (sizeInBaseInteger n 256#)))
+crypton                >     |                                                 ^^^^^^^^^^^^^^^^^
+crypton                > 
+crypton                > /tmp/stack-f20e5dbac700eb29/crypton-0.34/Crypto/Number/Compat.hs:140:48: warning: [GHC-68441] [-Wdeprecations]
+crypton                >     In the use of ‘sizeInBaseInteger’
+crypton                >     (imported from GHC.Integer.GMP.Internals):
+crypton                >     Deprecated: "Use integerSizeInBase# instead"
+crypton                >     |
+crypton                > 140 | gmpSizeInBits n = GmpSupported (I# (word2Int# (sizeInBaseInteger n 2#)))
+crypton                >     |                                                ^^^^^^^^^^^^^^^^^
+crypton                > 
+crypton                > /tmp/stack-f20e5dbac700eb29/crypton-0.34/Crypto/Number/Compat.hs:149:10: warning: [GHC-68441] [-Wdeprecations]
+crypton                >     In the use of ‘exportIntegerToAddr’
+crypton                >     (imported from GHC.Integer.GMP.Internals):
+crypton                >     Deprecated: "Use integerToAddr# instead"
+crypton                >     |
+crypton                > 149 |     _ <- exportIntegerToAddr n addr 1#
+crypton                >     |          ^^^^^^^^^^^^^^^^^^^
+crypton                > 
+crypton                > /tmp/stack-f20e5dbac700eb29/crypton-0.34/Crypto/Number/Compat.hs:163:10: warning: [GHC-68441] [-Wdeprecations]
+crypton                >     In the use of ‘exportIntegerToAddr’
+crypton                >     (imported from GHC.Integer.GMP.Internals):
+crypton                >     Deprecated: "Use integerToAddr# instead"
+crypton                >     |
+crypton                > 163 |     _ <- exportIntegerToAddr n addr 0#
+crypton                >     |          ^^^^^^^^^^^^^^^^^^^
+crypton                > 
+crypton                > /tmp/stack-f20e5dbac700eb29/crypton-0.34/Crypto/Number/Compat.hs:177:5: warning: [GHC-68441] [-Wdeprecations]
+crypton                >     In the use of ‘importIntegerFromAddr’
+crypton                >     (imported from GHC.Integer.GMP.Internals):
+crypton                >     Deprecated: "Use integerFromAddr# instead"
+crypton                >     |
+crypton                > 177 |     importIntegerFromAddr addr (int2Word# n) 1#
+crypton                >     |     ^^^^^^^^^^^^^^^^^^^^^
+crypton                > 
+crypton                > /tmp/stack-f20e5dbac700eb29/crypton-0.34/Crypto/Number/Compat.hs:189:5: warning: [GHC-68441] [-Wdeprecations]
+crypton                >     In the use of ‘importIntegerFromAddr’
+crypton                >     (imported from GHC.Integer.GMP.Internals):
+crypton                >     Deprecated: "Use integerFromAddr# instead"
+crypton                >     |
+crypton                > 189 |     importIntegerFromAddr addr (int2Word# n) 0#
+crypton                >     |     ^^^^^^^^^^^^^^^^^^^^^
+crypton                > [ 78 of 137] Compiling Crypto.Number.Basic
+http-client            > [ 2 of 19] Compiling Network.HTTP.Client.Types
+crypton                > [ 79 of 137] Compiling Crypto.ECC.Simple.Types
+acton                  > [10 of 37] Compiling Acton.Builtin
+acton                  > [11 of 37] Compiling Acton.Subst
+http-client            > [ 3 of 19] Compiling Network.HTTP.Client.Connection
+crypton                > [ 80 of 137] Compiling Crypto.Number.F2m
+acton                  > [12 of 37] Compiling Acton.Names
+acton                  > [13 of 37] Compiling Acton.Parser
+http-client            > [ 4 of 19] Compiling Network.HTTP.Client.Headers
+http-client            > [ 5 of 19] Compiling Network.HTTP.Client.Body
+crypton                > [ 81 of 137] Compiling Crypto.Number.ModArithmetic
+http-client            > [ 6 of 19] Compiling Network.HTTP.Client.Util
+http-client            > [ 7 of 19] Compiling Network.HTTP.Client.Request
+crypton                > [ 82 of 137] Compiling Crypto.Number.Nat
+crypton                > [ 83 of 137] Compiling Crypto.Number.Serialize.Internal
+crypton                > [ 84 of 137] Compiling Crypto.Number.Serialize
+crypton                > [ 85 of 137] Compiling Crypto.Number.Serialize.Internal.LE
+crypton                > [ 86 of 137] Compiling Crypto.Number.Serialize.LE
+crypton                > [ 87 of 137] Compiling Crypto.OTP
+crypton                > [ 88 of 137] Compiling Crypto.PubKey.ECC.Types
+http-client            > [ 8 of 19] Compiling Network.HTTP.Client.Response
+http-client            > [ 9 of 19] Compiling Network.HTTP.Proxy
+http-client            > [10 of 19] Compiling Network.HTTP.Client.Manager
+http-client            > [11 of 19] Compiling Network.PublicSuffixList.Types
+http-client            > [12 of 19] Compiling Network.PublicSuffixList.Serialize
+http-client            > [13 of 19] Compiling Network.PublicSuffixList.DataStructure
+http-client            > [14 of 19] Compiling Network.PublicSuffixList.Lookup
+http-client            > [15 of 19] Compiling Network.HTTP.Client.Cookies
+crypton                > [ 89 of 137] Compiling Crypto.PubKey.Internal
+crypton                > [ 90 of 137] Compiling Crypto.PubKey.MaskGenFunction
+crypton                > [ 91 of 137] Compiling Crypto.PubKey.RSA.Types
+http-client            > [16 of 19] Compiling Network.HTTP.Client.Core
+http-client            > [17 of 19] Compiling Network.HTTP.Client.Internal
+http-client            > [18 of 19] Compiling Network.HTTP.Client
+crypton                > [ 92 of 137] Compiling Crypto.PubKey.RSA.Prim
+crypton                > [ 93 of 137] Compiling Crypto.Random.Entropy.Source
+crypton                > [ 94 of 137] Compiling Crypto.Random.Entropy.Unix
+http-client            > [19 of 19] Compiling Network.HTTP.Client.MultipartFormData
+crypton                > [ 95 of 137] Compiling Crypto.Random.Entropy.Backend
+crypton                > [ 96 of 137] Compiling Crypto.Random.Entropy.Unsafe
+crypton                > [ 97 of 137] Compiling Crypto.Random.Entropy
+crypton                > [ 98 of 137] Compiling Crypto.Random.EntropyPool
+crypton                > [ 99 of 137] Compiling Crypto.Random.Types
+crypton                > [100 of 137] Compiling Crypto.Random.SystemDRG
+crypton                > [101 of 137] Compiling Crypto.Random.ChaChaDRG
+crypton                > [102 of 137] Compiling Crypto.Random
+crypton                > [103 of 137] Compiling Crypto.Random.Probabilistic
+crypton                > [104 of 137] Compiling Crypto.PubKey.Ed448
+crypton                > [105 of 137] Compiling Crypto.PubKey.Ed25519
+crypton                > [106 of 137] Compiling Crypto.PubKey.ECC.P256
+http-client            > copy/register
+crypton                > [107 of 137] Compiling Crypto.PubKey.Curve448
+http-client            > Installing library in /__w/acton/acton/debian/.debhelper/generated/_source/home/.stack/snapshots/aarch64-linux-tinfo6/990d0064a92c190cbad3a4d8701c3ff3a8c550fa15bdd2f1f8ea30b991dffd81/9.6.6/lib/aarch64-linux-ghc-9.6.6/http-client-0.7.17-6SeQcAWvLuvLjyKFb8fibB
+crypton                > [108 of 137] Compiling Crypto.PubKey.Curve25519
+http-client            > Registering library for http-client-0.7.17..
+crypton                > [109 of 137] Compiling Crypto.KDF.BCrypt
+crypton                > [110 of 137] Compiling Crypto.ECC.Edwards25519
+crypton                > [111 of 137] Compiling Crypto.Cipher.AESGCMSIV
+crypton                > 
+crypton                > /tmp/stack-f20e5dbac700eb29/crypton-0.34/Crypto/Cipher/AESGCMSIV.hs:193:23: warning: [GHC-62161] [-Wincomplete-uni-patterns]
+crypton                >     Pattern match(es) are non-exhaustive
+crypton                >     In a pattern binding:
+crypton                >         Patterns of type ‘Maybe (IV c)’ not matched: Nothing
+crypton                >     |
+crypton                > 193 |   where toIV bs = let Just iv = makeIV (bs :: Bytes) in iv
+crypton                >     |                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+crypton                > [112 of 137] Compiling Crypto.Number.Generate
+crypton                > [113 of 137] Compiling Crypto.PubKey.ECC.Prim
+crypton                > [114 of 137] Compiling Crypto.PubKey.ECC.ECDSA
+crypton                > [115 of 137] Compiling Crypto.PubKey.ECC.Generate
+crypton                > [116 of 137] Compiling Crypto.PubKey.DSA
+crypton                > [117 of 137] Compiling Crypto.Number.Prime
+crypton                > [118 of 137] Compiling Crypto.PubKey.Rabin.Types
+crypton                > [119 of 137] Compiling Crypto.PubKey.Rabin.OAEP
+crypton                > [120 of 137] Compiling Crypto.PubKey.Rabin.RW
+crypton                > [121 of 137] Compiling Crypto.PubKey.Rabin.Modified
+crypton                > [122 of 137] Compiling Crypto.PubKey.Rabin.Basic
+crypton                > [123 of 137] Compiling Crypto.PubKey.RSA
+crypton                > [124 of 137] Compiling Crypto.PubKey.RSA.PSS
+crypton                > [125 of 137] Compiling Crypto.PubKey.RSA.PKCS15
+crypton                > [126 of 137] Compiling Crypto.PubKey.RSA.OAEP
+crypton                > [127 of 137] Compiling Crypto.PubKey.DH
+crypton                > [128 of 137] Compiling Crypto.PubKey.ElGamal
+crypton                > [129 of 137] Compiling Crypto.PubKey.ECC.DH
+crypton                > 
+crypton                > /tmp/stack-f20e5dbac700eb29/crypton-0.34/Crypto/PubKey/ECC/DH.hs:47:5: warning: [GHC-62161] [-Wincomplete-uni-patterns]
+crypton                >     Pattern match(es) are non-exhaustive
+crypton                >     In a pattern binding: Patterns of type ‘Point’ not matched: PointO
+crypton                >    |
+crypton                > 47 |     Point x _ = pointMul curve db qa
+crypton                >    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+crypton                > [130 of 137] Compiling Crypto.ECC.Simple.Prim
+crypton                > [131 of 137] Compiling Crypto.ECC
+crypton                > [132 of 137] Compiling Crypto.PubKey.EdDSA
+crypton                > 
+crypton                > /tmp/stack-f20e5dbac700eb29/crypton-0.34/Crypto/PubKey/EdDSA.hs:110:45: warning: [GHC-58520] [-Wtype-equality-requires-operators]
+crypton                >     The use of ‘~’ without TypeOperators
+crypton                >     will become an error in a future GHC release.
+crypton                >     Suggested fix: Perhaps you intended to use TypeOperators
+crypton                >     |
+crypton                > 110 |                       , HashDigestSize hash ~ CurveDigestSize curve
+crypton                >     |                                             ^
+crypton                > 
+crypton                > /tmp/stack-f20e5dbac700eb29/crypton-0.34/Crypto/PubKey/EdDSA.hs:132:36: warning: [GHC-58520] [-Wtype-equality-requires-operators]
+crypton                >     The use of ‘~’ without TypeOperators
+crypton                >     will become an error in a future GHC release.
+crypton                >     Suggested fix: Perhaps you intended to use TypeOperators
+crypton                >     |
+crypton                > 132 |              , HashDigestSize hash ~ CurveDigestSize curve
+crypton                >     |                                    ^
+crypton                > 
+crypton                > /tmp/stack-f20e5dbac700eb29/crypton-0.34/Crypto/PubKey/EdDSA.hs:154:36: warning: [GHC-58520] [-Wtype-equality-requires-operators]
+crypton                >     The use of ‘~’ without TypeOperators
+crypton                >     will become an error in a future GHC release.
+crypton                >     Suggested fix: Perhaps you intended to use TypeOperators
+crypton                >     |
+crypton                > 154 |              , HashDigestSize hash ~ CurveDigestSize curve
+crypton                >     |                                    ^
+crypton                > 
+crypton                > /tmp/stack-f20e5dbac700eb29/crypton-0.34/Crypto/PubKey/EdDSA.hs:175:35: warning: [GHC-58520] [-Wtype-equality-requires-operators]
+crypton                >     The use of ‘~’ without TypeOperators
+crypton                >     will become an error in a future GHC release.
+crypton                >     Suggested fix: Perhaps you intended to use TypeOperators
+crypton                >     |
+crypton                > 175 |             , HashDigestSize hash ~ CurveDigestSize curve
+crypton                >     |                                   ^
+crypton                > 
+crypton                > /tmp/stack-f20e5dbac700eb29/crypton-0.34/Crypto/PubKey/EdDSA.hs:184:39: warning: [GHC-58520] [-Wtype-equality-requires-operators]
+crypton                >     The use of ‘~’ without TypeOperators
+crypton                >     will become an error in a future GHC release.
+crypton                >     Suggested fix: Perhaps you intended to use TypeOperators
+crypton                >     |
+crypton                > 184 |                 , HashDigestSize hash ~ CurveDigestSize curve
+crypton                >     |                                       ^
+crypton                > 
+crypton                > /tmp/stack-f20e5dbac700eb29/crypton-0.34/Crypto/PubKey/EdDSA.hs:195:31: warning: [GHC-58520] [-Wtype-equality-requires-operators]
+crypton                >     The use of ‘~’ without TypeOperators
+crypton                >     will become an error in a future GHC release.
+crypton                >     Suggested fix: Perhaps you intended to use TypeOperators
+crypton                >     |
+crypton                > 195 |         , HashDigestSize hash ~ CurveDigestSize curve
+crypton                >     |                               ^
+crypton                > 
+crypton                > /tmp/stack-f20e5dbac700eb29/crypton-0.34/Crypto/PubKey/EdDSA.hs:204:33: warning: [GHC-58520] [-Wtype-equality-requires-operators]
+crypton                >     The use of ‘~’ without TypeOperators
+crypton                >     will become an error in a future GHC release.
+crypton                >     Suggested fix: Perhaps you intended to use TypeOperators
+crypton                >     |
+crypton                > 204 |           , HashDigestSize hash ~ CurveDigestSize curve
+crypton                >     |                                 ^
+crypton                > 
+crypton                > /tmp/stack-f20e5dbac700eb29/crypton-0.34/Crypto/PubKey/EdDSA.hs:213:34: warning: [GHC-58520] [-Wtype-equality-requires-operators]
+crypton                >     The use of ‘~’ without TypeOperators
+crypton                >     will become an error in a future GHC release.
+crypton                >     Suggested fix: Perhaps you intended to use TypeOperators
+crypton                >     |
+crypton                > 213 |            , HashDigestSize hash ~ CurveDigestSize curve
+crypton                >     |                                  ^
+crypton                > 
+crypton                > /tmp/stack-f20e5dbac700eb29/crypton-0.34/Crypto/PubKey/EdDSA.hs:223:36: warning: [GHC-58520] [-Wtype-equality-requires-operators]
+crypton                >     The use of ‘~’ without TypeOperators
+crypton                >     will become an error in a future GHC release.
+crypton                >     Suggested fix: Perhaps you intended to use TypeOperators
+crypton                >     |
+crypton                > 223 |              , HashDigestSize hash ~ CurveDigestSize curve
+crypton                >     |                                    ^
+crypton                > 
+crypton                > /tmp/stack-f20e5dbac700eb29/crypton-0.34/Crypto/PubKey/EdDSA.hs:233:33: warning: [GHC-58520] [-Wtype-equality-requires-operators]
+crypton                >     The use of ‘~’ without TypeOperators
+crypton                >     will become an error in a future GHC release.
+crypton                >     Suggested fix: Perhaps you intended to use TypeOperators
+crypton                >     |
+crypton                > 233 |           , HashDigestSize hash ~ CurveDigestSize curve
+crypton                >     |                                 ^
+crypton                > 
+crypton                > /tmp/stack-f20e5dbac700eb29/crypton-0.34/Crypto/PubKey/EdDSA.hs:242:35: warning: [GHC-58520] [-Wtype-equality-requires-operators]
+crypton                >     The use of ‘~’ without TypeOperators
+crypton                >     will become an error in a future GHC release.
+crypton                >     Suggested fix: Perhaps you intended to use TypeOperators
+crypton                >     |
+crypton                > 242 |             , HashDigestSize hash ~ CurveDigestSize curve
+crypton                >     |                                   ^
+crypton                > 
+crypton                > /tmp/stack-f20e5dbac700eb29/crypton-0.34/Crypto/PubKey/EdDSA.hs:251:36: warning: [GHC-58520] [-Wtype-equality-requires-operators]
+crypton                >     The use of ‘~’ without TypeOperators
+crypton                >     will become an error in a future GHC release.
+crypton                >     Suggested fix: Perhaps you intended to use TypeOperators
+crypton                >     |
+crypton                > 251 |              , HashDigestSize hash ~ CurveDigestSize curve
+crypton                >     |                                    ^
+crypton                > 
+crypton                > /tmp/stack-f20e5dbac700eb29/crypton-0.34/Crypto/PubKey/EdDSA.hs:269:38: warning: [GHC-58520] [-Wtype-equality-requires-operators]
+crypton                >     The use of ‘~’ without TypeOperators
+crypton                >     will become an error in a future GHC release.
+crypton                >     Suggested fix: Perhaps you intended to use TypeOperators
+crypton                >     |
+crypton                > 269 |                , HashDigestSize hash ~ CurveDigestSize curve
+crypton                >     |                                      ^
+crypton                > 
+crypton                > /tmp/stack-f20e5dbac700eb29/crypton-0.34/Crypto/PubKey/EdDSA.hs:292:31: warning: [GHC-58520] [-Wtype-equality-requires-operators]
+crypton                >     The use of ‘~’ without TypeOperators
+crypton                >     will become an error in a future GHC release.
+crypton                >     Suggested fix: Perhaps you intended to use TypeOperators
+crypton                >     |
+crypton                > 292 |         , HashDigestSize hash ~ CurveDigestSize curve
+crypton                >     |                               ^
+crypton                > 
+crypton                > /tmp/stack-f20e5dbac700eb29/crypton-0.34/Crypto/PubKey/EdDSA.hs:313:42: warning: [GHC-58520] [-Wtype-equality-requires-operators]
+crypton                >     The use of ‘~’ without TypeOperators
+crypton                >     will become an error in a future GHC release.
+crypton                >     Suggested fix: Perhaps you intended to use TypeOperators
+crypton                >     |
+crypton                > 313 |                    , HashDigestSize hash ~ CurveDigestSize curve
+crypton                >     |                                          ^
+crypton                > [133 of 137] Compiling Crypto.PubKey.ECIES
+crypton                > [134 of 137] Compiling Crypto.PubKey.ECDSA
+crypton                > [135 of 137] Compiling Crypto.Data.AFIS
+crypton                > [136 of 137] Compiling Crypto.System.CPU
+crypton                > [137 of 137] Compiling Crypto.Tutorial
+acton                  > [14 of 37] Compiling Acton.NameInfo
+acton                  > [15 of 37] Compiling InterfaceFiles
+acton                  > [16 of 37] Compiling Acton.Prim
+acton                  > [17 of 37] Compiling Acton.Transform
+acton                  > [18 of 37] Compiling Acton.Env
+acton                  > [19 of 37] Compiling Acton.TypeEnv
+acton                  > [20 of 37] Compiling Acton.WitKnots
+acton                  > [21 of 37] Compiling Acton.Solver
+acton                  > [22 of 37] Compiling Acton.QuickType
+acton                  > [23 of 37] Compiling Acton.Normalizer
+acton                  > [24 of 37] Compiling Acton.LambdaLifter
+acton                  > [25 of 37] Compiling Acton.Kinds
+acton                  > [26 of 37] Compiling Acton.Hashing
+acton                  > [27 of 37] Compiling Acton.Diagnostics
+acton                  > [28 of 37] Compiling Acton.DocPrinter
+acton                  > [29 of 37] Compiling Acton.Deactorizer
+acton                  > [30 of 37] Compiling Acton.Converter
+acton                  > [31 of 37] Compiling Acton.Types
+acton                  > [32 of 37] Compiling Acton.CPS
+acton                  > [33 of 37] Compiling Acton.BuildSpec
+acton                  > [34 of 37] Compiling Acton.Boxing
+acton                  > [35 of 37] Compiling Acton.CodeGen
+acton                  > [36 of 37] Compiling Acton.Compile
+crypton                > copy/register
+crypton                > Installing library in /__w/acton/acton/debian/.debhelper/generated/_source/home/.stack/snapshots/aarch64-linux-tinfo6/990d0064a92c190cbad3a4d8701c3ff3a8c550fa15bdd2f1f8ea30b991dffd81/9.6.6/lib/aarch64-linux-ghc-9.6.6/crypton-0.34-ETn1U0plN4wLikiUvniXsO
+crypton                > Registering library for crypton-0.34..
+crypton-x509           > configure
+crypton-x509           > Configuring crypton-x509-1.7.7...
+crypton-x509           > build
+crypton-x509           > Preprocessing library for crypton-x509-1.7.7..
+crypton-x509           > Building library for crypton-x509-1.7.7..
+crypton-x509           > [ 1 of 14] Compiling Data.X509.AlgorithmIdentifier
+crypton-x509           > [ 2 of 14] Compiling Data.X509.Internal
+crypton-x509           > [ 3 of 14] Compiling Data.X509.ExtensionRaw
+crypton-x509           > 
+crypton-x509           > /tmp/stack-f20e5dbac700eb29/crypton-x509-1.7.7/Data/X509/ExtensionRaw.hs:17:1: warning: [-Wunused-imports]
+crypton-x509           >     The import of ‘Control.Applicative’ is redundant
+crypton-x509           >       except perhaps to import instances from ‘Control.Applicative’
+crypton-x509           >     To import instances alone, use: import Control.Applicative()
+crypton-x509           >    |
+crypton-x509           > 17 | import Control.Applicative
+crypton-x509           >    | ^^^^^^^^^^^^^^^^^^^^^^^^^^
+crypton-x509           > [ 4 of 14] Compiling Data.X509.DistinguishedName
+crypton-x509           > 
+crypton-x509           > /tmp/stack-f20e5dbac700eb29/crypton-x509-1.7.7/Data/X509/DistinguishedName.hs:20:1: warning: [-Wunused-imports]
+crypton-x509           >     The import of ‘Control.Applicative’ is redundant
+crypton-x509           >       except perhaps to import instances from ‘Control.Applicative’
+crypton-x509           >     To import instances alone, use: import Control.Applicative()
+crypton-x509           >    |
+crypton-x509           > 20 | import Control.Applicative
+crypton-x509           >    | ^^^^^^^^^^^^^^^^^^^^^^^^^^
+crypton-x509           > 
+crypton-x509           > /tmp/stack-f20e5dbac700eb29/crypton-x509-1.7.7/Data/X509/DistinguishedName.hs:22:1: warning: [-Wunused-imports]
+crypton-x509           >     The import of ‘Data.Semigroup’ is redundant
+crypton-x509           >       except perhaps to import instances from ‘Data.Semigroup’
+crypton-x509           >     To import instances alone, use: import Data.Semigroup()
+crypton-x509           >    |
+crypton-x509           > 22 | import           Data.Semigroup
+crypton-x509           >    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+crypton-x509           > [ 5 of 14] Compiling Data.X509.Ext
+crypton-x509           > 
+crypton-x509           > /tmp/stack-f20e5dbac700eb29/crypton-x509-1.7.7/Data/X509/Ext.hs:46:1: warning: [-Wunused-imports]
+crypton-x509           >     The import of ‘Control.Applicative’ is redundant
+crypton-x509           >       except perhaps to import instances from ‘Control.Applicative’
+crypton-x509           >     To import instances alone, use: import Control.Applicative()
+crypton-x509           >    |
+crypton-x509           > 46 | import Control.Applicative
+crypton-x509           >    | ^^^^^^^^^^^^^^^^^^^^^^^^^^
+acton                  > [37 of 37] Compiling Acton.Testing
+crypton-x509           > [ 6 of 14] Compiling Data.X509.CRL
+crypton-x509           > 
+crypton-x509           > /tmp/stack-f20e5dbac700eb29/crypton-x509-1.7.7/Data/X509/CRL.hs:19:1: warning: [-Wunused-imports]
+crypton-x509           >     The import of ‘Control.Applicative’ is redundant
+crypton-x509           >       except perhaps to import instances from ‘Control.Applicative’
+crypton-x509           >     To import instances alone, use: import Control.Applicative()
+crypton-x509           >    |
+crypton-x509           > 19 | import Control.Applicative
+crypton-x509           >    | ^^^^^^^^^^^^^^^^^^^^^^^^^^
+crypton-x509           > [ 7 of 14] Compiling Data.X509.OID
+crypton-x509           > 
+crypton-x509           > /tmp/stack-f20e5dbac700eb29/crypton-x509-1.7.7/Data/X509/OID.hs:15:1: warning: [-Wunused-imports]
+crypton-x509           >     The import of ‘Control.Applicative’ is redundant
+crypton-x509           >       except perhaps to import instances from ‘Control.Applicative’
+crypton-x509           >     To import instances alone, use: import Control.Applicative()
+crypton-x509           >    |
+crypton-x509           > 15 | import Control.Applicative
+crypton-x509           >    | ^^^^^^^^^^^^^^^^^^^^^^^^^^
+crypton-x509           > [ 8 of 14] Compiling Data.X509.PublicKey
+crypton-x509           > [ 9 of 14] Compiling Data.X509.PrivateKey
+crypton-x509           > 
+crypton-x509           > /tmp/stack-f20e5dbac700eb29/crypton-x509-1.7.7/Data/X509/PrivateKey.hs:16:1: warning: [-Wunused-imports]
+crypton-x509           >     The import of ‘Control.Applicative’ is redundant
+crypton-x509           >       except perhaps to import instances from ‘Control.Applicative’
+crypton-x509           >     To import instances alone, use: import Control.Applicative()
+crypton-x509           >    |
+crypton-x509           > 16 | import Control.Applicative ((<$>), pure)
+crypton-x509           >    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+crypton-x509           > 
+crypton-x509           > /tmp/stack-f20e5dbac700eb29/crypton-x509-1.7.7/Data/X509/PrivateKey.hs:18:1: warning: [-Wunused-imports]
+crypton-x509           >     The import of ‘Data.Word’ is redundant
+crypton-x509           >       except perhaps to import instances from ‘Data.Word’
+crypton-x509           >     To import instances alone, use: import Data.Word()
+crypton-x509           >    |
+crypton-x509           > 18 | import Data.Word (Word)
+crypton-x509           >    | ^^^^^^^^^^^^^^^^^^^^^^^
+acton                  > copy/register
+acton                  > Installing library in /__w/acton/acton/compiler/.stack-work/install/aarch64-linux-tinfo6/990d0064a92c190cbad3a4d8701c3ff3a8c550fa15bdd2f1f8ea30b991dffd81/9.6.6/lib/aarch64-linux-ghc-9.6.6/acton-0.26.0-GozLH2K7KZGJt8ZqfFuhoV
+crypton-x509           > [10 of 14] Compiling Data.X509.EC
+crypton-x509           > [11 of 14] Compiling Data.X509.Cert
+crypton-x509           > 
+crypton-x509           > /tmp/stack-f20e5dbac700eb29/crypton-x509-1.7.7/Data/X509/Cert.hs:15:1: warning: [-Wunused-imports]
+crypton-x509           >     The import of ‘Control.Applicative’ is redundant
+crypton-x509           >       except perhaps to import instances from ‘Control.Applicative’
+crypton-x509           >     To import instances alone, use: import Control.Applicative()
+crypton-x509           >    |
+crypton-x509           > 15 | import Control.Applicative ((<$>), (<*>))
+crypton-x509           >    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+crypton-x509           > [12 of 14] Compiling Data.X509.Signed
+acton                  > Registering library for acton-0.26.0..
+Building all executables for `lsp-server-acton' once. After a successful build of all of them, only specified executables will be rebuilt.
+lsp-server-acton       > configure (exe)
+lsp-server-acton       > Configuring lsp-server-acton-0.26.0.20260118.21.12...
+crypton-x509           > [13 of 14] Compiling Data.X509.CertificateChain
+crypton-x509           > [14 of 14] Compiling Data.X509
+crypton-x509           > copy/register
+crypton-x509           > Installing library in /__w/acton/acton/debian/.debhelper/generated/_source/home/.stack/snapshots/aarch64-linux-tinfo6/990d0064a92c190cbad3a4d8701c3ff3a8c550fa15bdd2f1f8ea30b991dffd81/9.6.6/lib/aarch64-linux-ghc-9.6.6/crypton-x509-1.7.7-JE2gYM6YiUrJjxI0ncouNN
+crypton-x509           > Registering library for crypton-x509-1.7.7..
+lsp-server-acton       > build (exe)
+lsp-server-acton       > Preprocessing executable 'lsp-server-acton' for lsp-server-acton-0.26.0.20260118.21.12..
+lsp-server-acton       > Building executable 'lsp-server-acton' for lsp-server-acton-0.26.0.20260118.21.12..
+lsp-server-acton       > [1 of 2] Compiling Main
+crypton-x509-store     > configure
+crypton-x509-store     > Configuring crypton-x509-store-1.6.9...
+crypton-x509-store     > build
+crypton-x509-store     > Preprocessing library for crypton-x509-store-1.6.9..
+crypton-x509-store     > Building library for crypton-x509-store-1.6.9..
+crypton-x509-store     > [1 of 3] Compiling Data.X509.CertificateStore
+lsp-server-acton       > [2 of 2] Compiling Paths_lsp_server_acton
+crypton-x509-store     > 
+crypton-x509-store     > /tmp/stack-f20e5dbac700eb29/crypton-x509-store-1.6.9/Data/X509/CertificateStore.hs:16:1: warning: [-Wunused-imports]
+crypton-x509-store     >     The import of ‘Data.Semigroup’ is redundant
+crypton-x509-store     >       except perhaps to import instances from ‘Data.Semigroup’
+crypton-x509-store     >     To import instances alone, use: import Data.Semigroup()
+crypton-x509-store     >    |
+crypton-x509-store     > 16 | import           Data.Semigroup
+crypton-x509-store     >    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+crypton-x509-store     > 
+crypton-x509-store     > /tmp/stack-f20e5dbac700eb29/crypton-x509-store-1.6.9/Data/X509/CertificateStore.hs:23:1: warning: [-Wunused-imports]
+crypton-x509-store     >     The import of ‘Control.Applicative’ is redundant
+crypton-x509-store     >       except perhaps to import instances from ‘Control.Applicative’
+crypton-x509-store     >     To import instances alone, use: import Control.Applicative()
+crypton-x509-store     >    |
+crypton-x509-store     > 23 | import Control.Applicative ((<$>))
+crypton-x509-store     >    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lsp-server-acton       > [3 of 3] Linking .stack-work/dist/aarch64-linux-tinfo6/Cabal-3.10.3.0/build/lsp-server-acton/lsp-server-acton
+crypton-x509-store     > [2 of 3] Compiling Data.X509.Memory
+crypton-x509-store     > [3 of 3] Compiling Data.X509.File
+crypton-x509-store     > 
+crypton-x509-store     > /tmp/stack-f20e5dbac700eb29/crypton-x509-store-1.6.9/Data/X509/File.hs:7:1: warning: [-Wunused-imports]
+crypton-x509-store     >     The import of ‘Control.Applicative’ is redundant
+crypton-x509-store     >       except perhaps to import instances from ‘Control.Applicative’
+crypton-x509-store     >     To import instances alone, use: import Control.Applicative()
+crypton-x509-store     >   |
+crypton-x509-store     > 7 | import Control.Applicative
+crypton-x509-store     >   | ^^^^^^^^^^^^^^^^^^^^^^^^^^
+crypton-x509-store     > 
+crypton-x509-store     > /tmp/stack-f20e5dbac700eb29/crypton-x509-store-1.6.9/Data/X509/File.hs:10:1: warning: [-Wunused-imports]
+crypton-x509-store     >     The import of ‘Data.ASN1.BinaryEncoding’ is redundant
+crypton-x509-store     >       except perhaps to import instances from ‘Data.ASN1.BinaryEncoding’
+crypton-x509-store     >     To import instances alone, use: import Data.ASN1.BinaryEncoding()
+crypton-x509-store     >    |
+crypton-x509-store     > 10 | import Data.ASN1.BinaryEncoding
+crypton-x509-store     >    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+crypton-x509-store     > 
+crypton-x509-store     > /tmp/stack-f20e5dbac700eb29/crypton-x509-store-1.6.9/Data/X509/File.hs:11:1: warning: [-Wunused-imports]
+crypton-x509-store     >     The import of ‘Data.ASN1.Encoding’ is redundant
+crypton-x509-store     >       except perhaps to import instances from ‘Data.ASN1.Encoding’
+crypton-x509-store     >     To import instances alone, use: import Data.ASN1.Encoding()
+crypton-x509-store     >    |
+crypton-x509-store     > 11 | import Data.ASN1.Encoding
+crypton-x509-store     >    | ^^^^^^^^^^^^^^^^^^^^^^^^^
+crypton-x509-store     > 
+crypton-x509-store     > /tmp/stack-f20e5dbac700eb29/crypton-x509-store-1.6.9/Data/X509/File.hs:15:43: warning: [-Wunused-imports]
+crypton-x509-store     >     The import of ‘PEM(pemName)’ from module ‘Data.PEM’ is redundant
+crypton-x509-store     >    |
+crypton-x509-store     > 15 | import Data.PEM (pemParseLBS, pemContent, pemName, PEM)
+crypton-x509-store     >    |                                           ^^^^^^^
+crypton-x509-store     > copy/register
+crypton-x509-store     > Installing library in /__w/acton/acton/debian/.debhelper/generated/_source/home/.stack/snapshots/aarch64-linux-tinfo6/990d0064a92c190cbad3a4d8701c3ff3a8c550fa15bdd2f1f8ea30b991dffd81/9.6.6/lib/aarch64-linux-ghc-9.6.6/crypton-x509-store-1.6.9-5LofArTFYtH5KXG4jdlLUu
+crypton-x509-store     > Registering library for crypton-x509-store-1.6.9..
+lsp-server-acton       > copy/register
+lsp-server-acton       > Installing executable lsp-server-acton in /__w/acton/acton/compiler/.stack-work/install/aarch64-linux-tinfo6/990d0064a92c190cbad3a4d8701c3ff3a8c550fa15bdd2f1f8ea30b991dffd81/9.6.6/bin
+crypton-x509-system    > configure
+crypton-x509-system    > Configuring crypton-x509-system-1.6.7...
+crypton-x509-system    > build
+crypton-x509-validation> configure
+crypton-x509-validation> Configuring crypton-x509-validation-1.6.12...
+crypton-x509-system    > Preprocessing library for crypton-x509-system-1.6.7..
+crypton-x509-system    > Building library for crypton-x509-system-1.6.7..
+crypton-x509-system    > [1 of 3] Compiling System.X509.MacOS
+crypton-x509-system    > 
+crypton-x509-system    > /tmp/stack-f20e5dbac700eb29/crypton-x509-system-1.6.7/System/X509/MacOS.hs:8:1: warning: [-Wunused-imports]
+crypton-x509-system    >     The import of ‘Control.Applicative’ is redundant
+crypton-x509-system    >       except perhaps to import instances from ‘Control.Applicative’
+crypton-x509-system    >     To import instances alone, use: import Control.Applicative()
+crypton-x509-system    >   |
+crypton-x509-system    > 8 | import Control.Applicative
+crypton-x509-system    >   | ^^^^^^^^^^^^^^^^^^^^^^^^^^
+crypton-x509-system    > [2 of 3] Compiling System.X509.Unix
+crypton-x509-system    > 
+crypton-x509-system    > /tmp/stack-f20e5dbac700eb29/crypton-x509-system-1.6.7/System/X509/Unix.hs:22:1: warning: [-Wunused-imports]
+crypton-x509-system    >     The import of ‘Control.Applicative’ is redundant
+crypton-x509-system    >       except perhaps to import instances from ‘Control.Applicative’
+crypton-x509-system    >     To import instances alone, use: import Control.Applicative()
+crypton-x509-system    >    |
+crypton-x509-system    > 22 | import Control.Applicative ((<$>))
+crypton-x509-system    >    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+crypton-x509-system    > 
+crypton-x509-system    > /tmp/stack-f20e5dbac700eb29/crypton-x509-system-1.6.7/System/X509/Unix.hs:26:1: warning: [-Wunused-imports]
+crypton-x509-system    >     The import of ‘Data.Monoid’ is redundant
+crypton-x509-system    >       except perhaps to import instances from ‘Data.Monoid’
+crypton-x509-system    >     To import instances alone, use: import Data.Monoid()
+crypton-x509-system    >    |
+crypton-x509-system    > 26 | import Data.Monoid (mconcat)
+crypton-x509-system    >    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+crypton-x509-system    > [3 of 3] Compiling System.X509
+crypton-x509-system    > copy/register
+crypton-x509-system    > Installing library in /__w/acton/acton/debian/.debhelper/generated/_source/home/.stack/snapshots/aarch64-linux-tinfo6/990d0064a92c190cbad3a4d8701c3ff3a8c550fa15bdd2f1f8ea30b991dffd81/9.6.6/lib/aarch64-linux-ghc-9.6.6/crypton-x509-system-1.6.7-ALM8XXBQfjG4Rst5vK47Qr
+crypton-x509-validation> build
+crypton-x509-system    > Registering library for crypton-x509-system-1.6.7..
+crypton-x509-validation> Preprocessing library for crypton-x509-validation-1.6.12..
+crypton-x509-validation> Building library for crypton-x509-validation-1.6.12..
+crypton-x509-validation> [1 of 5] Compiling Data.X509.Validation.Fingerprint
+crypton-x509-validation> [2 of 5] Compiling Data.X509.Validation.Signature
+crypton-x509-validation> [3 of 5] Compiling Data.X509.Validation.Types
+crypton-x509-validation> [4 of 5] Compiling Data.X509.Validation.Cache
+crypton-x509-validation> [5 of 5] Compiling Data.X509.Validation
+crypton-x509-validation> 
+crypton-x509-validation> /tmp/stack-f20e5dbac700eb29/crypton-x509-validation-1.6.12/Data/X509/Validation.hs:35:1: warning: [-Wunused-imports]
+crypton-x509-validation>     The import of ‘Control.Applicative’ is redundant
+crypton-x509-validation>       except perhaps to import instances from ‘Control.Applicative’
+crypton-x509-validation>     To import instances alone, use: import Control.Applicative()
+crypton-x509-validation>    |
+crypton-x509-validation> 35 | import Control.Applicative
+crypton-x509-validation>    | ^^^^^^^^^^^^^^^^^^^^^^^^^^
+crypton-x509-validation> copy/register
+crypton-x509-validation> Installing library in /__w/acton/acton/debian/.debhelper/generated/_source/home/.stack/snapshots/aarch64-linux-tinfo6/990d0064a92c190cbad3a4d8701c3ff3a8c550fa15bdd2f1f8ea30b991dffd81/9.6.6/lib/aarch64-linux-ghc-9.6.6/crypton-x509-validation-1.6.12-F4xFnG2PFqz5YoiGuufGVS
+crypton-x509-validation> Registering library for crypton-x509-validation-1.6.12..
+tls                    > configure
+tls                    > Configuring tls-1.8.0...
+tls                    > build
+tls                    > Preprocessing library for tls-1.8.0..
+tls                    > Building library for tls-1.8.0..
+tls                    > [ 1 of 64] Compiling Network.TLS.Crypto.Types
+tls                    > [ 2 of 64] Compiling Network.TLS.ErrT
+tls                    > [ 3 of 64] Compiling Network.TLS.Imports
+tls                    > [ 4 of 64] Compiling Network.TLS.Backend
+tls                    > [ 5 of 64] Compiling Network.TLS.Measurement
+tls                    > [ 6 of 64] Compiling Network.TLS.RNG
+tls                    > [ 7 of 64] Compiling Network.TLS.Crypto.DH
+tls                    > [ 8 of 64] Compiling Network.TLS.Extra.FFDHE
+tls                    > [ 9 of 64] Compiling Network.TLS.Types
+tls                    > [10 of 64] Compiling Network.TLS.Session
+tls                    > [11 of 64] Compiling Network.TLS.Compression
+tls                    > [12 of 64] Compiling Network.TLS.Cap
+tls                    > [13 of 64] Compiling Network.TLS.Util
+tls                    > [14 of 64] Compiling Network.TLS.Util.ASN1
+tls                    > [15 of 64] Compiling Network.TLS.Util.Serialization
+tls                    > [16 of 64] Compiling Network.TLS.Crypto.IES
+tls                    > [17 of 64] Compiling Network.TLS.Crypto
+tls                    > 
+tls                    > /tmp/stack-f20e5dbac700eb29/tls-1.8.0/Network/TLS/Crypto.hs:112:36: warning: [GHC-62161] [-Wincomplete-uni-patterns]
+tls                    >     Pattern match(es) are non-exhaustive
+tls                    >     In a pattern binding:
+tls                    >         Patterns of type ‘Maybe DH.Params’ not matched: Nothing
+tls                    >     |
+tls                    > 112 |                              , let Just prms = dhParamsForGroup grp
+tls                    >     |                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tls                    > [18 of 64] Compiling Network.TLS.Struct
+tls                    > [19 of 64] Compiling Network.TLS.Struct13
+tls                    > [20 of 64] Compiling Network.TLS.MAC
+tls                    > [21 of 64] Compiling Network.TLS.Cipher
+tls                    > [22 of 64] Compiling Network.TLS.Handshake.Control
+tls                    > [23 of 64] Compiling Network.TLS.Extra.Cipher
+tls                    > [24 of 64] Compiling Network.TLS.Extra
+tls                    > [25 of 64] Compiling Network.TLS.Wire
+tls                    > [26 of 64] Compiling Network.TLS.Packet
+tls                    > [27 of 64] Compiling Network.TLS.Record.State
+tls                    > 
+tls                    > /tmp/stack-f20e5dbac700eb29/tls-1.8.0/Network/TLS/Record/State.hs:89:5: warning: [-Wnoncanonical-monad-instances]
+tls                    >     Noncanonical ‘pure = return’ definition detected
+tls                    >     in the instance declaration for ‘Applicative RecordM’.
+tls                    >     Move definition from ‘return’ to ‘pure’
+tls                    >     See also: https://gitlab.haskell.org/ghc/ghc/-/wikis/proposal/monad-of-no-return
+tls                    >    |
+tls                    > 89 |     pure = return
+tls                    >    |     ^^^^^^^^^^^^^
+tls                    > 
+tls                    > /tmp/stack-f20e5dbac700eb29/tls-1.8.0/Network/TLS/Record/State.hs:93:5: warning: [-Wnoncanonical-monad-instances]
+tls                    >     Noncanonical ‘return’ definition detected
+tls                    >     in the instance declaration for ‘Monad RecordM’.
+tls                    >     ‘return’ will eventually be removed in favour of ‘pure’
+tls                    >     Either remove definition for ‘return’ (recommended) or define as ‘return = pure’
+tls                    >     See also: https://gitlab.haskell.org/ghc/ghc/-/wikis/proposal/monad-of-no-return
+tls                    >    |
+tls                    > 93 |     return a  = RecordM $ \_ st  -> Right (a, st)
+tls                    >    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tls                    > [28 of 64] Compiling Network.TLS.Record.Types
+tls                    > [29 of 64] Compiling Network.TLS.Record.Engage
+tls                    > [30 of 64] Compiling Network.TLS.Record.Disengage
+tls                    > [31 of 64] Compiling Network.TLS.Record
+tls                    > [32 of 64] Compiling Network.TLS.Record.Layer
+tls                    > [33 of 64] Compiling Network.TLS.Packet13
+tls                    > [34 of 64] Compiling Network.TLS.Handshake.State
+tls                    > [35 of 64] Compiling Network.TLS.KeySchedule
+tls                    > [36 of 64] Compiling Network.TLS.Extension
+tls                    > [37 of 64] Compiling Network.TLS.State
+tls                    > [38 of 64] Compiling Network.TLS.X509
+tls                    > [39 of 64] Compiling Network.TLS.Hooks
+tls                    > [40 of 64] Compiling Network.TLS.Credentials
+tls                    > [41 of 64] Compiling Network.TLS.Parameters
+tls                    > [42 of 64] Compiling Network.TLS.Context.Internal
+tls                    > 
+tls                    > /tmp/stack-f20e5dbac700eb29/tls-1.8.0/Network/TLS/Context/Internal.hs:336:40: warning: [GHC-62161] [-Wincomplete-uni-patterns]
+tls                    >     Pattern match(es) are non-exhaustive
+tls                    >     In a lambda abstraction:
+tls                    >         Patterns of type ‘Handshake13’ not matched:
+tls                    >             ClientHello13 _ _ _ _ _
+tls                    >             ServerHello13 _ _ _ _
+tls                    >             NewSessionTicket13 _ _ _ _ _
+tls                    >             EndOfEarlyData13
+tls                    >             ...
+tls                    >     |
+tls                    > 336 |     let (matched, others) = partition (\(CertRequest13 c _) -> context == c) l
+tls                    >     |                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tls                    > [43 of 64] Compiling Network.TLS.Record.Writing
+tls                    > [44 of 64] Compiling Network.TLS.Record.Reading
+tls                    > 
+tls                    > /tmp/stack-f20e5dbac700eb29/tls-1.8.0/Network/TLS/Record/Reading.hs:16:1: warning: [-Wunused-imports]
+tls                    >     The import of ‘Control.Monad.Reader’ is redundant
+tls                    >       except perhaps to import instances from ‘Control.Monad.Reader’
+tls                    >     To import instances alone, use: import Control.Monad.Reader()
+tls                    >    |
+tls                    > 16 | import Control.Monad.Reader
+tls                    >    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tls                    > [45 of 64] Compiling Network.TLS.Receiving
+tls                    > [46 of 64] Compiling Network.TLS.Handshake.State13
+tls                    > 
+tls                    > /tmp/stack-f20e5dbac700eb29/tls-1.8.0/Network/TLS/Handshake/State13.hs:57:9: warning: [GHC-62161] [-Wincomplete-uni-patterns]
+tls                    >     Pattern match(es) are non-exhaustive
+tls                    >     In a pattern binding:
+tls                    >         Patterns of type ‘Maybe Cipher’ not matched: Nothing
+tls                    >    |
+tls                    > 57 |     let Just usedCipher = stCipher tx
+tls                    >    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tls                    > [47 of 64] Compiling Network.TLS.Handshake.Random
+tls                    > [48 of 64] Compiling Network.TLS.Sending
+tls                    > [49 of 64] Compiling Network.TLS.IO
+tls                    > [50 of 64] Compiling Network.TLS.Handshake.Key
+tls                    > [51 of 64] Compiling Network.TLS.Handshake.Signature
+tls                    > [52 of 64] Compiling Network.TLS.Handshake.Process
+tls                    > [53 of 64] Compiling Network.TLS.Handshake.Common
+tls                    > 
+tls                    > /tmp/stack-f20e5dbac700eb29/tls-1.8.0/Network/TLS/Handshake/Common.hs:247:9: warning: [GHC-62161] [-Wincomplete-uni-patterns]
+tls                    >     Pattern match(es) are non-exhaustive
+tls                    >     In a pattern binding:
+tls                    >         Patterns of type ‘CertificateChain’ not matched:
+tls                    >             CertificateChain []
+tls                    >     |
+tls                    > 247 |     let CertificateChain (c:_) = cc
+tls                    >     |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tls                    > [54 of 64] Compiling Network.TLS.Handshake.Certificate
+tls                    > [55 of 64] Compiling Network.TLS.Handshake.Common13
+tls                    > 
+tls                    > /tmp/stack-f20e5dbac700eb29/tls-1.8.0/Network/TLS/Handshake/Common13.hs:299:5: warning: [GHC-62161] [-Wincomplete-uni-patterns]
+tls                    >     Pattern match(es) are non-exhaustive
+tls                    >     In a pattern binding:
+tls                    >         Patterns of type ‘Maybe Millisecond’ not matched: Nothing
+tls                    >     |
+tls                    > 299 |     Just rtt = estimatedRTT tinfo
+tls                    >     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tls                    > [56 of 64] Compiling Network.TLS.Handshake.Server
+tls                    > 
+tls                    > /tmp/stack-f20e5dbac700eb29/tls-1.8.0/Network/TLS/Handshake/Server.hs:851:25: warning: [GHC-62161] [-Wincomplete-uni-patterns]
+tls                    >     Pattern match(es) are non-exhaustive
+tls                    >     In a pattern binding:
+tls                    >         Patterns of type ‘Maybe TLS13TicketInfo’ not matched: Nothing
+tls                    >     |
+tls                    > 851 |                     let Just tinfo = sessionTicketInfo sdata
+tls                    >     |                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tls                    > [57 of 64] Compiling Network.TLS.Handshake.Client
+tls                    > [58 of 64] Compiling Network.TLS.PostHandshake
+tls                    > [59 of 64] Compiling Network.TLS.Handshake
+tls                    > [60 of 64] Compiling Network.TLS.Context
+tls                    > [61 of 64] Compiling Network.TLS.Core
+tls                    > [62 of 64] Compiling Network.TLS.QUIC
+tls                    > [63 of 64] Compiling Network.TLS.Internal
+tls                    > [64 of 64] Compiling Network.TLS
+tls                    > copy/register
+tls                    > Installing library in /__w/acton/acton/debian/.debhelper/generated/_source/home/.stack/snapshots/aarch64-linux-tinfo6/990d0064a92c190cbad3a4d8701c3ff3a8c550fa15bdd2f1f8ea30b991dffd81/9.6.6/lib/aarch64-linux-ghc-9.6.6/tls-1.8.0-EkAJ60fMC58J5fhPn3a6O2
+tls                    > Registering library for tls-1.8.0..
+crypton-connection     > configure
+crypton-connection     > Configuring crypton-connection-0.3.2...
+crypton-connection     > build
+crypton-connection     > Preprocessing library for crypton-connection-0.3.2..
+crypton-connection     > Building library for crypton-connection-0.3.2..
+crypton-connection     > [1 of 2] Compiling Network.Connection.Types
+crypton-connection     > [2 of 2] Compiling Network.Connection
+crypton-connection     > copy/register
+crypton-connection     > Installing library in /__w/acton/acton/debian/.debhelper/generated/_source/home/.stack/snapshots/aarch64-linux-tinfo6/990d0064a92c190cbad3a4d8701c3ff3a8c550fa15bdd2f1f8ea30b991dffd81/9.6.6/lib/aarch64-linux-ghc-9.6.6/crypton-connection-0.3.2-BmmiuNQseC1FS1DKF3ywZp
+crypton-connection     > Registering library for crypton-connection-0.3.2..
+http-client-tls        > configure
+http-client-tls        > Configuring http-client-tls-0.3.6.3...
+http-client-tls        > build
+http-client-tls        > Preprocessing library for http-client-tls-0.3.6.3..
+http-client-tls        > Building library for http-client-tls-0.3.6.3..
+http-client-tls        > [1 of 1] Compiling Network.HTTP.Client.TLS
+http-client-tls        > copy/register
+http-client-tls        > Installing library in /__w/acton/acton/debian/.debhelper/generated/_source/home/.stack/snapshots/aarch64-linux-tinfo6/990d0064a92c190cbad3a4d8701c3ff3a8c550fa15bdd2f1f8ea30b991dffd81/9.6.6/lib/aarch64-linux-ghc-9.6.6/http-client-tls-0.3.6.3-IKAz0svZlV2F0f9k17Mijp
+http-client-tls        > Registering library for http-client-tls-0.3.6.3..
+Building all executables for `actonc' once. After a successful build of all of them, only specified executables will be rebuilt.
+actonc                 > configure (exe)
+actonc                 > Configuring actonc-0.26.0.20260118.21.12...
+actonc                 > build (exe)
+actonc                 > Preprocessing executable 'actonc' for actonc-0.26.0.20260118.21.12..
+actonc                 > Building executable 'actonc' for actonc-0.26.0.20260118.21.12..
+actonc                 > 
+actonc                 > <no location info>: warning: [GHC-32850] [-Wmissing-home-modules]
+actonc                 >     These modules are needed for compilation but not listed in your .cabal file's other-modules for ‘main’ :
+actonc                 >         Paths_actonc
+actonc                 > [1 of 3] Compiling Paths_actonc
+actonc                 > [2 of 3] Compiling PkgCommands
+actonc                 > [3 of 3] Compiling Main
+actonc                 > 
+actonc                 > <no location info>: warning: [GHC-32850] [-Wmissing-home-modules]
+actonc                 >     These modules are needed for compilation but not listed in your .cabal file's other-modules for ‘main’ :
+actonc                 >         Paths_actonc
+actonc                 > [4 of 4] Linking .stack-work/dist/aarch64-linux-tinfo6/Cabal-3.10.3.0/build/actonc/actonc
+actonc                 > copy/register
+actonc                 > Installing executable actonc in /__w/acton/acton/compiler/.stack-work/install/aarch64-linux-tinfo6/990d0064a92c190cbad3a4d8701c3ff3a8c550fa15bdd2f1f8ea30b991dffd81/9.6.6/bin
+Completed 34 action(s).
+cd compiler && unset CC && unset CXX && unset CFLAGS && stack --local-bin-path=../dist/bin install actonc lsp-server-acton
+Stack has not been tested with GHC versions above 9.0, and using 9.6.6, this may fail
+Stack has not been tested with Cabal versions above 3.4, but version 3.10.3.0 was found, this may fail
+Copying from /__w/acton/acton/compiler/.stack-work/install/aarch64-linux-tinfo6/990d0064a92c190cbad3a4d8701c3ff3a8c550fa15bdd2f1f8ea30b991dffd81/9.6.6/bin/actonc to /__w/acton/acton/dist/bin/actonc
+Copying from /__w/acton/acton/compiler/.stack-work/install/aarch64-linux-tinfo6/990d0064a92c190cbad3a4d8701c3ff3a8c550fa15bdd2f1f8ea30b991dffd81/9.6.6/bin/lsp-server-acton to /__w/acton/acton/dist/bin/lsp-server-acton
+
+Copied executables to /__w/acton/acton/dist/bin:
+- actonc
+- lsp-server-acton
+
+Warning: Installation path /__w/acton/acton/dist/bin not found on the PATH environment variable.
+mkdir -p "dist/base" "dist/base/.build" "dist/base/out"
+cp -a base/__root.zig base/Acton.toml base/acton.zig base/build.zig base/build.zig.zon base/builtin base/rts base/src dist/base/
+cd dist/base && ../bin/actonc build --skip-build && rm -rf .build
+Building project in /__w/acton/acton/dist/base
+   Finished type check of     base/__builtin__         0.843 s
+   Finished type check of     base/term                0.014 s
+   Finished compilation of    base/term                0.020 s
+   Finished type check of     base/random              0.050 s
+   Finished compilation of    base/random              0.009 s
+   Finished compilation of    base/__builtin__         0.253 s
+   Finished type check of     base/time                0.276 s
+   Finished type check of     base/file                0.224 s
+   Finished type check of     base/acton.rts           0.057 s
+   Finished compilation of    base/time                0.064 s
+   Finished type check of     base/json                0.010 s
+   Finished compilation of    base/json                0.028 s
+   Finished type check of     base/argparse            0.410 s
+   Finished compilation of    base/acton.rts           0.080 s
+   Finished type check of     base/logging             0.126 s
+   Finished compilation of    base/argparse            0.079 s
+   Finished compilation of    base/logging             0.055 s
+   Finished type check of     base/re                  0.090 s
+   Finished compilation of    base/re                  0.017 s
+   Finished compilation of    base/file                0.252 s
+   Finished type check of     base/net                 0.206 s
+   Finished type check of     base/fs                  0.160 s
+   Finished compilation of    base/fs                  0.020 s
+   Finished type check of     base/diff                0.679 s
+   Finished type check of     base/uri                 0.089 s
+   Finished compilation of    base/diff                0.066 s
+   Finished type check of     base/buildy              0.211 s
+   Finished compilation of    base/uri                 0.031 s
+   Finished type check of     base/qcheck              0.052 s
+   Finished compilation of    base/buildy              0.066 s
+   Finished compilation of    base/qcheck              0.016 s
+   Finished type check of     base/process             0.095 s
+   Finished compilation of    base/net                 0.279 s
+   Finished type check of     base/math                0.011 s
+   Finished type check of     base/crypto.hash.md5     0.006 s
+   Finished type check of     base/xml                 0.036 s
+   Finished type check of     base/snappy              0.001 s
+   Finished type check of     base/hash.wyhash         0.011 s
+   Finished type check of     base/base64              0.001 s
+   Finished compilation of    base/crypto.hash.md5     0.012 s
+   Finished compilation of    base/snappy              0.002 s
+   Finished compilation of    base/xml                 0.011 s
+   Finished compilation of    base/math                0.019 s
+   Finished compilation of    base/hash.wyhash         0.006 s
+   Finished compilation of    base/base64              0.003 s
+   Finished compilation of    base/process             0.061 s
+   Finished type check of     base/http                0.589 s
+   Finished type check of     base/testing             1.798 s
+   Finished compilation of    base/http                1.459 s
+   Finished compilation of    base/testing             0.564 s
+  Skipping final build step
+make dist/deps/mbedtls dist/deps/libargp dist/deps/libbsdnt dist/deps/libgc dist/deps/libnetstring dist/deps/pcre2 dist/deps/libprotobuf_c dist/deps/tlsuv dist/deps/libutf8proc dist/deps/libuuid dist/deps/libuv dist/deps/libxml2 dist/deps/libyyjson dist/deps/libsnappy_c
+make[3]: Entering directory '/__w/acton/acton'
+make[3]: 'dist/deps/mbedtls' is up to date.
+make[3]: 'dist/deps/libargp' is up to date.
+make[3]: 'dist/deps/libbsdnt' is up to date.
+make[3]: 'dist/deps/libgc' is up to date.
+make[3]: 'dist/deps/libnetstring' is up to date.
+make[3]: 'dist/deps/pcre2' is up to date.
+make[3]: 'dist/deps/libprotobuf_c' is up to date.
+make[3]: 'dist/deps/tlsuv' is up to date.
+make[3]: 'dist/deps/libutf8proc' is up to date.
+make[3]: 'dist/deps/libuuid' is up to date.
+make[3]: 'dist/deps/libuv' is up to date.
+make[3]: 'dist/deps/libxml2' is up to date.
+make[3]: 'dist/deps/libyyjson' is up to date.
+make[3]: 'dist/deps/libsnappy_c' is up to date.
+make[3]: Leaving directory '/__w/acton/acton'
+cd cli && rm -f build.zig build.zig.zon && "/__w/acton/acton/dist/bin/actonc" build --target aarch64-linux-gnu.2.27
+Building project in /__w/acton/acton/cli
+   Finished type check of     cli/acton_cli.deps       0.045 s
+   Finished compilation of    cli/acton_cli.deps       0.055 s
+   Finished type check of     cli/acton_cli.github     0.189 s
+   Finished compilation of    cli/acton_cli.github     0.082 s
+   Finished type check of     cli/acton                9.207 s
+   Finished compilation of    cli/acton                7.347 s
+   Finished final compilation                         12.190 s
+cp -a cli/out/bin/acton dist/bin/acton.tmp
+mv dist/bin/acton.tmp dist/bin/acton
+make[2]: Leaving directory '/__w/acton/acton'
+make[1]: Leaving directory '/__w/acton/acton'
+   debian/rules override_dh_auto_test
+make[1]: Entering directory '/__w/acton/acton'
+Skipping tests
+make[1]: Leaving directory '/__w/acton/acton'
+   create-stamp debian/debhelper-build-stamp
+   dh_prep
+	rm -f -- debian/acton.substvars
+	rm -fr -- debian/.debhelper/generated/acton/ debian/acton/ debian/tmp/
+   dh_auto_install --destdir=debian/acton/
+	install -m0755 -d /__w/acton/acton/debian/acton
+	make -j4 install DESTDIR=/__w/acton/acton/debian/acton AM_UPDATE_INFO_DIR=no "INSTALL=install --strip-program=true"
+make[1]: Entering directory '/__w/acton/acton'
+mkdir -p "/__w/acton/acton/debian/acton/usr/bin" "/__w/acton/acton/debian/acton/usr/lib/acton"
+cp -a dist/. "/__w/acton/acton/debian/acton/usr/lib/acton/"
+cd "/__w/acton/acton/debian/acton/usr/bin" && ln -s ../lib/acton/bin/acton
+cd "/__w/acton/acton/debian/acton/usr/bin" && ln -s ../lib/acton/bin/actonc
+cd "/__w/acton/acton/debian/acton/usr/bin" && ln -s ../lib/acton/bin/actondb
+cd "/__w/acton/acton/debian/acton/usr/bin" && ln -s ../lib/acton/bin/runacton
+cd "/__w/acton/acton/debian/acton/usr/bin" && ln -s ../lib/acton/bin/lsp-server-acton
+make[1]: Leaving directory '/__w/acton/acton'
+   dh_installdocs
+	install -m0755 -d debian/acton/usr/share/doc/acton
+	install -p -m0644 debian/copyright debian/acton/usr/share/doc/acton/copyright
+   dh_installchangelogs
+	install -m0755 -d debian/acton/usr/share/doc/acton
+	install -p -m0644 debian/.debhelper/generated/acton/dh_installchangelogs.dch.trimmed debian/acton/usr/share/doc/acton/changelog
+   dh_bash-completion
+dh_bash-completion: warning: file-list parsing failed, installing as proper snippet
+	install -m0755 -d debian/acton/usr/share/bash-completion/completions
+	installing source as actonc`)
+	install -p -m0644 debian/acton.bash-completion debian/acton/usr/share/bash-completion/completions/acton
+   dh_perl
+	/usr/bin/perl -p -i -e "s{#!\\s*(/usr/bin/perl|\\/usr\\/bin\\/perl|/usr/bin/env\\s+perl)}{#! /usr/bin/perl} if (\$. == 1);" debian/acton/usr/lib/acton/deps/mbedtls/scripts/config.pl
+	/usr/bin/perl -p -i -e "s{#!\\s*(/usr/bin/perl|\\/usr\\/bin\\/perl|/usr/bin/env\\s+perl)}{#! /usr/bin/perl} if (\$. == 1);" debian/acton/usr/lib/acton/deps/mbedtls/scripts/generate_query_config.pl
+	/usr/bin/perl -p -i -e "s{#!\\s*(/usr/bin/perl|\\/usr\\/bin\\/perl|/usr/bin/env\\s+perl)}{#! /usr/bin/perl} if (\$. == 1);" debian/acton/usr/lib/acton/deps/mbedtls/scripts/generate_features.pl
+	/usr/bin/perl -p -i -e "s{#!\\s*(/usr/bin/perl|\\/usr\\/bin\\/perl|/usr/bin/env\\s+perl)}{#! /usr/bin/perl} if (\$. == 1);" debian/acton/usr/lib/acton/deps/mbedtls/scripts/generate_errors.pl
+	/usr/bin/perl -p -i -e "s{#!\\s*(/usr/bin/perl|\\/usr\\/bin\\/perl|/usr/bin/env\\s+perl)}{#! /usr/bin/perl} if (\$. == 1);" debian/acton/usr/lib/acton/deps/mbedtls/scripts/generate_visualc_files.pl
+	/usr/bin/perl -p -i -e "s{#!\\s*(/usr/bin/perl|\\/usr\\/bin\\/perl|/usr/bin/env\\s+perl)}{#! /usr/bin/perl} if (\$. == 1);" debian/acton/usr/lib/acton/deps/mbedtls/scripts/massif_max.pl
+	/usr/bin/perl -p -i -e "s{#!\\s*(/usr/bin/perl|\\/usr\\/bin\\/perl|/usr/bin/env\\s+perl)}{#! /usr/bin/perl} if (\$. == 1);" debian/acton/usr/lib/acton/deps/mbedtls/tests/scripts/test-ref-configs.pl
+	/usr/bin/perl -p -i -e "s{#!\\s*(/usr/bin/perl|\\/usr\\/bin\\/perl|/usr/bin/env\\s+perl)}{#! /usr/bin/perl} if (\$. == 1);" debian/acton/usr/lib/acton/deps/mbedtls/tests/scripts/gen_pkcs1_v21_sign_verify.pl
+	/usr/bin/perl -p -i -e "s{#!\\s*(/usr/bin/perl|\\/usr\\/bin\\/perl|/usr/bin/env\\s+perl)}{#! /usr/bin/perl} if (\$. == 1);" debian/acton/usr/lib/acton/deps/mbedtls/tests/scripts/tcp_client.pl
+	/usr/bin/perl -p -i -e "s{#!\\s*(/usr/bin/perl|\\/usr\\/bin\\/perl|/usr/bin/env\\s+perl)}{#! /usr/bin/perl} if (\$. == 1);" debian/acton/usr/lib/acton/deps/mbedtls/tests/scripts/run-test-suites.pl
+	/usr/bin/perl -p -i -e "s{#!\\s*(/usr/bin/perl|\\/usr\\/bin\\/perl|/usr/bin/env\\s+perl)}{#! /usr/bin/perl} if (\$. == 1);" debian/acton/usr/lib/acton/deps/mbedtls/tests/scripts/gen_gcm_decrypt.pl
+	/usr/bin/perl -p -i -e "s{#!\\s*(/usr/bin/perl|\\/usr\\/bin\\/perl|/usr/bin/env\\s+perl)}{#! /usr/bin/perl} if (\$. == 1);" debian/acton/usr/lib/acton/deps/mbedtls/tests/scripts/gen_gcm_encrypt.pl
+	/usr/bin/perl -p -i -e "s{#!\\s*(/usr/bin/perl|\\/usr\\/bin\\/perl|/usr/bin/env\\s+perl)}{#! /usr/bin/perl} if (\$. == 1);" debian/acton/usr/lib/acton/deps/mbedtls/tests/scripts/gen_ctr_drbg.pl
+	/usr/bin/perl -p -i -e "s{#!\\s*(/usr/bin/perl|\\/usr\\/bin\\/perl|/usr/bin/env\\s+perl)}{#! /usr/bin/perl} if (\$. == 1);" debian/acton/usr/lib/acton/deps/mbedtls/tests/scripts/check-doxy-blocks.pl
+	/usr/bin/perl -p -i -e "s{#!\\s*(/usr/bin/perl|\\/usr\\/bin\\/perl|/usr/bin/env\\s+perl)}{#! /usr/bin/perl} if (\$. == 1);" debian/acton/usr/lib/acton/deps/mbedtls/tests/scripts/recursion.pl
+	/usr/bin/perl -p -i -e "s{#!\\s*(/usr/bin/perl|\\/usr\\/bin\\/perl|/usr/bin/env\\s+perl)}{#! /usr/bin/perl} if (\$. == 1);" debian/acton/usr/lib/acton/deps/mbedtls/tests/data_files/print_c.pl
+	mv debian/acton.substvars.new debian/acton.substvars
+   dh_link
+	rm -f debian/acton/usr/lib/acton/backend/deps
+	ln -s ../deps debian/acton/usr/lib/acton/backend/deps
+	rm -f debian/acton/usr/bin/acton
+	ln -s ../lib/acton/bin/acton debian/acton/usr/bin/acton
+	rm -f debian/acton/usr/bin/actondb
+	ln -s ../lib/acton/bin/actondb debian/acton/usr/bin/actondb
+	rm -f debian/acton/usr/bin/lsp-server-acton
+	ln -s ../lib/acton/bin/lsp-server-acton debian/acton/usr/bin/lsp-server-acton
+	rm -f debian/acton/usr/bin/actonc
+	ln -s ../lib/acton/bin/actonc debian/acton/usr/bin/actonc
+	rm -f debian/acton/usr/bin/runacton
+	ln -s ../lib/acton/bin/runacton debian/acton/usr/bin/runacton
+   dh_strip_nondeterminism
+	Using 1631563568 as canonical time
+	Normalizing debian/acton/usr/lib/acton/deps/pcre2/testdata/grepinputC.gz using File::StripNondeterminism::handlers::gzip
+   dh_compress
+	cd debian/acton
+	chmod a-x usr/share/doc/acton/changelog
+	gzip -9nf usr/share/doc/acton/changelog
+	cd '/__w/acton/acton'
+   dh_fixperms
+	find debian/acton ! -type l -a -true -a -true -print0 2>/dev/null | xargs -0r chmod go=rX,u+rw,a-s
+	find debian/acton/usr/share/doc -type f -a -true -a ! -regex 'debian/acton/usr/share/doc/[^/]*/examples/.*' -print0 2>/dev/null | xargs -0r chmod 0644
+	find debian/acton/usr/share/doc -type d -a -true -a -true -print0 2>/dev/null | xargs -0r chmod 0755
+	find debian/acton -type f \( -name '*.so.*' -o -name '*.so' -o -name '*.la' -o -name '*.a' -o -name '*.js' -o -name '*.css' -o -name '*.scss' -o -name '*.sass' -o -name '*.jpeg' -o -name '*.jpg' -o -name '*.png' -o -name '*.gif' -o -name '*.cmxs' -o -name '*.node' \) -a -true -a -true -print0 2>/dev/null | xargs -0r chmod 0644
+	find debian/acton/usr/bin -type f -a -true -a -true -print0 2>/dev/null | xargs -0r chmod a+x
+	find debian/acton/usr/lib -type f -name '*.ali' -a -true -a -true -print0 2>/dev/null | xargs -0r chmod uga-w
+   dh_missing
+   dh_dwz -a
+	install -m0755 -d debian/acton/usr/lib/debug/.dwz/aarch64-linux-gnu
+	dwz -mdebian/acton/usr/lib/debug/.dwz/aarch64-linux-gnu/acton.debug -M/usr/lib/debug/.dwz/aarch64-linux-gnu/acton.debug -- debian/acton/usr/lib/acton/bin/acton debian/acton/usr/lib/acton/bin/actonc debian/acton/usr/lib/acton/bin/actondb debian/acton/usr/lib/acton/bin/lsp-server-acton debian/acton/usr/lib/acton/zig/zig
+dwz: debian/acton/usr/lib/acton/bin/actonc: .debug_info section not present
+dwz: debian/acton/usr/lib/acton/bin/lsp-server-acton: .debug_info section not present
+dwz: debian/acton/usr/lib/acton/zig/zig: .debug_info section not present
+	objcopy --compress-debug-sections debian/acton/usr/lib/debug/.dwz/aarch64-linux-gnu/acton.debug
+	chmod 0644 -- debian/acton/usr/lib/debug/.dwz/aarch64-linux-gnu/acton.debug
+   debian/rules override_dh_strip
+make[1]: Entering directory '/__w/acton/acton'
+Skipping strip
+make[1]: Leaving directory '/__w/acton/acton'
+   dh_makeshlibs -a
+	rm -f debian/acton/DEBIAN/shlibs
+   dh_shlibdeps -a
+	install -m0755 -d debian/acton/DEBIAN
+	dpkg-shlibdeps -Tdebian/acton.substvars debian/acton/usr/lib/acton/bin/actonc debian/acton/usr/lib/acton/bin/lsp-server-acton debian/acton/usr/lib/acton/bin/actondb debian/acton/usr/lib/acton/bin/acton
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/acton/usr/lib/acton/bin/acton was not linked against libdl.so.2 (it uses none of the library's symbols)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/acton/usr/lib/acton/bin/acton was not linked against libpthread.so.0 (it uses none of the library's symbols)
+   dh_installdeb
+	install -m0755 -d debian/acton/DEBIAN
+   dh_gencontrol
+	install -m0755 -d debian/acton/DEBIAN
+	echo misc:Depends= >> debian/acton.substvars
+	echo misc:Pre-Depends= >> debian/acton.substvars
+	dpkg-gencontrol -pacton -ldebian/changelog -Tdebian/acton.substvars -Pdebian/acton
+dpkg-gencontrol: warning: package acton: substitution variable ${perl:Depends} unused, but is defined
+dpkg-gencontrol: warning: package acton: substitution variable ${shlibs:Depends} unused, but is defined
+	chmod 0644 -- debian/acton/DEBIAN/control
+   dh_md5sums
+	install -m0755 -d debian/acton/DEBIAN
+	cd debian/acton >/dev/null && xargs -r0 md5sum | perl -pe 'if (s@^\\@@) { s/\\\\/\\/g; }' > DEBIAN/md5sums
+	chmod 0644 -- debian/acton/DEBIAN/md5sums
+   dh_builddeb
+	dpkg-deb --root-owner-group --build debian/acton ..
+dpkg-deb: building package 'acton' in '../acton_0.26.0.20260118.21.12_arm64.deb'.
+ dpkg-genbuildinfo --build=binary -O../acton_0.26.0.20260118.21.12_arm64.buildinfo
+ dpkg-genchanges --build=binary -O../acton_0.26.0.20260118.21.12_arm64.changes
+dpkg-genchanges: info: binary-only upload (no source code included)
+ dpkg-source -i --after-build .
+dpkg-buildpackage: info: binary-only upload (no source included)
+Now running lintian acton_0.26.0.20260118.21.12_arm64.changes ...
+running with root privileges is not recommended!
+E: acton changes: bad-distribution-in-changes-file tip
+E: acton: custom-library-search-path RUNPATH /__w/acton/acton/dist/lib [usr/lib/acton/bin/actondb]
+E: acton: description-starts-with-package-name
+E: acton: embedded-library gmp [usr/lib/acton/bin/actonc]
+E: acton: embedded-library gmp [usr/lib/acton/bin/lsp-server-acton]
+E: acton: embedded-library mbedtls [usr/lib/acton/bin/acton]
+E: acton: embedded-library zlib [usr/lib/acton/bin/actonc]
+E: acton: embedded-library zlib [usr/lib/acton/zig/zig]
+E: acton: python3-script-but-no-python3-dep python3 (does not satisfy python3:any | python3-minimal:any) [usr/lib/acton/deps/libxml2/build_glob.py]
+E: acton: python3-script-but-no-python3-dep python3 (does not satisfy python3:any | python3-minimal:any) [usr/lib/acton/deps/libxml2/check-relaxng-test-suite.py]
+E: acton: python3-script-but-no-python3-dep python3 (does not satisfy python3:any | python3-minimal:any) [usr/lib/acton/deps/libxml2/check-relaxng-test-suite2.py]
+E: acton: python3-script-but-no-python3-dep python3 (does not satisfy python3:any | python3-minimal:any) [usr/lib/acton/deps/libxml2/check-xinclude-test-suite.py]
+E: acton: python3-script-but-no-python3-dep python3 (does not satisfy python3:any | python3-minimal:any) [usr/lib/acton/deps/libxml2/check-xml-test-suite.py]
+E: acton: python3-script-but-no-python3-dep python3 (does not satisfy python3:any | python3-minimal:any) [usr/lib/acton/deps/libxml2/check-xsddata-test-suite.py]
+E: acton: python3-script-but-no-python3-dep python3 (does not satisfy python3:any | python3-minimal:any) [usr/lib/acton/deps/libxml2/genChRanges.py]
+E: acton: python3-script-but-no-python3-dep python3 (does not satisfy python3:any | python3-minimal:any) [usr/lib/acton/deps/libxml2/genUnicode.py]
+E: acton: python3-script-but-no-python3-dep python3 (does not satisfy python3:any | python3-minimal:any) [usr/lib/acton/deps/libxml2/gentest.py]
+E: acton: python3-script-but-no-python3-dep python3 (does not satisfy python3:any | python3-minimal:any) [usr/lib/acton/deps/libxml2/xstc/fixup-tests.py]
+E: acton: python3-script-but-no-python3-dep python3 (does not satisfy python3:any | python3-minimal:any) [usr/lib/acton/deps/libxml2/xstc/xstc.py]
+E: acton: python3-script-but-no-python3-dep python3 (does not satisfy python3:any | python3-minimal:any) [usr/lib/acton/deps/mbedtls/scripts/abi_check.py]
+E: acton: python3-script-but-no-python3-dep python3 (does not satisfy python3:any | python3-minimal:any) [usr/lib/acton/deps/mbedtls/scripts/assemble_changelog.py]
+E: acton: python3-script-but-no-python3-dep python3 (does not satisfy python3:any | python3-minimal:any) [usr/lib/acton/deps/mbedtls/scripts/code_size_compare.py]
+E: acton: python3-script-but-no-python3-dep python3 (does not satisfy python3:any | python3-minimal:any) [usr/lib/acton/deps/mbedtls/scripts/code_style.py]
+E: acton: python3-script-but-no-python3-dep python3 (does not satisfy python3:any | python3-minimal:any) [usr/lib/acton/deps/mbedtls/scripts/config.py]
+E: acton: python3-script-but-no-python3-dep python3 (does not satisfy python3:any | python3-minimal:any) [usr/lib/acton/deps/mbedtls/scripts/ecp_comb_table.py]
+E: acton: python3-script-but-no-python3-dep python3 (does not satisfy python3:any | python3-minimal:any) [usr/lib/acton/deps/mbedtls/scripts/generate_driver_wrappers.py]
+E: acton: python3-script-but-no-python3-dep python3 (does not satisfy python3:any | python3-minimal:any) [usr/lib/acton/deps/mbedtls/scripts/generate_psa_constants.py]
+E: acton: python3-script-but-no-python3-dep python3 (does not satisfy python3:any | python3-minimal:any) [usr/lib/acton/deps/mbedtls/scripts/generate_ssl_debug_helpers.py]
+E: acton: python3-script-but-no-python3-dep python3 (does not satisfy python3:any | python3-minimal:any) [usr/lib/acton/deps/mbedtls/scripts/min_requirements.py]
+E: acton: python3-script-but-no-python3-dep python3 (does not satisfy python3:any | python3-minimal:any) [usr/lib/acton/deps/mbedtls/tests/scripts/analyze_outcomes.py]
+E: acton: python3-script-but-no-python3-dep python3 (does not satisfy python3:any | python3-minimal:any) [usr/lib/acton/deps/mbedtls/tests/scripts/check_files.py]
+E: acton: python3-script-but-no-python3-dep python3 (does not satisfy python3:any | python3-minimal:any) [usr/lib/acton/deps/mbedtls/tests/scripts/check_names.py]
+E: acton: python3-script-but-no-python3-dep python3 (does not satisfy python3:any | python3-minimal:any) [usr/lib/acton/deps/mbedtls/tests/scripts/check_test_cases.py]
+E: acton: python3-script-but-no-python3-dep python3 (does not satisfy python3:any | python3-minimal:any) [usr/lib/acton/deps/mbedtls/tests/scripts/depends.py]
+E: acton: python3-script-but-no-python3-dep python3 (does not satisfy python3:any | python3-minimal:any) [usr/lib/acton/deps/mbedtls/tests/scripts/generate_bignum_tests.py]
+E: acton: python3-script-but-no-python3-dep python3 (does not satisfy python3:any | python3-minimal:any) [usr/lib/acton/deps/mbedtls/tests/scripts/generate_ecp_tests.py]
+E: acton: python3-script-but-no-python3-dep python3 (does not satisfy python3:any | python3-minimal:any) [usr/lib/acton/deps/mbedtls/tests/scripts/generate_pkcs7_tests.py]
+E: acton: python3-script-but-no-python3-dep python3 (does not satisfy python3:any | python3-minimal:any) [usr/lib/acton/deps/mbedtls/tests/scripts/generate_psa_tests.py]
+E: acton: python3-script-but-no-python3-dep python3 (does not satisfy python3:any | python3-minimal:any) [usr/lib/acton/deps/mbedtls/tests/scripts/generate_test_code.py]
+E: acton: python3-script-but-no-python3-dep python3 (does not satisfy python3:any | python3-minimal:any) [usr/lib/acton/deps/mbedtls/tests/scripts/generate_tls13_compat_tests.py]
+E: acton: python3-script-but-no-python3-dep python3 (does not satisfy python3:any | python3-minimal:any) [usr/lib/acton/deps/mbedtls/tests/scripts/list_internal_identifiers.py]
+E: acton: python3-script-but-no-python3-dep python3 (does not satisfy python3:any | python3-minimal:any) [usr/lib/acton/deps/mbedtls/tests/scripts/psa_collect_statuses.py]
+E: acton: python3-script-but-no-python3-dep python3 (does not satisfy python3:any | python3-minimal:any) [usr/lib/acton/deps/mbedtls/tests/scripts/set_psa_test_dependencies.py]
+E: acton: python3-script-but-no-python3-dep python3 (does not satisfy python3:any | python3-minimal:any) [usr/lib/acton/deps/mbedtls/tests/scripts/test_config_script.py]
+E: acton: python3-script-but-no-python3-dep python3 (does not satisfy python3:any | python3-minimal:any) [usr/lib/acton/deps/mbedtls/tests/scripts/test_generate_test_code.py]
+E: acton: python3-script-but-no-python3-dep python3 (does not satisfy python3:any | python3-minimal:any) [usr/lib/acton/deps/mbedtls/tests/scripts/test_psa_compliance.py]
+E: acton: python3-script-but-no-python3-dep python3 (does not satisfy python3:any | python3-minimal:any) [usr/lib/acton/deps/mbedtls/tests/scripts/test_psa_constant_names.py]
+E: acton: python3-script-but-no-python3-dep python3 (does not satisfy python3:any | python3-minimal:any) [usr/lib/acton/deps/mbedtls/tests/scripts/translate_ciphers.py]
+E: acton: shell-script-fails-syntax-check [usr/lib/acton/deps/mbedtls/tests/scripts/all.sh]
+E: acton: statically-linked-binary [usr/lib/acton/zig/zig]
+E: acton: unstripped-binary-or-object [usr/lib/acton/bin/acton]
+E: acton: unstripped-binary-or-object [usr/lib/acton/bin/actondb]
+W: acton: broken-bz2 [usr/lib/acton/deps/pcre2/testdata/grepnot.bz2]
+W: acton: debug-suffix-not-dbg [usr/lib/debug/.dwz/]
+W: acton: executable-not-elf-or-script [usr/lib/acton/deps/libprotobuf_c/protobuf-c/protobuf-c.h]
+W: acton: executable-not-elf-or-script [usr/lib/acton/deps/libprotobuf_c/protoc-c/c_message.cc]
+W: acton: executable-not-elf-or-script [usr/lib/acton/deps/libprotobuf_c/t/generated-code2/test-generated-code2.c]
+W: acton: executable-not-elf-or-script [usr/lib/acton/deps/libxml2/vms/build_libxml.com]
+W: acton: executable-not-elf-or-script [usr/lib/acton/deps/libxml2/vms/config.vms]
+W: acton: executable-not-elf-or-script [usr/lib/acton/deps/libxml2/xstc/xstc-to-python.xsl]
+W: acton: executable-not-elf-or-script [usr/lib/acton/deps/pcre2/PrepareRelease]
+W: acton: executable-not-elf-or-script [usr/lib/acton/deps/tlsuv/sample/engine_test.c]
+W: acton: executable-not-elf-or-script [usr/lib/acton/deps/tlsuv/sample/sample-cf.c]
+W: acton: executable-not-elf-or-script [usr/lib/acton/deps/tlsuv/sample/sample.c]
+W: acton: hardening-no-pie [usr/lib/acton/bin/acton]
+W: acton: hardening-no-pie [usr/lib/acton/bin/actonc]
+W: acton: hardening-no-pie [usr/lib/acton/bin/actondb]
+W: acton: hardening-no-pie [usr/lib/acton/bin/lsp-server-acton]
+W: acton: national-encoding [usr/lib/acton/deps/libxml2/result/XInclude/tstencoding.xml]
+W: acton: national-encoding [usr/lib/acton/deps/libxml2/result/cdata-2-byte-UTF-8.xml.sax2]
+W: acton: national-encoding [usr/lib/acton/deps/libxml2/result/cdata-2-byte-UTF-8.xml.sax]
+W: acton: national-encoding [usr/lib/acton/deps/libxml2/result/cdata-3-byte-UTF-8.xml.sax2]
+W: acton: national-encoding [usr/lib/acton/deps/libxml2/result/cdata-3-byte-UTF-8.xml.sax]
+W: acton: national-encoding [usr/lib/acton/deps/libxml2/result/cdata-4-byte-UTF-8.xml.sax2]
+W: acton: national-encoding [usr/lib/acton/deps/libxml2/result/cdata-4-byte-UTF-8.xml.sax]
+W: acton: national-encoding [usr/lib/acton/deps/libxml2/result/comment4.xml]
+W: acton: national-encoding [usr/lib/acton/deps/libxml2/result/ebcdic_566012.xml]
+W: acton: national-encoding [usr/lib/acton/deps/libxml2/result/icu_parse_test.xml]
+W: acton: national-encoding [usr/lib/acton/deps/libxml2/result/isolat1]
+W: acton: national-encoding [usr/lib/acton/deps/libxml2/result/isolat2]
+W: acton: national-encoding [usr/lib/acton/deps/libxml2/result/isolat3]
+W: acton: national-encoding [usr/lib/acton/deps/libxml2/result/noent/cdata-2-byte-UTF-8.xml.sax2]
+W: acton: national-encoding [usr/lib/acton/deps/libxml2/result/noent/cdata-3-byte-UTF-8.xml.sax2]
+W: acton: national-encoding [usr/lib/acton/deps/libxml2/result/noent/cdata-4-byte-UTF-8.xml.sax2]
+W: acton: national-encoding [usr/lib/acton/deps/libxml2/result/noent/comment4.xml]
+W: acton: national-encoding [usr/lib/acton/deps/libxml2/result/noent/ebcdic_566012.xml]
+W: acton: national-encoding [usr/lib/acton/deps/libxml2/result/noent/icu_parse_test.xml]
+W: acton: national-encoding [usr/lib/acton/deps/libxml2/result/noent/isolat1]
+W: acton: national-encoding [usr/lib/acton/deps/libxml2/result/noent/isolat2]
+W: acton: national-encoding [usr/lib/acton/deps/libxml2/result/noent/isolat3]
+W: acton: national-encoding [usr/lib/acton/deps/libxml2/result/noent/slashdot16.xml]
+W: acton: national-encoding [usr/lib/acton/deps/libxml2/result/noent/text-4-byte-UTF-16-BE-offset.xml.sax2]
+W: acton: national-encoding [usr/lib/acton/deps/libxml2/result/noent/text-4-byte-UTF-16-BE.xml.sax2]
+W: acton: national-encoding [usr/lib/acton/deps/libxml2/result/noent/text-4-byte-UTF-16-LE-offset.xml.sax2]
+W: acton: national-encoding [usr/lib/acton/deps/libxml2/result/noent/text-4-byte-UTF-16-LE.xml.sax2]
+W: acton: national-encoding [usr/lib/acton/deps/libxml2/result/noent/utf16bom.xml]
+W: acton: national-encoding [usr/lib/acton/deps/libxml2/result/slashdot16.xml]
+W: acton: national-encoding [usr/lib/acton/deps/libxml2/result/text-4-byte-UTF-16-BE-offset.xml.sax2]
+W: acton: national-encoding [usr/lib/acton/deps/libxml2/result/text-4-byte-UTF-16-BE-offset.xml.sax]
+W: acton: national-encoding [usr/lib/acton/deps/libxml2/result/text-4-byte-UTF-16-BE.xml.sax2]
+W: acton: national-encoding [usr/lib/acton/deps/libxml2/result/text-4-byte-UTF-16-BE.xml.sax]
+W: acton: national-encoding [usr/lib/acton/deps/libxml2/result/text-4-byte-UTF-16-LE-offset.xml.sax2]
+W: acton: national-encoding [usr/lib/acton/deps/libxml2/result/text-4-byte-UTF-16-LE-offset.xml.sax]
+W: acton: national-encoding [usr/lib/acton/deps/libxml2/result/text-4-byte-UTF-16-LE.xml.sax2]
+W: acton: national-encoding [usr/lib/acton/deps/libxml2/result/text-4-byte-UTF-16-LE.xml.sax]
+W: acton: national-encoding [usr/lib/acton/deps/libxml2/result/utf16bom.xml]
+W: acton: national-encoding [usr/lib/acton/deps/libxml2/result/valid/REC-xml-19980210.xml]
+W: acton: national-encoding [usr/lib/acton/deps/libxml2/result/valid/index.xml]
+W: acton: national-encoding [usr/lib/acton/deps/mbedtls/tests/data_files/base64/def_b64_ff.bin]
+W: acton: national-encoding [usr/lib/acton/deps/pcre2/testdata/testinput10]
+W: acton: national-encoding [usr/lib/acton/deps/pcre2/testdata/testinput11]
+W: acton: national-encoding [usr/lib/acton/deps/pcre2/testdata/testinput12]
+W: acton: national-encoding [usr/lib/acton/deps/pcre2/testdata/testinput3]
+W: acton: national-encoding [usr/lib/acton/deps/pcre2/testdata/testinputEBC]
+W: acton: national-encoding [usr/lib/acton/deps/pcre2/testdata/testoutput10]
+W: acton: national-encoding [usr/lib/acton/deps/pcre2/testdata/testoutput11-16]
+W: acton: national-encoding [usr/lib/acton/deps/pcre2/testdata/testoutput11-32]
+W: acton: national-encoding [usr/lib/acton/deps/pcre2/testdata/testoutput12-16]
+W: acton: national-encoding [usr/lib/acton/deps/pcre2/testdata/testoutput12-32]
+W: acton: national-encoding [usr/lib/acton/deps/pcre2/testdata/testoutput3A]
+W: acton: national-encoding [usr/lib/acton/deps/pcre2/testdata/testoutput3B]
+W: acton: national-encoding [usr/lib/acton/deps/pcre2/testdata/testoutput3]
+W: acton: national-encoding [usr/lib/acton/deps/pcre2/testdata/testoutputEBC]
+W: acton: national-encoding [usr/lib/acton/deps/pcre2/testdata/wintestinput3]
+W: acton: national-encoding [usr/lib/acton/deps/pcre2/testdata/wintestoutput3]
+W: acton: national-encoding [usr/lib/acton/zig/lib/libc/include/any-windows-any/ddk/ide.h]
+W: acton: national-encoding [usr/lib/acton/zig/lib/libc/mingw/math/x86/log10l.S]
+W: acton: national-encoding [usr/lib/acton/zig/lib/libc/mingw/math/x86/log1pl.S]
+W: acton: national-encoding [usr/lib/acton/zig/lib/libc/mingw/math/x86/log2f.S]
+W: acton: national-encoding [usr/lib/acton/zig/lib/libc/mingw/math/x86/log2l.S]
+W: acton: no-manual-page [usr/bin/acton]
+W: acton: no-manual-page [usr/bin/actonc]
+W: acton: no-manual-page [usr/bin/actondb]
+W: acton: no-manual-page [usr/bin/lsp-server-acton]
+W: acton: no-manual-page [usr/bin/runacton]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/libargp/.gitignore]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/libbsdnt/.gitignore]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/libgc/.gitattributes]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/libgc/.gitignore]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/libprotobuf_c/.gitignore]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/libprotobuf_c/build-cmake/.gitignore]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/libprotobuf_c/m4/.gitignore]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/libprotobuf_c/t/issue204/.gitignore]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/libprotobuf_c/t/issue220/.gitignore]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/libprotobuf_c/t/issue251/.gitignore]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/libprotobuf_c/t/issue330/.gitignore]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/libprotobuf_c/t/issue375/.gitignore]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/libprotobuf_c/t/issue440/.gitignore]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/libsnappy_c/.gitignore]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/libsnappy_c/.gitmodules]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/libutf8proc/.gitignore]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/libxml2/.gitattributes]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/libxml2/.gitignore]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/libxml2/xstc/.gitignore]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/mbedtls/.gitattributes]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/mbedtls/.gitignore]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/mbedtls/3rdparty/.gitignore]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/mbedtls/3rdparty/everest/.gitignore]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/mbedtls/docs/.gitignore]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/mbedtls/include/.gitignore]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/mbedtls/library/.gitignore]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/mbedtls/programs/.gitignore]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/mbedtls/programs/fuzz/.gitignore]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/mbedtls/programs/test/cmake_package/.gitignore]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/mbedtls/programs/test/cmake_package_install/.gitignore]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/mbedtls/programs/test/cmake_subproject/.gitignore]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/mbedtls/tests/.gitignore]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/mbedtls/tests/data_files/.gitignore]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/mbedtls/visualc/VS2013/.gitignore]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/pcre2/.gitignore]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/tlsuv/.gitattributes]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/tlsuv/.gitignore]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/tlsuv/.gitmodules]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/tlsuv/deps/uv_link_t/.gitignore]
+W: acton: privacy-breach-generic [<img src="http://ads.gamesquad.net/addclick.exe/adcycle.cgi?group=52&amp;media=1&amp;id=1" width="468" height="60" border="0" alt="gsn ros ad">] (http://ads.gamesquad.net/addclick.exe/adcycle.cgi?group=52&amp;media=1&amp;id=1) [usr/lib/acton/deps/libxml2/result/HTML/doc3.htm]
+W: acton: privacy-breach-generic [<img src="http://barnesandnoble.bfast.com/booklink/serve?sourceid=383471&amp;is_search=y" border="0" align="top">] (http://barnesandnoble.bfast.com/booklink/serve?sourceid=383471&amp;is_search=y) [usr/lib/acton/deps/libxml2/result/HTML/wired.html]
+W: acton: privacy-breach-generic [<img src="http://static.wired.com/advertising/blipverts/hp_colorinkjet/hp_970c_120x60_6.gif" border="1" height="60" width="120" alt="true to the original">] (http://static.wired.com/advertising/blipverts/hp_colorinkjet/hp_970c_120x60_6.gif) [usr/lib/acton/deps/libxml2/result/HTML/wired.html]
+W: acton: privacy-breach-generic [<img src="http://static.wired.com/news/images/button_ads_news10.gif" width="143" height="56" border="0" alt="" usemap="#buttons" hspace="0" vspace="0">] (http://static.wired.com/news/images/button_ads_news10.gif) [usr/lib/acton/deps/libxml2/result/HTML/wired.html]
+W: acton: privacy-breach-generic [<img src="http://static.wired.com/news/images/navstrip_off.gif" height="17" width="126" usemap="#navstrip.map" border="0" alt="">] (http://static.wired.com/news/images/navstrip_off.gif) [usr/lib/acton/deps/libxml2/result/HTML/wired.html]
+W: acton: privacy-breach-generic [<img src="http://static.wired.com/news/images/news_ffffff.gif" width="103" height="30" border="0">] (http://static.wired.com/news/images/news_ffffff.gif) [usr/lib/acton/deps/libxml2/result/HTML/wired.html]
+W: acton: privacy-breach-generic [<img src="http://static.wired.com/news/images/pix155.gif" height="10" width="155" alt="">] (http://static.wired.com/news/images/pix155.gif) [usr/lib/acton/deps/libxml2/result/HTML/wired.html]
+W: acton: privacy-breach-generic [<img src="http://static.wired.com/news/images/spacer.gif" height="5" width="447" alt="">] (http://static.wired.com/news/images/spacer.gif) [usr/lib/acton/deps/libxml2/result/HTML/wired.html]
+W: acton: privacy-breach-generic [<img src="http://static.wired.com/news/images/wired_000000.gif" width="153" height="30" border="0">] (http://static.wired.com/news/images/wired_000000.gif) [usr/lib/acton/deps/libxml2/result/HTML/wired.html]
+W: acton: privacy-breach-generic [<img src="http://static.wired.com/news/images/wiredcover.gif" width="91" height="109" border="0" alt="wired magazine">] (http://static.wired.com/news/images/wiredcover.gif) [usr/lib/acton/deps/libxml2/result/HTML/wired.html]
+W: acton: privacy-breach-generic [<img src="http://www.wired.com/special/modx/news.gif" height="1" width="1" alt="">] (http://www.wired.com/special/modx/news.gif) [usr/lib/acton/deps/libxml2/result/HTML/wired.html]
+W: acton: privacy-breach-generic [<img width="468" height="60" border="0" alt="advertisement" src="http://ads.adflight.com/ad_static.asp?pid=2097&amp;sid=1881&amp;asid=7708">] (http://ads.adflight.com/ad_static.asp?pid=2097&amp;sid=1881&amp;asid=7708) [usr/lib/acton/deps/libxml2/result/HTML/doc3.htm]
+W: acton: privacy-breach-generic [<input type="image" src="http://static.wired.com/advertising/blipverts/allapartments/990625jpa_ssthome.gif" width="375" height="60" border="0" value="search" hspace="0" alt="search over 6,000,000 apts with springstreet">] (http://static.wired.com/advertising/blipverts/allapartments/990625jpa_ssthome.gif) [usr/lib/acton/deps/libxml2/result/HTML/wired.html]
+W: acton: privacy-breach-generic [<link rel="stylesheet" href="http://foo.com">] (http://foo.com) [usr/lib/acton/deps/libxml2/result/HTML/noscript.html]
+W: acton: script-not-executable [usr/lib/acton/deps/libutf8proc/data/data_generator.rb]
+W: acton: script-not-executable [usr/lib/acton/deps/libxml2/.gitlab-ci/setup_mingw.sh]
+W: acton: script-not-executable [usr/lib/acton/deps/libxml2/.gitlab-ci/test.sh]
+W: acton: script-not-executable [usr/lib/acton/deps/libxml2/.gitlab-ci/test_cmake.sh]
+W: acton: unusual-interpreter /usr/bin/python [usr/lib/acton/deps/pcre2/maint/GenerateCommon.py]
+W: acton: unusual-interpreter /usr/bin/python [usr/lib/acton/deps/pcre2/maint/GenerateTest26.py]
+W: acton: unusual-interpreter /usr/bin/python [usr/lib/acton/deps/pcre2/maint/GenerateUcd.py]
+W: acton: unusual-interpreter /usr/bin/python [usr/lib/acton/deps/pcre2/maint/GenerateUcpHeader.py]
+W: acton: unusual-interpreter /usr/bin/python [usr/lib/acton/deps/pcre2/maint/GenerateUcpTables.py]
+W: acton: windows-devel-file-in-package [usr/lib/acton/deps/mbedtls/scripts/data_files/vs2013-sln-template.sln]
+W: acton: windows-devel-file-in-package [usr/lib/acton/deps/mbedtls/scripts/data_files/vs6-app-template.dsp]
+W: acton: windows-devel-file-in-package [usr/lib/acton/deps/mbedtls/scripts/data_files/vs6-main-template.dsp]
+W: acton: windows-devel-file-in-package [usr/lib/acton/deps/mbedtls/scripts/data_files/vs6-workspace-template.dsw]
+W: acton: windows-devel-file-in-package [usr/lib/acton/deps/mbedtls/visualc/VS2013/mbedTLS.sln]
+Finished running lintian.
