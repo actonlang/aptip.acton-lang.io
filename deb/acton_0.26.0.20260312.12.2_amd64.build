@@ -19,7 +19,7 @@ mkdir -p deps-download
 curl --fail --location --retry 5 --retry-delay 2 --retry-max-time 120 --retry-all-errors --retry-connrefused -o deps-download/zig-x86_64-linux-0.15.2.tar.xz https://ziglang.org/download/0.15.2/zig-x86_64-linux-0.15.2.tar.xz
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0 51.2M    0 48890    0     0  58317      0  0:15:21 --:--:--  0:15:21 58271  8 51.2M    8 4255k    0     0  2297k      0  0:00:22  0:00:01  0:00:21 2296k 50 51.2M   50 25.7M    0     0  9491k      0  0:00:05  0:00:02  0:00:03 9489k 99 51.2M   99 51.0M    0     0  13.2M      0  0:00:03  0:00:03 --:--:-- 13.2M100 51.2M  100 51.2M    0     0  13.2M      0  0:00:03  0:00:03 --:--:-- 13.2M
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0 51.2M    0  191k    0     0   161k      0  0:05:25  0:00:01  0:05:24  161k 11 51.2M   11 6015k    0     0  2689k      0  0:00:19  0:00:02  0:00:17 2689k 46 51.2M   46 23.7M    0     0  7583k      0  0:00:06  0:00:03  0:00:03 7582k 81 51.2M   81 41.6M    0     0   9.9M      0  0:00:05  0:00:04  0:00:01  9.9M100 51.2M  100 51.2M    0     0  10.8M      0  0:00:04  0:00:04 --:--:-- 11.3M
 mkdir -p "dist/zig"
 cd "dist/zig" && tar Jx --strip-components=1 -f "../../deps-download/zig-x86_64-linux-0.15.2.tar.xz"
 rm -rf "dist/zig/doc"
@@ -31,72 +31,71 @@ mkdir -p deps-download
 mkdir -p deps-download
 mkdir -p deps-download
 curl --fail --location --retry 5 --retry-delay 2 --retry-max-time 120 --retry-all-errors --retry-connrefused -o deps-download/c7d83538d3d359b05a9331bb2c9217977b5856ac.tar.gz https://github.com/actonlang/mbedtls/archive/c7d83538d3d359b05a9331bb2c9217977b5856ac.tar.gz
-curl --fail --location --retry 5 --retry-delay 2 --retry-max-time 120 --retry-all-errors --retry-connrefused -o deps-download/137154fb257055beb11f3283021d8eccc3c4f470.tar.gz https://github.com/actonlang/argp-standalone/archive/137154fb257055beb11f3283021d8eccc3c4f470.tar.gz
 cp -a builder/build.zig builder/build.zig.zon "dist/builder/"
+curl --fail --location --retry 5 --retry-delay 2 --retry-max-time 120 --retry-all-errors --retry-connrefused -o deps-download/137154fb257055beb11f3283021d8eccc3c4f470.tar.gz https://github.com/actonlang/argp-standalone/archive/137154fb257055beb11f3283021d8eccc3c4f470.tar.gz
 curl --fail --location --retry 5 --retry-delay 2 --retry-max-time 120 --retry-all-errors --retry-connrefused -o deps-download/cf7db3414867b8b4a5561bc9aa94a8050d0225c4.tar.gz https://github.com/actonlang/bsdnt/archive/cf7db3414867b8b4a5561bc9aa94a8050d0225c4.tar.gz
 mkdir -p deps-download
 curl --fail --location --retry 5 --retry-delay 2 --retry-max-time 120 --retry-all-errors --retry-connrefused -o deps-download/5ef334ab8f9ef9e23d6b9c99fbd2b621bd52789b.tar.gz https://github.com/actonlang/bdwgc/archive/5ef334ab8f9ef9e23d6b9c99fbd2b621bd52789b.tar.gz
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                              %   T o t aDll o a d  %  URpelcoeaidv e d  T% Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0otal   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+  0     0    0     %   T0o t a l  0      %   R0e c e i v e d0  %   X f  0 --:--:-- --:--:-- --:--:--     0erd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-100 55466    0 55466    0     0   115k      0 --:--:-- --:--:-- --:--:--  115k
+100 55466    0 55466    0     0   158k      0 --:--:-- --:--:-- --:--:--  158k
 mkdir -p "/__w/acton/acton/dist/deps/libnetstring"
 cp -a "deps/libnetstring/"* "/__w/acton/acton/dist/deps/libnetstring"
 mkdir -p deps-download
 curl --fail --location --retry 5 --retry-delay 2 --retry-max-time 120 --retry-all-errors --retry-connrefused -o deps-download/b82656c5b28658ce1d75489a1b67ba0de5f531ec.tar.gz https://github.com/actonlang/pcre2/archive/b82656c5b28658ce1d75489a1b67ba0de5f531ec.tar.gz
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 64141    0 64141    0     0   126k      0 --:--:-- --:--:-- --:--:--  126k
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 64141    0 64141    0     0   173k      0 --:--:-- --:--:-- --:--:--  173k
 mkdir -p deps-download
 curl --fail --location --retry 5 --retry-delay 2 --retry-max-time 120 --retry-all-errors --retry-connrefused -o deps-download/faa19a6f6ca393fea01077fb37011a949bc6a3ee.tar.gz https://github.com/actonlang/protobuf-c/archive/faa19a6f6ca393fea01077fb37011a949bc6a3ee.tar.gz
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  844k    0  844k    0     0  1363k      0 --:--:-- --:--:-- --:--:-- 1363k
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100  844k    0  844k    0     0  1815k      0 --:--:-- --:--:-- --:--:-- 1815k
 mkdir -p deps-download
 curl --fail --location --retry 5 --retry-delay 2 --retry-max-time 120 --retry-all-errors --retry-connrefused -o deps-download/5af699b033776ec6a21b32c90e7aa7bf08c9929f.tar.gz https://github.com/actonlang/tlsuv/archive/5af699b033776ec6a21b32c90e7aa7bf08c9929f.tar.gz
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-100  131k    0  131k    0     0   271k      0 --:--:-- --:--:-- --:--:--  271k
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:- -  0- - : - - :0- -   - -0: - - : - -0         00     0      0      0 --:--:-- --:--:-- --:--:--     0100 1281k    0 1281k    0     0  2343k      0 --:--:-- --:--:-- --:--:-- 2343k  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100  131k    0  131k    0     0   396k      0 --:--:-- --:--:-- --:--:--  804k
 mkdir -p deps-download
 curl --fail --location --retry 5 --retry-delay 2 --retry-max-time 120 --retry-all-errors --retry-connrefused -o deps-download/d760a3f23511ebe7b1935fe1429147d4fca27bb4.tar.gz https://github.com/actonlang/libuv/archive/d760a3f23511ebe7b1935fe1429147d4fca27bb4.tar.gz
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 4837k    0 4837k    0     0  4433k      0 --:--:--  0:00:01 --:--:-- 4433k
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100  207k    0  207k    0     0   541k      0 --:--:-- --:--:-- --:--:--  541k
 mkdir -p deps-download
 curl --fail --location --retry 5 --retry-delay 2 --retry-max-time 120 --retry-all-errors --retry-connrefused -o deps-download/a78677e855f0a282e79da6164db4ce1cf0789237.tar.gz https://github.com/actonlang/utf8proc/archive/a78677e855f0a282e79da6164db4ce1cf0789237.tar.gz
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  865k    0  865k    0     0  1302k      0 --:--:-- --:--:-- --:--:-- 1302k100  100k    0  100k    0     0   193k      0 --:--:-- --:--:-- --:--:--  193k  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  207k    0  207k    0     0   380k      0 --:--:-- --:--:-- --:--:-- 3719k
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 4837k    0 4837k    0     0  5034k      0 --:--:-- --:--:-- --:--:-- 8590k
 mkdir -p "/__w/acton/acton/dist/deps/libuuid"
 cp -a "deps/libuuid/"* "/__w/acton/acton/dist/deps/libuuid"
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-mkdir -p deps-download
+  0     0    0     0    0     0      0      0 --:--:mkdir -p deps-download
+-- --:--:-- --:--:--     0
 curl --fail --location --retry 5 --retry-delay 2 --retry-max-time 120 --retry-all-errors --retry-connrefused -o deps-download/358ca4e6e34dd2b386aab1fdeb74a641c54940a0.tar.gz https://github.com/actonlang/libxml2/archive/358ca4e6e34dd2b386aab1fdeb74a641c54940a0.tar.gz
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-100 2869k    0 2869k    0     0  3238k      0 --:--:-- --:--:-- --:--:-- 9067k
+100 2869k    0 2869k    0     0  3757k      0 --:--:-- --:--:-- --:--:-- 5042k
 mkdir -p "/__w/acton/acton/dist/deps/libyyjson"
 cp -a "deps/libyyjson/"* "/__w/acton/acton/dist/deps/libyyjson"
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
 mkdir -p deps-download
 curl --fail --location --retry 5 --retry-delay 2 --retry-max-time 120 --retry-all-errors --retry-connrefused -o deps-download/9d77a3136e271b709eeac4b1db2d27c281b330b2.tar.gz https://github.com/actonlang/snappy/archive/9d77a3136e271b709eeac4b1db2d27c281b330b2.tar.gz
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-100 1280k    0 1280k    0     0  2194k      0 --:--:-- --:--:-- --:--:-- 2194k
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 1280k    0 1280k    0     0  2617k      0 --:--:-- --:--:-- --:--:-- 2617k
 mkdir -p "dist/backend/"
 cp -a "backend//Build.act" "dist/backend/Build.act"
 mkdir -p "dist/backend/"
@@ -110,6 +109,7 @@ cp -a "backend//client_api.c" "dist/backend/client_api.c"
 mkdir -p "dist/backend/"
 cp -a "backend//comm.c" "dist/backend/comm.c"
 mkdir -p "dist/backend/"
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
 cp -a "backend//db.c" "dist/backend/db.c"
 mkdir -p "dist/backend/"
 cp -a "backend//hash_ring.c" "dist/backend/hash_ring.c"
@@ -154,13 +154,13 @@ cp -a "backend//queue_groups.h" "dist/backend/queue_groups.h"
 mkdir -p "dist/backend/"
 cp -a "backend//queue.h" "dist/backend/queue.h"
 mkdir -p "dist/backend/"
-100  186k    0  186k    0     0   333k      0 --:--:-- --:--:-- --:--:--  333k
 cp -a "backend//skiplist.h" "dist/backend/skiplist.h"
 mkdir -p "dist/backend/"
 cp -a "backend//txns.h" "dist/backend/txns.h"
 mkdir -p "dist/backend/"
-mkdir -p "dist/backend/failure_detector/"
 cp -a "backend//txn_state.h" "dist/backend/txn_state.h"
+100  186k    0  186k    0     0   418k      0 --:--:-- --:--:-- --:--:--  418k
+mkdir -p "dist/backend/failure_detector/"
 cp -a "backend//failure_detector/cells.c" "dist/backend/failure_detector/cells.c"
 mkdir -p "dist/backend/failure_detector/"
 mkdir -p "dist/backend/failure_detector/"
@@ -187,8 +187,8 @@ mkdir -p "dist/backend/"
 cp -a "backend//failure_detector/vector_clock.h" "dist/backend/failure_detector/vector_clock.h"
 cp -a "backend//deps" "dist/backend/deps"
 cp bin/runacton dist/bin/runacton.tmp
-mv dist/bin/runacton.tmp dist/bin/runacton
 cp -a utils/lldb/acton.py dist/lldb/acton.py
+mv dist/bin/runacton.tmp dist/bin/runacton
 mkdir -p dist/bin
 mkdir -p "dist/deps/mbedtls"
 rm -f dist/bin/actonc
@@ -198,7 +198,7 @@ cd compiler && unset CC && unset CXX && unset CFLAGS && stack build acton lsp-se
 	(sed 's,^version: BUILD_VERSION,version: "0.26.0.20260312.12.2",' < acton/package.yaml.in > acton/package.yaml \
 	&& sed 's,^version: BUILD_VERSION,version: "0.26.0.20260312.12.2",' < lsp-server/package.yaml.in > lsp-server/package.yaml \
 	&& stack build acton lsp-server-acton  --ghc-options='-j4 ')
-touch "/__w/acton/acton/dist/deps/mbedtls"
+100 1377k    0 1377k    0     0  2433k      0 --:--:-- --:--:-- --:--:-- 2433k100 46459    0 46459    0     0   111k      0 --:--:-- --:--:-- --:--:--  111ktouch "/__w/acton/acton/dist/deps/mbedtls"
 mkdir -p "dist/deps/libargp"
 cd "dist/deps/libargp" && tar zx --strip-components=1 -f "/__w/acton/acton/deps-download/137154fb257055beb11f3283021d8eccc3c4f470.tar.gz"
 rm -rf "dist/deps/libargp/testsuite"
@@ -208,7 +208,7 @@ cd "dist/deps/libbsdnt" && tar zx --strip-components=1 -f "/__w/acton/acton/deps
 touch "/__w/acton/acton/dist/deps/libbsdnt"
 mkdir -p "dist/deps/libgc"
 cd "dist/deps/libgc" && tar zx --strip-components=1 -f "/__w/acton/acton/deps-download/5ef334ab8f9ef9e23d6b9c99fbd2b621bd52789b.tar.gz"
-100 1080k    0 1080k    0     0  2091k      0 --:--:-- --:--:-- --:--:-- 2091k
+100 1080k    0 1080k    0     0  2226k      0 --:--:-- --:--:-- --:--:-- 13.1M
 mkdir -p "dist/deps/pcre2"
 cd "dist/deps/pcre2" && tar zx --strip-components=1 -f "/__w/acton/acton/deps-download/b82656c5b28658ce1d75489a1b67ba0de5f531ec.tar.gz"
 rm -rf "dist/deps/libgc/tests" "dist/deps/libgc/tools"
@@ -224,12 +224,12 @@ cd "dist/deps/libutf8proc" && tar zx --strip-components=1 -f "/__w/acton/acton/d
 touch "/__w/acton/acton/dist/deps/libutf8proc"
 mkdir -p "dist/deps/libsnappy_c"
 cd "dist/deps/libsnappy_c" && tar zx --strip-components=1 -f "/__w/acton/acton/deps-download/9d77a3136e271b709eeac4b1db2d27c281b330b2.tar.gz"
-touch "/__w/acton/acton/dist/deps/pcre2"
+touch "/__w/acton/acton/dist/deps/libsnappy_c"
 mkdir -p "dist/deps/tlsuv"
 cd "dist/deps/tlsuv" && tar zx --strip-components=1 -f "/__w/acton/acton/deps-download/5af699b033776ec6a21b32c90e7aa7bf08c9929f.tar.gz"
+touch "/__w/acton/acton/dist/deps/pcre2"
 touch "/__w/acton/acton/dist/deps/tlsuv"
-touch "/__w/acton/acton/dist/deps/libsnappy_c"
-100 2832k    0 2832k    0     0  2920k      0 --:--:-- --:--:-- --:--:-- 2920k100 3695k    0 3695k    0     0  3459k      0 --:--:--  0:00:01 --:--:-- 8810k
+100 3695k    0 3695k    0     0  3716k      0 --:--:-- --:--:-- --:--:-- 5416k
 mkdir -p "dist/deps/libxml2"
 cd "dist/deps/libxml2" && tar zx --strip-components=1 -f "/__w/acton/acton/deps-download/358ca4e6e34dd2b386aab1fdeb74a641c54940a0.tar.gz"
 rm -rf "dist/deps/libxml2/doc" "dist/deps/libxml2/example" "dist/deps/libxml2/fuzz" "dist/deps/libxml2/os400" "dist/deps/libxml2/python" dist/deps/libxml2/test*
@@ -380,56 +380,56 @@ cp -a base/__root.zig base/Build.act base/acton.zig base/build.zig base/build.zi
 cd dist/base && ../bin/actonc build --skip-build && rm -rf .build
 Building project in /__w/acton/acton/dist/base
 Resolving dependencies (fetching if missing)...
-   __builtin__      Type check done                                                       0.568 s
-   term             Type check done                                                       0.034 s
-   term             Compilation done                                                      0.014 s
-   random           Type check done                                                       0.051 s
+   __builtin__      Type check done                                                       0.573 s
+   term             Type check done                                                       0.018 s
+   term             Compilation done                                                      0.010 s
+   random           Type check done                                                       0.083 s
    random           Compilation done                                                      0.012 s
-   __builtin__      Compilation done                                                      0.370 s
-   file             Type check done                                                       0.321 s
-   acton.rts        Type check done                                                       0.014 s
-   json             Type check done                                                       0.006 s
+   time             Type check done                                                       0.305 s
+   acton.rts        Type check done                                                       0.048 s
+   __builtin__      Compilation done                                                      0.436 s
+   json             Type check done                                                       0.013 s
    json             Compilation done                                                      0.011 s
-   acton.rts        Compilation done                                                      0.059 s
-   time             Type check done                                                       0.511 s
-   argparse         Type check done                                                       0.538 s
-   time             Compilation done                                                      0.065 s
-   re               Type check done                                                       0.035 s
-   net              Type check done                                                       0.196 s
-   re               Compilation done                                                      0.012 s
-   file             Compilation done                                                      0.281 s
-   argparse         Compilation done                                                      0.147 s
-   logging          Type check done                                                       0.199 s
-   fs               Type check done                                                       0.201 s
-   diff             Type check done                                                       0.748 s
-   logging          Compilation done                                                      0.086 s
-   fs               Compilation done                                                      0.040 s
-   diff             Compilation done                                                      0.072 s
-   net              Compilation done                                                      0.302 s
-   uri              Type check done                                                       0.132 s
-   buildy           Type check done                                                       0.342 s
-   uri              Compilation done                                                      0.028 s
-   qcheck           Type check done                                                       0.041 s
-   math             Type check done                                                       0.012 s
-   buildy           Compilation done                                                      0.057 s
-   qcheck           Compilation done                                                      0.018 s
-   math             Compilation done                                                      0.011 s
-   process          Type check done                                                       0.098 s
-   crypto.hash.md5  Type check done                                                       0.004 s
-   hash.wyhash      Type check done                                                       0.003 s
+   time             Compilation done                                                      0.100 s
+   acton.rts        Compilation done                                                      0.063 s
+   file             Type check done                                                       0.367 s
+   logging          Type check done                                                       0.109 s
+   net              Type check done                                                       0.180 s
+   re               Type check done                                                       0.086 s
+   re               Compilation done                                                      0.016 s
+   argparse         Type check done                                                       0.741 s
+   logging          Compilation done                                                      0.185 s
+   argparse         Compilation done                                                      0.170 s
+   buildy           Type check done                                                       0.313 s
+   file             Compilation done                                                      0.600 s
+   fs               Type check done                                                       0.357 s
+   buildy           Compilation done                                                      0.165 s
+   fs               Compilation done                                                      0.044 s
+   uri              Type check done                                                       0.184 s
+   net              Compilation done                                                      0.585 s
+   process          Type check done                                                       0.108 s
+   uri              Compilation done                                                      0.026 s
+   qcheck           Type check done                                                       0.038 s
+   diff             Type check done                                                       1.215 s
+   qcheck           Compilation done                                                      0.017 s
+   math             Type check done                                                       0.029 s
+   process          Compilation done                                                      0.089 s
+   xml              Type check done                                                       0.077 s
+   math             Compilation done                                                      0.012 s
+   xml              Compilation done                                                      0.017 s
+   diff             Compilation done                                                      0.106 s
+   hash.wyhash      Type check done                                                       0.009 s
+   crypto.hash.md5  Type check done                                                       0.024 s
    snappy           Type check done                                                       0.001 s
    base64           Type check done                                                       0.001 s
-   snappy           Compilation done                                                      0.003 s
-   base64           Compilation done                                                      0.003 s
+   hash.wyhash      Compilation done                                                      0.005 s
+   snappy           Compilation done                                                      0.002 s
+   base64           Compilation done                                                      0.002 s
    crypto.hash.md5  Compilation done                                                      0.006 s
-   hash.wyhash      Compilation done                                                      0.006 s
-   xml              Type check done                                                       0.056 s
-   xml              Compilation done                                                      0.011 s
-   process          Compilation done                                                      0.074 s
-   http             Type check done                                                       0.590 s
-   http             Compilation done                                                      0.981 s
-   testing          Type check done                                                       4.156 s
-   testing          Compilation done                                                      2.145 s
+   http             Type check done                                                       0.861 s
+   http             Compilation done                                                      1.428 s
+   testing          Type check done                                                       4.825 s
+   testing          Compilation done                                                      3.224 s
   Skipping final build step
 make dist/deps/mbedtls dist/deps/libargp dist/deps/libbsdnt dist/deps/libgc dist/deps/libnetstring dist/deps/pcre2 dist/deps/libprotobuf_c dist/deps/tlsuv dist/deps/libutf8proc dist/deps/libuuid dist/deps/libuv dist/deps/libxml2 dist/deps/libyyjson dist/deps/libsnappy_c
 make[3]: Entering directory '/__w/acton/acton'
