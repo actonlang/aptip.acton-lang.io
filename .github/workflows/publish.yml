@@ -17,7 +17,7 @@ jobs:
         run: |
           apt-get update
           apt-get install -qy -t experimental reprepro
-          apt-get install -qy git gnupg
+          apt-get install -qy ca-certificates git gnupg
       - name: "Check out repository code"
         uses: actions/checkout@v6
       - name: "Create .gnupg"
