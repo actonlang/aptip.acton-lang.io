@@ -1,0 +1,53 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Origin: Acton
+Label: Acton
+Suite: unstable
+Codename: tip
+Date: Mon, 13 Apr 2026 04:21:24 UTC
+Architectures: amd64 arm64
+Components: main
+Description: Acton apt tip repository
+MD5Sum:
+ fc2a372633789d29929c5864d0c58dc4 11755 main/binary-amd64/Packages
+ 6656971c1c2c09800f9380c5a130ebe4 3503 main/binary-amd64/Packages.gz
+ 3215f5fc7e4ff14eb7e19da61f3cb9ed 119 main/binary-amd64/Release
+ 2a7f1e668d5b0b3ec4fce379dbc6c549 11755 main/binary-arm64/Packages
+ 1d33fb5af7bc9bdf1178dcbb3836799d 3488 main/binary-arm64/Packages.gz
+ 08f6cfaf4a1c466688585c58afb450f8 119 main/binary-arm64/Release
+SHA1:
+ f7c5cc6d6d18d4239585b83a040665403bf20ab4 11755 main/binary-amd64/Packages
+ 440d5e9aaf20f69cb80e79f92181b412781eb47a 3503 main/binary-amd64/Packages.gz
+ a1b8de048fba62b519525132f390cc544a939139 119 main/binary-amd64/Release
+ 10614f87eb03ceacd7debb7f7b018e916b2b4968 11755 main/binary-arm64/Packages
+ 209ae947d69ff0a03c4344ef36ac35fd57393ba2 3488 main/binary-arm64/Packages.gz
+ 22f7fab1e8a12eea43702e056a1d4f83a7de32c8 119 main/binary-arm64/Release
+SHA256:
+ 281e3fd0994f402758382ddebe95b605ee321701d23b55bfc1bfcb28c7a9fd7c 11755 main/binary-amd64/Packages
+ d0e7c5b2b584db712e0dbe91f7821b3c24324252668e5b909582b3a94ef78e63 3503 main/binary-amd64/Packages.gz
+ da9844e9de18078cac94be7232b5a69b9ac8931629e7863a34c69f78c68e78e3 119 main/binary-amd64/Release
+ 7e9cfc8463fc798b382f9fabab8a99e15737878597d86f614badf40493d45dc0 11755 main/binary-arm64/Packages
+ 70b30f572899593908e1c8b19d4c54042f6ee49ff1ec805e8e503dc17ea4751f 3488 main/binary-arm64/Packages.gz
+ 28c212e6b9ff9bac8c82ab2be7dd5031658193f859d54c83b69760073b5ea898 119 main/binary-arm64/Release
+SHA512:
+ be66afae78ab722420e4d9c19d83a2ce6e5fea1cb59784a40651dddcf497fee4078043141db5295c24bf68e44df98c70da1dfdb2c95297a873ef108365819201 11755 main/binary-amd64/Packages
+ 4ff657b6c551513f3c319525b9a5b2ee69a72736baffc21ef78d00850028b84c51732b0b7ca7414e03b9fc43d631922fa13dff7239bbf8b5ec672737e5c1cf12 3503 main/binary-amd64/Packages.gz
+ e4421238937473b34ccb62096a8967ea60cde17a69ffbde4431180c164620efd6a8f49c40be7258c4c8846bd49f71719e2373fdab5367c050f73500accc33d4d 119 main/binary-amd64/Release
+ ac479eb55f41b0ec43105aace4ce2b4b48981d0f56fe2b058f09378082287886b09440db5cfb3561c5143b6212a19c55afe0b1fb2dba0217bd0b8c0dc69a9fde 11755 main/binary-arm64/Packages
+ b3bcc26b4c2db96bc025f8255ecb3ecba724ecad46dd45dc76c4a4d3946df46ff9ebf19f75f4406f970682c77a32e92f7056ac34ad6b2328c4a01152fe5be47d 3488 main/binary-arm64/Packages.gz
+ 29e030c16dcd033d7fd8f60d30eed2476a076622ae83ea1c952125b0f00b0cf72168ceeb918f0dab86c52b4115f143cb3c6b8401455962bfa1752209ddf0e587 119 main/binary-arm64/Release
+-----BEGIN PGP SIGNATURE-----
+
+iQGzBAEBCgAdFiEEBbqisxkyppKzt3P4tCu7fdZYLIcFAmncb0QACgkQtCu7fdZY
+LIdU1Av/dBTzS/RR/Fcf/aXGWhxUQoUy+Y2Pr0KeaAbnzRSJevo+mhnCAVLqNLUa
+0hcyCz33aH2IWiSQtaSdBtWZ7+GDYYoTuUeLSn/cA5IbMmPIA9w+iypP/8pyGuHM
+vW/FUTeqoQMg19J93CPTGQxLpvDUPm6UQ0IOQqXxm8R+gSbBQ9e86ETo+GZGyT4H
+7XMKp9mXSptNHdvoRKNaAKPOm9zVrCk3FHwJJC/rJTiYgDfcZyGvX/Tn1CRHjEIz
+CFyulpiMVDUqFg/Ym4b50xgP8bH7iUuz/hTQR37WgtcQnvtI8gVOz0Fav59VjmKH
+2hdbhRPmdltn8eeXUQreTWCxUllS/H4qSFZbhzYUS1LG4wg/Jm7JdgvgbKRv9Qb3
+kgMcDjmztfHumKu6fJcEJYW+JnjaoZnWreyAJZWDR8uCGfSuH/fmCTcACERvrlbL
+65K7ucOti5/bPufNkL2fUT/fcAAQ68Zc0t7BkGM3gl0GrXQjDXmM5WQyP5g2+LFv
+tZe/BBJN
+=2Piv
+-----END PGP SIGNATURE-----
