@@ -1,0 +1,1723 @@
+ dpkg-buildpackage -us -uc -ui -i -nc -b
+dpkg-buildpackage: info: source package acton
+dpkg-buildpackage: info: source version 0.27.0.20260605.13.0
+dpkg-buildpackage: info: source distribution tip
+dpkg-buildpackage: info: source changed by Kristian Larsson <kristian@spritelink.net>
+ dpkg-source -i --before-build .
+dpkg-buildpackage: info: host architecture amd64
+ debian/rules binary
+dh binary --parallel --with bash-completion
+   dh_update_autotools_config
+   dh_autoreconf
+   dh_auto_configure
+	install -d /__w/acton/acton/debian/.debhelper/generated/_source/home
+   dh_auto_build
+	make -j4 "INSTALL=install --strip-program=true"
+make[1]: Entering directory '/__w/acton/acton'
+make dist/zig
+make[2]: Entering directory '/__w/acton/acton'
+mkdir -p "dist/zig"
+cd "dist/zig" && tar Jx --strip-components=1 -f "../../deps-download/zig-x86_64-linux-0.16.0.tar.xz"
+rm -rf "dist/zig/doc"
+cp -a deps/zig-extras/* "dist/zig"
+make[2]: Leaving directory '/__w/acton/acton'
+make distribution
+make[2]: Entering directory '/__w/acton/acton'
+cd bdeps/zlib && "/__w/acton/acton/dist/zig/zig" build -Doptimize=ReleaseFast --prefix "/__w/acton/acton/bdeps/out" \
+	-Dtarget=x86_64-linux-gnu.2.31
+cd bdeps/lmdb && "/__w/acton/acton/dist/zig/zig" build -Doptimize=ReleaseFast --prefix "/__w/acton/acton/bdeps/out" \
+	-Dtarget=x86_64-linux-gnu.2.31
+cp -a builder/build.zig builder/build.zig.zon "dist/builder/"
+cd bdeps/gmp && "/__w/acton/acton/dist/zig/zig" build -Doptimize=ReleaseFast --prefix "/__w/acton/acton/bdeps/out" \
+	-Dtarget=x86_64-linux-gnu.2.31
+cd bdeps/ncurses && "/__w/acton/acton/dist/zig/zig" build -Doptimize=ReleaseFast --prefix "/__w/acton/acton/bdeps/out" \
+	-Dtarget=x86_64-linux-gnu.2.31
+rm -rf "dist/deps/mbedtls"
+mkdir -p "dist/deps/mbedtls"
+cd "dist/deps/mbedtls" && tar zx --strip-components=1 -f "/__w/acton/acton/deps-download/c7d83538d3d359b05a9331bb2c9217977b5856ac.tar.gz"
+cp "/__w/acton/acton/deps/mbedtls/build.zig" "dist/deps/mbedtls/build.zig"
+touch "/__w/acton/acton/dist/deps/mbedtls"
+rm -rf "dist/deps/libargp"
+mkdir -p "dist/deps/libargp"
+cd "dist/deps/libargp" && tar zx --strip-components=1 -f "/__w/acton/acton/deps-download/137154fb257055beb11f3283021d8eccc3c4f470.tar.gz"
+cp "/__w/acton/acton/deps/libargp/build.zig" "dist/deps/libargp/build.zig"
+rm -rf "dist/deps/libargp/testsuite"
+touch "/__w/acton/acton/dist/deps/libargp"
+rm -rf "dist/deps/libbsdnt"
+mkdir -p "dist/deps/libbsdnt"
+cd "dist/deps/libbsdnt" && tar zx --strip-components=1 -f "/__w/acton/acton/deps-download/cf7db3414867b8b4a5561bc9aa94a8050d0225c4.tar.gz"
+cp "/__w/acton/acton/deps/libbsdnt/build.zig" "dist/deps/libbsdnt/build.zig"
+touch "/__w/acton/acton/dist/deps/libbsdnt"
+rm -rf "dist/deps/libgc"
+mkdir -p "dist/deps/libgc"
+cd "dist/deps/libgc" && tar zx --strip-components=1 -f "/__w/acton/acton/deps-download/0a23b211b558137de7ee654c5527a54113142517.tar.gz"
+cp "/__w/acton/acton/deps/libgc/build.zig" "dist/deps/libgc/build.zig"
+rm -rf "dist/deps/libgc/tests" "dist/deps/libgc/tools"
+touch "/__w/acton/acton/dist/deps/libgc"
+mkdir -p "/__w/acton/acton/dist/deps/libnetstring"
+cp -a "deps/libnetstring/"* "/__w/acton/acton/dist/deps/libnetstring"
+rm -rf "dist/deps/pcre2"
+mkdir -p "dist/deps/pcre2"
+cd "dist/deps/pcre2" && tar zx --strip-components=1 -f "/__w/acton/acton/deps-download/e4ccef3034c870342f2d37c928e98bc8c69cd340.tar.gz"
+cp "/__w/acton/acton/deps/pcre2/build.zig" "dist/deps/pcre2/build.zig"
+touch "/__w/acton/acton/dist/deps/pcre2"
+rm -rf "dist/deps/libprotobuf_c"
+mkdir -p "dist/deps/libprotobuf_c"
+rm -rf "dist/deps/libuv"
+cd "dist/deps/libprotobuf_c" && tar zx --strip-components=1 -f "/__w/acton/acton/deps-download/abc67a11c6db271bedbb9f58be85d6f4e2ea8389.tar.gz"
+mkdir -p "dist/deps/libuv"
+cd "dist/deps/libuv" && tar zx --strip-components=1 -f "/__w/acton/acton/deps-download/d760a3f23511ebe7b1935fe1429147d4fca27bb4.tar.gz" "libuv-d760a3f23511ebe7b1935fe1429147d4fca27bb4/include" "libuv-d760a3f23511ebe7b1935fe1429147d4fca27bb4/src"
+cp "/__w/acton/acton/deps/libprotobuf_c/build.zig" "dist/deps/libprotobuf_c/build.zig"
+touch "/__w/acton/acton/dist/deps/libprotobuf_c"
+rm -rf "dist/deps/libutf8proc"
+mkdir -p "dist/deps/libutf8proc"
+cd "dist/deps/libutf8proc" && tar zx --strip-components=1 -f "/__w/acton/acton/deps-download/1cb28a66ca79a0845e99433fd1056257456cef8b.tar.gz"
+cp "/__w/acton/acton/deps/libuv/build.zig" "dist/deps/libuv/build.zig"
+touch "/__w/acton/acton/dist/deps/libuv"
+mkdir -p "/__w/acton/acton/dist/deps/libuuid"
+cp -a "deps/libuuid/"* "/__w/acton/acton/dist/deps/libuuid"
+rm -rf "dist/deps/libxml2"
+mkdir -p "dist/deps/libxml2"
+cd "dist/deps/libxml2" && tar zx --strip-components=1 -f "/__w/acton/acton/deps-download/358ca4e6e34dd2b386aab1fdeb74a641c54940a0.tar.gz"
+cp "/__w/acton/acton/deps/libutf8proc/build.zig" "dist/deps/libutf8proc/build.zig"
+touch "/__w/acton/acton/dist/deps/libutf8proc"
+mkdir -p "/__w/acton/acton/dist/deps/libyyjson"
+cp -a "deps/libyyjson/"* "/__w/acton/acton/dist/deps/libyyjson"
+rm -rf "dist/deps/libsnappy_c"
+mkdir -p "dist/deps/libsnappy_c"
+cd "dist/deps/libsnappy_c" && tar zx --strip-components=1 -f "/__w/acton/acton/deps-download/dc05e026488865bc69313a68bcc03ef2e4ea8e83.tar.gz"
+cp "/__w/acton/acton/deps/libsnappy_c/build.zig" "dist/deps/libsnappy_c/build.zig"
+touch "/__w/acton/acton/dist/deps/libsnappy_c"
+mkdir -p "dist/backend/"
+cp -a "backend//Build.act" "dist/backend/Build.act"
+mkdir -p "dist/backend/"
+cp -a "backend//build.zig" "dist/backend/build.zig"
+mkdir -p "dist/backend/"
+cp -a "backend//build.zig.zon" "dist/backend/build.zig.zon"
+mkdir -p "dist/backend/"
+cp -a "backend//actondb.c" "dist/backend/actondb.c"
+mkdir -p "dist/backend/"
+cp -a "backend//client_api.c" "dist/backend/client_api.c"
+mkdir -p "dist/backend/"
+cp -a "backend//comm.c" "dist/backend/comm.c"
+mkdir -p "dist/backend/"
+cp -a "backend//db.c" "dist/backend/db.c"
+mkdir -p "dist/backend/"
+cp -a "backend//hash_ring.c" "dist/backend/hash_ring.c"
+mkdir -p "dist/backend/"
+cp -a "backend//log.c" "dist/backend/log.c"
+mkdir -p "dist/backend/"
+cp -a "backend//queue.c" "dist/backend/queue.c"
+mkdir -p "dist/backend/"
+cp -a "backend//queue_callback.c" "dist/backend/queue_callback.c"
+mkdir -p "dist/backend/"
+cp -a "backend//queue_groups.c" "dist/backend/queue_groups.c"
+mkdir -p "dist/backend/"
+cp -a "backend//skiplist.c" "dist/backend/skiplist.c"
+mkdir -p "dist/backend/"
+cp -a "backend//txns.c" "dist/backend/txns.c"
+mkdir -p "dist/backend/"
+cp -a "backend//txn_state.c" "dist/backend/txn_state.c"
+mkdir -p "dist/backend/"
+cp -a "backend//client_api.h" "dist/backend/client_api.h"
+mkdir -p "dist/backend/"
+cp -a "backend//comm.h" "dist/backend/comm.h"
+mkdir -p "dist/backend/"
+cp -a "backend//common.h" "dist/backend/common.h"
+mkdir -p "dist/backend/"
+cp -a "backend//consumer_state.h" "dist/backend/consumer_state.h"
+mkdir -p "dist/backend/"
+cp -a "backend//db_client_api.h" "dist/backend/db_client_api.h"
+mkdir -p "dist/backend/"
+cp -a "backend//db.h" "dist/backend/db.h"
+mkdir -p "dist/backend/"
+cp -a "backend//fastrand.h" "dist/backend/fastrand.h"
+mkdir -p "dist/backend/"
+cp -a "backend//hashes.h" "dist/backend/hashes.h"
+mkdir -p "dist/backend/"
+cp -a "backend//hash_ring.h" "dist/backend/hash_ring.h"
+mkdir -p "dist/backend/"
+cp -a "backend//log.h" "dist/backend/log.h"
+mkdir -p "dist/backend/"
+cp -a "backend//queue_callback.h" "dist/backend/queue_callback.h"
+mkdir -p "dist/backend/"
+cp -a "backend//queue_groups.h" "dist/backend/queue_groups.h"
+mkdir -p "dist/backend/"
+cp -a "backend//queue.h" "dist/backend/queue.h"
+mkdir -p "dist/backend/"
+cp -a "backend//skiplist.h" "dist/backend/skiplist.h"
+mkdir -p "dist/backend/"
+cp -a "backend//txns.h" "dist/backend/txns.h"
+mkdir -p "dist/backend/"
+cp -a "backend//txn_state.h" "dist/backend/txn_state.h"
+mkdir -p "dist/backend/failure_detector/"
+cp -a "backend//failure_detector/cells.c" "dist/backend/failure_detector/cells.c"
+mkdir -p "dist/backend/failure_detector/"
+cp -a "backend//failure_detector/db_messages.pb-c.c" "dist/backend/failure_detector/db_messages.pb-c.c"
+mkdir -p "dist/backend/failure_detector/"
+cp -a "backend//failure_detector/db_messages_test.c" "dist/backend/failure_detector/db_messages_test.c"
+mkdir -p "dist/backend/failure_detector/"
+cp -a "backend//failure_detector/db_queries.c" "dist/backend/failure_detector/db_queries.c"
+mkdir -p "dist/backend/failure_detector/"
+cp -a "backend//failure_detector/fd.c" "dist/backend/failure_detector/fd.c"
+mkdir -p "dist/backend/failure_detector/"
+cp -a "backend//failure_detector/vector_clock.c" "dist/backend/failure_detector/vector_clock.c"
+mkdir -p "dist/backend/failure_detector/"
+cp -a "backend//failure_detector/cells.h" "dist/backend/failure_detector/cells.h"
+mkdir -p "dist/backend/failure_detector/"
+cp -a "backend//failure_detector/db_messages.pb-c.h" "dist/backend/failure_detector/db_messages.pb-c.h"
+mkdir -p "dist/backend/failure_detector/"
+cp -a "backend//failure_detector/db_queries.h" "dist/backend/failure_detector/db_queries.h"
+mkdir -p "dist/backend/failure_detector/"
+cp -a "backend//failure_detector/fd.h" "dist/backend/failure_detector/fd.h"
+mkdir -p "dist/backend/failure_detector/"
+cp -a "backend//failure_detector/txns.h" "dist/backend/failure_detector/txns.h"
+mkdir -p "dist/backend/failure_detector/"
+cp -a "backend//failure_detector/vector_clock.h" "dist/backend/failure_detector/vector_clock.h"
+mkdir -p "dist/backend/"
+cp -a "backend//deps" "dist/backend/deps"
+cp bin/runacton dist/bin/runacton.tmp
+mv dist/bin/runacton.tmp dist/bin/runacton
+cp -a utils/lldb/acton.py dist/lldb/acton.py
+rm -rf "dist/deps/tlsuv"
+mkdir -p "dist/deps/tlsuv"
+cd "dist/deps/tlsuv" && tar zx --strip-components=1 -f "/__w/acton/acton/deps-download/5af699b033776ec6a21b32c90e7aa7bf08c9929f.tar.gz"
+cp "/__w/acton/acton/deps/libxml2/build.zig" "dist/deps/libxml2/build.zig"
+rm -rf "dist/deps/libxml2/doc" "dist/deps/libxml2/example" "dist/deps/libxml2/fuzz" "dist/deps/libxml2/os400" "dist/deps/libxml2/python" dist/deps/libxml2/test*
+cp "/__w/acton/acton/deps/tlsuv/build.zig" "dist/deps/tlsuv/build.zig"
+cp "/__w/acton/acton/deps/tlsuv/build.zig.zon" "dist/deps/tlsuv/build.zig.zon"
+touch "/__w/acton/acton/dist/deps/tlsuv"
+touch "/__w/acton/acton/dist/deps/libxml2"
+cd dist/backend && "/__w/acton/acton/dist/zig/zig" build -Donly_actondb -Dtarget=x86_64-linux-gnu.2.31 --prefix "/__w/acton/acton/dist"
+Threads enabled
+mkdir -p dist/bin
+rm -f dist/bin/actonc
+cd compiler && sed 's,^version: BUILD_VERSION,version: "0.27.0",' < lib/package.yaml.in > lib/package.yaml
+cd compiler && CC="/__w/acton/acton/compiler/tools/zig-cc.sh" CXX="/__w/acton/acton/compiler/tools/zig-cxx.sh" CFLAGS= CPPFLAGS= LDFLAGS= ACTON_REAL_LD="/__w/acton/acton/compiler/tools/zig-cc.sh" stack --with-gcc="/__w/acton/acton/compiler/tools/zig-cc.sh" build acton lsp-server-acton  --ghc-options='-j4 ' --dry-run 2>&1 | grep "Nothing to build" || \
+	(sed 's,^version: BUILD_VERSION,version: "0.27.0.20260605.13.0",' < acton/package.yaml.in > acton/package.yaml \
+	&& sed 's,^version: BUILD_VERSION,version: "0.27.0.20260605.13.0",' < lsp-server/package.yaml.in > lsp-server/package.yaml \
+	&& unset CC && unset CXX && unset CFLAGS && unset CPPFLAGS && unset LDFLAGS && unset ACTON_REAL_LD && stack setup \
+	&& CC="/__w/acton/acton/compiler/tools/zig-cc.sh" CXX="/__w/acton/acton/compiler/tools/zig-cxx.sh" CFLAGS= CPPFLAGS= LDFLAGS= ACTON_REAL_LD="/__w/acton/acton/compiler/tools/zig-cc.sh" stack --with-gcc="/__w/acton/acton/compiler/tools/zig-cc.sh" build acton lsp-server-acton  --ghc-options='-j4 ')
+Stack will use a sandboxed GHC it installed. To use this GHC and packages outside of a project,
+consider using: stack ghc, stack ghci, stack runghc, or stack exec.
+diagnose        > configure (lib)
+diagnose        > Configuring diagnose-2.5.1...
+diagnose        > build (lib) with ghc-9.8.4
+diagnose        > Preprocessing library for diagnose-2.5.1..
+diagnose        > Building library for diagnose-2.5.1..
+diagnose        > [ 1 of 11] Compiling Data.List.Safe
+diagnose        > [ 2 of 11] Compiling Error.Diagnose.Position
+diagnose        > [ 3 of 11] Compiling Error.Diagnose.Pretty
+diagnose        > [ 4 of 11] Compiling Error.Diagnose.Style
+diagnose        > [ 5 of 11] Compiling Error.Diagnose.Report.Internal
+diagnose        > [ 6 of 11] Compiling Error.Diagnose.Report
+diagnose        > [ 7 of 11] Compiling Error.Diagnose.Diagnostic.Internal
+diagnose        > [ 8 of 11] Compiling Error.Diagnose.Diagnostic
+diagnose        > [ 9 of 11] Compiling Error.Diagnose
+diagnose        > [10 of 11] Compiling Error.Diagnose.Compat.Hints
+diagnose        > [11 of 11] Compiling Paths_diagnose
+diagnose        > copy/register
+diagnose        > Installing library in /__w/acton/acton/compiler/.stack-work/install/x86_64-linux-tinfo6-libc6-pre232/1c08c95748c6fec5e3f34c1ecd1572c9dea65d07a99f2d02d28dd4c39a0eaecc/9.8.4/lib/x86_64-linux-ghc-9.8.4/diagnose-2.5.1-Gg3AYH7tvnDKcc0i0YohMU
+diagnose        > Registering library for diagnose-2.5.1..
+libacton        > configure (lib + exe)
+libacton        > Configuring libacton-0.27.0...
+libacton        > build (lib + exe) with ghc-9.8.4
+libacton        > Preprocessing library for libacton-0.27.0..
+libacton        > Building library for libacton-0.27.0..
+libacton        > [ 1 of 39] Compiling Acton.CommandLineParser
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Utils.hs:116:35: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Prelude, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 116 | head_ tag xs                    = head xs
+libacton        >     |                                   ^^^^
+libacton        > [ 2 of 39] Compiling Acton.Fingerprint
+libacton        > [ 3 of 39] Compiling Acton.SourceProvider
+libacton        > [ 4 of 39] Compiling Paths_libacton
+libacton        > [ 5 of 39] Compiling Pretty
+libacton        > [ 6 of 39] Compiling SrcLocation
+libacton        > [ 7 of 39] Compiling Text_Megaparsec_Expr
+libacton        > [ 8 of 39] Compiling Utils
+libacton        > [ 9 of 39] Compiling Acton.Syntax
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Syntax.hs:262:19: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘tail’
+libacton        >     (imported from Prelude, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Replace it with drop 1, or use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 262 |   where nss     = tail $ inits $ map tcname tcs
+libacton        >     |                   ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Syntax.hs:417:35: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Prelude, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 417 |                         = PosPar (head ns) (Just t) Nothing (pPar (tail ns) p)
+libacton        >     |                                   ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Syntax.hs:417:68: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘tail’
+libacton        >     (imported from Prelude, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Replace it with drop 1, or use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 417 |                         = PosPar (head ns) (Just t) Nothing (pPar (tail ns) p)
+libacton        >     |                                                                    ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Syntax.hs:419:36: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Prelude, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 419 | pPar ns (TStar _ PRow r)= PosSTAR (head ns) (Just $ tTupleP r)
+libacton        >     |                                    ^^^^
+libacton        > [10 of 39] Compiling Acton.Printer
+libacton        > [11 of 39] Compiling Acton.Builtin
+libacton        > [12 of 39] Compiling Acton.Subst
+libacton        > [13 of 39] Compiling Acton.Names
+libacton        > 
+libacton        > [14 of 39] Compiling Acton.Parser
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Parser.hs:209:36: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘tail’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Replace it with drop 1, or use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 209 | popCtx st      = st { psContexts = tail (psContexts st) }
+libacton        >     |                                    ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Parser.hs:609:39: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 609 |                                  then head combinedExprs
+libacton        >     |                                       ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Parser.hs:685:28: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 685 |                       then head exprs
+libacton        >     |                            ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Parser.hs:719:28: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 719 |                 c <- char (head quoteStr)
+libacton        >     |                            ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Parser.hs:720:51: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 720 |                 quotes <- lookAhead $ many (char (head quoteStr))
+libacton        >     |                                                   ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Parser.hs:725:30: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 725 |                   2 -> char (head quoteStr) >> return [c, head quoteStr]
+libacton        >     |                              ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Parser.hs:725:59: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 725 |                   2 -> char (head quoteStr) >> return [c, head quoteStr]
+libacton        >     |                                                           ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Parser.hs:731:30: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 731 |                   5 -> char (head quoteStr) >> return [c, head quoteStr]
+libacton        >     |                              ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Parser.hs:731:59: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 731 |                   5 -> char (head quoteStr) >> return [c, head quoteStr]
+libacton        >     |                                                           ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Parser.hs:974:60: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 974 |       | isHex h1 && isHex h2 && (not (null rest) && isHex (head rest)) =
+libacton        >     |                                                            ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Parser.hs:998:29: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 998 |        if length cs == 3 && head cs > '3'
+libacton        >     |                             ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Parser.hs:1129:23: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >      |
+libacton        > 1129 |           if isUpper (head x) && all isDigit (tail x)
+libacton        >      |                       ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Parser.hs:1129:47: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘tail’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Replace it with drop 1, or use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >      |
+libacton        > 1129 |           if isUpper (head x) && all isDigit (tail x)
+libacton        >      |                                               ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Parser.hs:1133:43: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >      |
+libacton        > 1133 | escname = name <|> addLoc (S.Name NoLoc . head <$> plainstrLiteral)  -- Assumes an escname cannot contain hex escape sequences
+libacton        >      |                                           ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Parser.hs:1137:27: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >      |
+libacton        > 1137 |               if isUpper (head x) && all isDigit (tail x)
+libacton        >      |                           ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Parser.hs:1137:51: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘tail’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Replace it with drop 1, or use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >      |
+libacton        > 1137 |               if isUpper (head x) && all isDigit (tail x)
+libacton        >      |                                                   ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Parser.hs:2388:75: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >      |
+libacton        > 2388 |                         return (\a -> S.Dot (loc a `upto` l) a (S.Name l (head ss)))
+libacton        >      |                                                                           ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Parser.hs:2404:76: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >      |
+libacton        > 2404 |                      return (\a -> S.Index NoLoc a (if length es == 1 then head es else S.eTuple es))
+libacton        >      |                                                                            ^^^^
+libacton        > [15 of 39] Compiling Acton.NameInfo
+libacton        > 
+libacton        > [16 of 39] Compiling InterfaceFiles
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Env.hs:158:56: warning: [GHC-63394] [-Wx-partial]
+libacton        > [17 of 39] Compiling Acton.Prim
+libacton        >     In the use of ‘head’
+libacton        > [18 of 39] Compiling Acton.Env
+libacton        >     (imported from Prelude, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 158 |       | otherwise                   = case lookupName (head ns) env of
+libacton        >     |                                                        ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Env.hs:299:53: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Prelude, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 299 |   | not $ null badSelf      = selfParamError (loc $ head badSelf)
+libacton        >     |                                                     ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Env.hs:306:53: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Prelude, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 306 |   | not $ null badSelf      = selfParamError (loc $ head badSelf)
+libacton        >     |                                                     ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Env.hs:319:53: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Prelude, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 319 |   | not $ null badSelf      = selfParamError (loc $ head badSelf)
+libacton        >     |                                                     ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Env.hs:326:53: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Prelude, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > [19 of 39] Compiling Acton.TypeEnv
+libacton        > 326 |   | not $ null badSelf      = selfParamError (loc $ head badSelf)
+libacton        >     |                                                     ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Env.hs:443:48: warning: [GHC-63394] [-Wx-partial]
+libacton        > [20 of 39] Compiling Acton.Transform
+libacton        >     In the use of ‘head’
+libacton        > [21 of 39] Compiling Acton.WitKnots
+libacton        >     (imported from Prelude, but defined in GHC.List):
+libacton        > [22 of 39] Compiling Acton.Solver
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        > [23 of 39] Compiling Acton.QuickType
+libacton        >     |
+libacton        > [24 of 39] Compiling Acton.Normalizer
+libacton        > 443 | findHMod m@(ModName ns) env = case lookupName (head ns) env of
+libacton        > [25 of 39] Compiling Acton.LambdaLifter
+libacton        >     |                                                ^^^^
+libacton        > [26 of 39] Compiling Acton.Kinds
+libacton        > 
+libacton        > [27 of 39] Compiling Acton.Hashing
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Env.hs:444:91: warning: [GHC-63394] [-Wx-partial]
+libacton        > [28 of 39] Compiling Acton.Diagnostics
+libacton        >     In the use of ‘tail’
+libacton        >     (imported from Prelude, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Replace it with drop 1, or use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 444 |                                 Just (HNMAlias (ModName m')) -> lookupHMod (ModName $ m'++tail ns) env
+libacton        >     |                                                                                           ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Env.hs:995:57: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Prelude, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 995 |   | not $ null common                   = pure $ tCon $ head common
+libacton        >     |                                                         ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Env.hs:1315:50: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Prelude, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >      |
+libacton        > 1315 | err0 xs s                           = err (loc $ head xs) s
+libacton        >      |                                                  ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Env.hs:1317:50: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Prelude, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >      |
+libacton        > 1317 | err2 xs s                           = err (loc $ head xs) (s ++ " " ++ prstrs xs)
+libacton        >      |                                                  ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/TypeEnv.hs:473:72: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 473 | currFX                                  = lift $ state $ \st -> (fst $ head $ effectstack st, st)
+libacton        >     |                                                                        ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/TypeEnv.hs:476:72: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 476 | currRet                                 = lift $ state $ \st -> (snd $ head $ effectstack st, st)
+libacton        >     |                                                                        ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/TypeEnv.hs:479:88: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘tail’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Replace it with drop 1, or use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 479 | popFX                                   = lift $ state $ \st -> ((), st{ effectstack = tail (effectstack st) })
+libacton        >     |                                                                                        ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/TypeEnv.hs:880:37: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 880 |       | not $ null ideps    = err2 (head ideps) "Interdependent type variable bounds:"
+libacton        >     |                                     ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/TypeEnv.hs:883:51: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 883 |             ideps           = [ [tcname u, root $ head w] | u <- us, (w,p) <- ps, length w > 1, p == u ]
+libacton        >     |                                                   ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/TypeEnv.hs:1141:75: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >      |
+libacton        > 1141 |                                                                   pretty (head tvs) <+> text "escapes")
+libacton        >      |                                                                           ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/TypeEnv.hs:1172:48: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >      |
+libacton        > 1172 |                           then "type " ++ case head vs of
+libacton        >      |                                                ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/TypeEnv.hs:1174:54: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >      |
+libacton        > 1174 |                                           _ -> show (head vs)
+libacton        >      |                                                      ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/TypeEnv.hs:1249:49: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >      |
+libacton        > 1249 |                                         pretty (head tvs) <+> text "escapes"))]
+libacton        >      |                                                 ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/TypeEnv.hs:1278:69: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >      |
+libacton        > 1278 | tyerrs xs s                         = throwError $ TypeError (loc $ head xs) (s ++ " " ++ prstrs xs)
+libacton        >      |                                                                     ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/TypeEnv.hs:1288:61: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >      |
+libacton        > 1288 | lackSig ns                          = throwError $ LackSig (head ns)
+libacton        >      |                                                             ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/TypeEnv.hs:1289:61: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >      |
+libacton        > 1289 | lackDef ns                          = throwError $ LackDef (head ns)
+libacton        >      |                                                             ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/WitKnots.hs:89:35: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Prelude, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >    |
+libacton        > 89 | initMeth d                      = head [ m | Decl _ ms <- dbody d, m <- ms, dname m == initKW ]
+libacton        >    |                                   ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/WitKnots.hs:94:35: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘tail’
+libacton        >     (imported from Prelude, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Replace it with drop 1, or use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >    |
+libacton        > 94 |         ps                      = tail $ bound $ pos $ initMeth d
+libacton        >    |                                   ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/WitKnots.hs:113:41: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Prelude, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 113 |         WAbs vs ps as           = snd $ head deps0
+libacton        >     |                                         ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/WitKnots.hs:124:35: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Prelude, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 124 |   where a_0                     = head chain
+libacton        >     |                                   ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Solver.hs:188:55: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 188 |                                                  case head $ sort $ map (newrank pol) cs of
+libacton        >     |                                                       ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Solver.hs:297:55: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 297 |                                                  case head goals of
+libacton        >     |                                                       ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Solver.hs:514:101: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 514 |   | n == primWrappedP               = reverse [ schematic (wtype w) | w <- witsByPName env n, t == (head $ tcargs $ proto w) ]
+libacton        >     |                                                                                                     ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/QuickType.hs:277:60: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 277 |     qType env f (PList l ps p)      = (tList (typeOf env $ head ps), fxPure, PList l ps p)
+libacton        >     |                                                            ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/QuickType.hs:367:63: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 367 |   | otherwise                       = foldl restrict (envOf $ head liveSuites) (map bound $ tail liveSuites)
+libacton        >     |                                                               ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/QuickType.hs:367:93: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘tail’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Replace it with drop 1, or use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 367 |   | otherwise                       = foldl restrict (envOf $ head liveSuites) (map bound $ tail liveSuites)
+libacton        >     |                                                                                             ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Kinds.hs:84:45: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >    |
+libacton        > 84 |   | not $ null clash                = err1 (head clash) "Type variable already in scope:"    -- No type variable shadowing
+libacton        >    |                                             ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Kinds.hs:85:45: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >    |
+libacton        > 85 |   | not $ null dups                 = err1 (head dups) "Duplicate type variable in binding:"
+libacton        >    |                                             ^^^^
+libacton        > [29 of 39] Compiling Acton.Completion
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Completion.hs:883:7: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Prelude, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 883 |       head s : stripBuiltinPrefix (tail s)
+libacton        >     |       ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Completion.hs:883:36: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘tail’
+libacton        >     (imported from Prelude, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Replace it with drop 1, or use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 883 |       head s : stripBuiltinPrefix (tail s)
+libacton        >     |                                    ^^^^
+libacton        > [30 of 39] Compiling Acton.DocPrinter
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/DocPrinter.hs:1761:87: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Prelude, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >      |
+libacton        > 1761 |     | qn == qnList && length ts == 1 = text "list" <> brackets (prettySimplifiedType (head ts))
+libacton        >      |                                                                                       ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/DocPrinter.hs:1762:87: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Prelude, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >      |
+libacton        > 1762 |     | qn == qnDict && length ts == 2 = text "dict" <> brackets (prettySimplifiedType (head ts) <> comma <+> prettySimplifiedType (ts !! 1))
+libacton        >      |                                                                                       ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/DocPrinter.hs:1763:86: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Prelude, but defined in GHC.List):
+libacton        > [31 of 39] Compiling Acton.Deactorizer
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        > [32 of 39] Compiling Acton.Converter
+libacton        >      |
+libacton        > 1763 |     | qn == qnSetT && length ts == 1 = text "set" <> brackets (prettySimplifiedType (head ts))
+libacton        >      |                                                                                      ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/DocPrinter.hs:1874:77: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Prelude, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >      |
+libacton        > 1874 |         | qn == qnList && length ts == 1 = "[" ++ renderTypeHtml gens cons (head ts) ++ "]"
+libacton        > [33 of 39] Compiling Acton.Types
+libacton        >      |                                                                             ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/DocPrinter.hs:1875:77: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Prelude, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >      |
+libacton        > 1875 |         | qn == qnDict && length ts == 2 = "{" ++ renderTypeHtml gens cons (head ts) ++ ": " ++ renderTypeHtml gens cons (ts !! 1) ++ "}"
+libacton        >      |                                                                             ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/DocPrinter.hs:1876:77: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Prelude, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >      |
+libacton        > 1876 |         | qn == qnSetT && length ts == 1 = "{" ++ renderTypeHtml gens cons (head ts) ++ "}"
+libacton        >      |                                                                             ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/DocPrinter.hs:1882:77: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Prelude, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >      |
+libacton        > 1882 |         | qn == qnList && length ts == 1 = "[" ++ renderTypeHtml gens cons (head ts) ++ "]"
+libacton        >      |                                                                             ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/DocPrinter.hs:1883:77: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Prelude, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >      |
+libacton        > 1883 |         | qn == qnDict && length ts == 2 = "{" ++ renderTypeHtml gens cons (head ts) ++ ": " ++ renderTypeHtml gens cons (ts !! 1) ++ "}"
+libacton        >      |                                                                             ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/DocPrinter.hs:1884:77: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Prelude, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >      |
+libacton        > 1884 |         | qn == qnSetT && length ts == 1 = "{" ++ renderTypeHtml gens cons (head ts) ++ "}"
+libacton        >      |                                                                             ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/DocPrinter.hs:1991:112: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Prelude, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >      |
+libacton        > 1991 |         | qn == qnList && length ts == 1 = "[" ++ renderTypeHtmlWithClassesAndModule curMod gens cons classes (head ts) ++ "]"
+libacton        >      |                                                                                                                ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/DocPrinter.hs:1993:81: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Prelude, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >      |
+libacton        > 1993 |             "{" ++ renderTypeHtmlWithClassesAndModule curMod gens cons classes (head ts) ++ ": " ++
+libacton        >      |                                                                                 ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/DocPrinter.hs:1995:112: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Prelude, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >      |
+libacton        > 1995 |         | qn == qnSetT && length ts == 1 = "{" ++ renderTypeHtmlWithClassesAndModule curMod gens cons classes (head ts) ++ "}"
+libacton        >      |                                                                                                                ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/DocPrinter.hs:2125:123: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Prelude, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >      |
+libacton        > 2125 |         | qn == qnList && length ts == 1 = "[" ++ renderTypeHtmlWithClassesModuleAndScope curMod gens cons classes scope (head ts) ++ "]"
+libacton        >      |                                                                                                                           ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/DocPrinter.hs:2127:92: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Prelude, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >      |
+libacton        > 2127 |             "{" ++ renderTypeHtmlWithClassesModuleAndScope curMod gens cons classes scope (head ts) ++ ": " ++
+libacton        >      |                                                                                            ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/DocPrinter.hs:2129:123: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Prelude, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >      |
+libacton        > 2129 |         | qn == qnSetT && length ts == 1 = "{" ++ renderTypeHtmlWithClassesModuleAndScope curMod gens cons classes scope (head ts) ++ "}"
+libacton        >      |                                                                                                                           ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/DocPrinter.hs:2253:96: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Prelude, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >      |
+libacton        > 2253 |         | qn == qnList && length ts == 1 = "[" ++ renderTypeHtmlWithClasses gens cons classes (head ts) ++ "]"
+libacton        >      |                                                                                                ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/DocPrinter.hs:2254:96: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Prelude, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >      |
+libacton        > 2254 |         | qn == qnDict && length ts == 2 = "{" ++ renderTypeHtmlWithClasses gens cons classes (head ts) ++ ": " ++ renderTypeHtmlWithClasses gens cons classes (ts !! 1) ++ "}"
+libacton        >      |                                                                                                ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/DocPrinter.hs:2255:96: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Prelude, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >      |
+libacton        > 2255 |         | qn == qnSetT && length ts == 1 = "{" ++ renderTypeHtmlWithClasses gens cons classes (head ts) ++ "}"
+libacton        >      |                                                                                                ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Converter.hs:54:43: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >    |
+libacton        > 54 |         main                            = head bases
+libacton        >    |                                           ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Converter.hs:76:72: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >    |
+libacton        > 76 |                         us0             = [ TC (baseGName w) (tcargs $ head us1) | w <- zipWith (:) (wheads ws0) (wtails ws0) ]
+libacton        >    |                                                                        ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Converter.hs:79:99: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >    |
+libacton        > 79 |         sibClasses                      = [ Class NoLoc (sibName ws n0) q1 us (sibClassBody ws n (head us) wes inh) Nothing | (ws,n,us,wes,inh) <- allsibs ]
+libacton        >    |                                                                                                   ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Converter.hs:124:43: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 124 |         main                            = head bases
+libacton        >     |                                           ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Converter.hs:143:72: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 143 |                         us0             = [ TC (baseGName w) (tcargs $ head us1) | w <- zipWith (:) (wheads ws0) (wtails ws0) ]
+libacton        >     |                                                                        ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Converter.hs:146:99: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 146 |         sibClasses                      = [ Class NoLoc (sibName ws n1) q1 us (sibClassBody ws n (head us) wes inh) Nothing | (ws,n,us,wes,inh) <- allsibs ]
+libacton        >     |                                                                                                   ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Converter.hs:175:50: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘tail’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Replace it with drop 1, or use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 175 | witCtxt ps ws                           = ctxt $ tail $ reverse ws
+libacton        >     |                                                  ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Converter.hs:200:50: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 200 | baseGName ws                            = modOf (head ws) $ baseName ws
+libacton        >     |                                                  ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Types.hs:423:42: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 423 | uniqPrefix s@Assign{}                  = head (bound s)
+libacton        >     |                                          ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Types.hs:424:42: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 424 | uniqPrefix s@Signature{}               = head (bound s)
+libacton        >     |                                          ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Types.hs:803:63: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 803 |       | not $ null bad                  = illegalSigOverride (head bad)
+libacton        >     |                                                               ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Types.hs:993:49: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 993 |         base                            = snd $ head as
+libacton        >     |                                                 ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Types.hs:1063:104: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >      |
+libacton        > 1063 |                                                     body = [sExpr $ Call NoLoc (eDot (eQVar $ tcname $ head us) initKW) (pArg pp) (kArg kp)]
+libacton        >      |                                                                                                        ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Types.hs:1089:95: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >      |
+libacton        > 1089 |       | not $ null witsearch            = err (loc n) ("Extension already exists: " ++ prstr (head witsearch))
+libacton        >      |                                                                                               ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Types.hs:1106:43: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >      |
+libacton        > 1106 |             u                           = head us
+libacton        >      |                                           ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Types.hs:1108:87: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘tail’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Replace it with drop 1, or use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >      |
+libacton        > 1108 |             final                       = concat [ conAttrs env (tcname p) | (_,p) <- tail ps, hasWitness env (tCon c) p ]
+libacton        >      |                                                                                       ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Types.hs:2236:59: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >      |
+libacton        > 2236 |                                              let Elem v = head es
+libacton        >      |                                                           ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Types.hs:2250:62: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >      |
+libacton        > 2250 |                                              let Assoc k v = head as
+libacton        >      |                                                              ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Types.hs:2280:78: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘tail’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Replace it with drop 1, or use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >      |
+libacton        > 2280 |                                                  p1 = foldl (flip posRow) p (tail ts)
+libacton        >      |                                                                              ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Types.hs:2281:73: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >      |
+libacton        > 2281 |                                              return (TTuple NoLoc p0 k, head ts, TTuple NoLoc p1 k)
+libacton        >      |                                                                         ^^^^
+libacton        > [34 of 39] Compiling Acton.CPS
+libacton        > [35 of 39] Compiling Acton.BuildSpec
+libacton        > [36 of 39] Compiling Acton.Boxing
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Boxing.hs:134:38: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘tail’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Replace it with drop 1, or use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 134 | unboxableTypes                     = tail numericTypes
+libacton        >     |                                      ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Boxing.hs:449:19: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 449 |         where t = head ts
+libacton        >     |                   ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Boxing.hs:451:73: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 451 |                                     = return ([], Box (last ts) (unbox (head ts) x))
+libacton        >     |                                                                         ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Boxing.hs:455:39: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 455 |         where t                     = head ts
+libacton        >     |                                       ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Boxing.hs:460:39: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 460 |         where t                     = head ts
+libacton        >     |                                       ^^^^
+libacton        > 
+libacton        > [37 of 39] Compiling Acton.CodeGen
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Boxing.hs:465:19: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 465 |         where t = head ts
+libacton        >     |                   ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/CodeGen.hs:564:144: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Prelude, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 564 |         super                       = if null as then text "NULL" else parens (gen env qnSuperClass) <> text "&" <> methodtable' env (tcname $ head as)
+libacton        >     |                                                                                                                                                ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/CodeGen.hs:1586:46: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        > [38 of 39] Compiling Acton.Compile
+libacton        >     (imported from Prelude, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >      |
+libacton        > 1586 | genStr env s                        = text $ head $ sval s
+libacton        >      |                                              ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Compile.hs:643:47: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 643 |   maybeRoot <- findProjectDir (takeDirectory (head srcFiles))
+libacton        >     |                                               ^^^^
+libacton        > 
+libacton        > /__w/acton/acton/compiler/lib/src/Acton/Compile.hs:647:27: warning: [GHC-63394] [-Wx-partial]
+libacton        >     In the use of ‘head’
+libacton        >     (imported from Utils, but defined in GHC.List):
+libacton        >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+libacton        >     |
+libacton        > 647 |   pathsRoot <- findPaths (head srcFiles) opts'
+libacton        >     |                           ^^^^
+libacton        > [39 of 39] Compiling Acton.Testing
+libacton        > Preprocessing executable 'kinds-bench' for libacton-0.27.0..
+libacton        > Building executable 'kinds-bench' for libacton-0.27.0..
+libacton        > [1 of 1] Compiling Main
+libacton        > [2 of 2] Linking .stack-work/dist/x86_64-linux-tinfo6-libc6-pre232/ghc-9.8.4/build/kinds-bench/kinds-bench
+libacton        > Preprocessing executable 'compiler-bench' for libacton-0.27.0..
+libacton        > Building executable 'compiler-bench' for libacton-0.27.0..
+libacton        > [1 of 1] Compiling Main
+libacton        > [2 of 2] Linking .stack-work/dist/x86_64-linux-tinfo6-libc6-pre232/ghc-9.8.4/build/compiler-bench/compiler-bench
+libacton        > Preprocessing executable 'types-bench' for libacton-0.27.0..
+libacton        > Building executable 'types-bench' for libacton-0.27.0..
+libacton        > [1 of 1] Compiling Main
+libacton        > [2 of 2] Linking .stack-work/dist/x86_64-linux-tinfo6-libc6-pre232/ghc-9.8.4/build/types-bench/types-bench
+libacton        > copy/register
+libacton        > Installing library in /__w/acton/acton/compiler/.stack-work/install/x86_64-linux-tinfo6-libc6-pre232/1c08c95748c6fec5e3f34c1ecd1572c9dea65d07a99f2d02d28dd4c39a0eaecc/9.8.4/lib/x86_64-linux-ghc-9.8.4/libacton-0.27.0-4gzvMF3GCNyLx0IxRPyeMQ
+libacton        > Installing executable kinds-bench in /__w/acton/acton/compiler/.stack-work/install/x86_64-linux-tinfo6-libc6-pre232/1c08c95748c6fec5e3f34c1ecd1572c9dea65d07a99f2d02d28dd4c39a0eaecc/9.8.4/bin
+libacton        > Installing executable compiler-bench in /__w/acton/acton/compiler/.stack-work/install/x86_64-linux-tinfo6-libc6-pre232/1c08c95748c6fec5e3f34c1ecd1572c9dea65d07a99f2d02d28dd4c39a0eaecc/9.8.4/bin
+libacton        > Installing executable types-bench in /__w/acton/acton/compiler/.stack-work/install/x86_64-linux-tinfo6-libc6-pre232/1c08c95748c6fec5e3f34c1ecd1572c9dea65d07a99f2d02d28dd4c39a0eaecc/9.8.4/bin
+libacton        > Registering library for libacton-0.27.0..
+acton           > configure (exe)
+lsp-server-acton> configure (exe)
+lsp-server-acton> Configuring lsp-server-acton-0.27.0.20260605.13.0...
+acton           > Configuring acton-0.27.0.20260605.13.0...
+acton           > build (exe) with ghc-9.8.4
+lsp-server-acton> build (exe) with ghc-9.8.4
+acton           > Preprocessing executable 'acton' for acton-0.27.0.20260605.13.0..
+acton           > Building executable 'acton' for acton-0.27.0.20260605.13.0..
+lsp-server-acton> Preprocessing executable 'lsp-server-acton' for lsp-server-acton-0.27.0.20260605.13.0..
+lsp-server-acton> Building executable 'lsp-server-acton' for lsp-server-acton-0.27.0.20260605.13.0..
+lsp-server-acton> [1 of 2] Compiling Main
+acton           > [ 1 of 11] Compiling FileUtil
+acton           > [ 2 of 11] Compiling Paths_acton
+acton           > [ 3 of 11] Compiling PkgCommands
+lsp-server-acton> [2 of 2] Compiling Paths_lsp_server_acton
+lsp-server-acton> [3 of 3] Linking .stack-work/dist/x86_64-linux-tinfo6-libc6-pre232/ghc-9.8.4/build/lsp-server-acton/lsp-server-acton
+lsp-server-acton> 
+lsp-server-acton> <no location info>: error:
+lsp-server-acton>     Warning: Couldn't figure out linker information!
+lsp-server-acton>              Make sure you're using GNU ld, GNU gold or the built in OS X linker, etc.
+acton           > [ 4 of 11] Compiling Repl
+lsp-server-acton> copy/register
+lsp-server-acton> Installing executable lsp-server-acton in /__w/acton/acton/compiler/.stack-work/install/x86_64-linux-tinfo6-libc6-pre232/1c08c95748c6fec5e3f34c1ecd1572c9dea65d07a99f2d02d28dd4c39a0eaecc/9.8.4/bin
+acton           > [ 5 of 11] Compiling TerminalProgress
+acton           > 
+acton           > [ 6 of 11] Compiling TerminalSize
+acton           > /__w/acton/acton/compiler/acton/TestRunner.hs:1102:28: warning: [GHC-63394] [-Wx-partial]
+acton           > [ 7 of 11] Compiling TestFormat
+acton           >     In the use of ‘head’
+acton           > [ 8 of 11] Compiling TestUI
+acton           >     (imported from Prelude, but defined in GHC.List):
+acton           > [ 9 of 11] Compiling TestRunner
+acton           >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+acton           > [10 of 11] Compiling ZigProgress
+acton           >      |
+acton           > [11 of 11] Compiling Main
+acton           > 1102 |           Nothing -> Just (head xs)
+acton           >      |                            ^^^^
+acton           > 
+acton           > /__w/acton/acton/compiler/acton/Main.hs:148:70: warning: [GHC-63394] [-Wx-partial]
+acton           >     In the use of ‘head’
+acton           >     (imported from Utils, but defined in GHC.List):
+acton           >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+acton           >     |
+acton           > 148 |           C.CompileOpt nms gopts opts         -> runFile gopts opts (head nms)
+acton           >     |                                                                      ^^^^
+acton           > 
+acton           > /__w/acton/acton/compiler/acton/Main.hs:2791:35: warning: [GHC-63394] [-Wx-partial]
+acton           >     In the use of ‘head’
+acton           >     (imported from Utils, but defined in GHC.List):
+acton           >     "This is a partial function, it throws an error on empty lists. Use pattern matching or Data.List.uncons instead. Consider refactoring to use Data.List.NonEmpty."
+acton           >      |
+acton           > 2791 |         let baseName   = binName (head binTasks)
+acton           >      |                                   ^^^^
+acton           > [12 of 12] Linking .stack-work/dist/x86_64-linux-tinfo6-libc6-pre232/ghc-9.8.4/build/acton/acton
+acton           > 
+acton           > <no location info>: error:
+acton           >     Warning: Couldn't figure out linker information!
+acton           >              Make sure you're using GNU ld, GNU gold or the built in OS X linker, etc.
+acton           > copy/register
+acton           > Installing executable acton in /__w/acton/acton/compiler/.stack-work/install/x86_64-linux-tinfo6-libc6-pre232/1c08c95748c6fec5e3f34c1ecd1572c9dea65d07a99f2d02d28dd4c39a0eaecc/9.8.4/bin
+Completed 4 action(s).
+cd compiler && CC="/__w/acton/acton/compiler/tools/zig-cc.sh" CXX="/__w/acton/acton/compiler/tools/zig-cxx.sh" CFLAGS= CPPFLAGS= LDFLAGS= ACTON_REAL_LD="/__w/acton/acton/compiler/tools/zig-cc.sh" stack --with-gcc="/__w/acton/acton/compiler/tools/zig-cc.sh" --local-bin-path=../dist/bin install acton lsp-server-acton  --ghc-options='-j4 '
+Copying from
+/__w/acton/acton/compiler/.stack-work/install/x86_64-linux-tinfo6-libc6-pre232/1c08c95748c6fec5e3f34c1ecd1572c9dea65d07a99f2d02d28dd4c39a0eaecc/9.8.4/bin/acton
+to /__w/acton/acton/dist/bin/acton.
+Copying from
+/__w/acton/acton/compiler/.stack-work/install/x86_64-linux-tinfo6-libc6-pre232/1c08c95748c6fec5e3f34c1ecd1572c9dea65d07a99f2d02d28dd4c39a0eaecc/9.8.4/bin/lsp-server-acton
+to /__w/acton/acton/dist/bin/lsp-server-acton.
+Copied executables to /__w/acton/acton/dist/bin/:
+* acton
+* lsp-server-acton
+
+Warning: Installation path /__w/acton/acton/dist/bin not found on the PATH environment variable.
+# Keep actonc as a symlink for compatibility
+ln -sf acton dist/bin/actonc
+mkdir -p "dist/base" "dist/base/.build" "dist/base/out"
+ln -sf acton dist/bin/actonc
+rm -rf "dist/base/src" "dist/base/out/types/std"
+cp -a base/__root.zig base/Build.act base/acton.zig base/build.zig base/build.zig.zon base/builtin base/rts base/src dist/base/
+cd dist/base && ../bin/acton build --skip-build && rm -rf .build
+Building project in /__w/acton/acton/dist/base
+Resolving dependencies (fetching if missing)...
+   __builtin__      Wrote .tydb                                                           0.022 s
+   __builtin__      Type check done                                                       0.250 s
+   file             Parse done                                                            0.039 s
+   time             Parse done                                                            0.066 s
+   argparse         Parse done                                                            0.076 s
+   file             Wrote .tydb                                                           0.006 s
+   file             Type check done                                                       0.060 s
+   term             Parse done                                                            0.094 s
+   term             Type check done                                                       0.076 s
+   term             Compilation done                                                      0.006 s
+   diff             Parse done                                                            0.094 s
+   term             Wrote .tydb                                                           0.020 s
+   time             Wrote .tydb                                                           0.008 s
+   time             Type check done                                                       0.148 s
+   argparse         Type check done                                                       0.173 s
+   time             Compilation done                                                      0.034 s
+   argparse         Wrote .tydb                                                           0.039 s
+   file             Compilation done                                                      0.206 s
+   json             Parse done                                                            0.075 s
+   acton.rts        Parse done                                                            0.083 s
+   argparse         Compilation done                                                      0.069 s
+   json             Type check done                                                       0.008 s
+   acton.rts        Type check done                                                       0.013 s
+   json             Compilation done                                                      0.012 s
+   acton.rts        Wrote .tydb                                                           0.007 s
+   json             Wrote .tydb                                                           0.025 s
+   net              Parse done                                                            0.046 s
+   acton.rts        Compilation done                                                      0.043 s
+   logging          Parse done                                                            0.226 s
+   diff             Type check done                                                       0.226 s
+   diff             Compilation done                                                      0.048 s
+   diff             Wrote .tydb                                                           0.062 s
+   logging          Type check done                                                       0.071 s
+   net              Type check done                                                       0.128 s
+   logging          Wrote .tydb                                                           0.030 s
+   http             Parse done                                                            0.121 s
+   net              Wrote .tydb                                                           0.050 s
+   logging          Compilation done                                                      0.061 s
+   buildy           Parse done                                                            0.081 s
+   re               Parse done                                                            0.101 s
+   re               Type check done                                                       0.026 s
+   re               Compilation done                                                      0.008 s
+   re               Wrote .tydb                                                           0.054 s
+   net              Compilation done                                                      0.214 s
+   uri              Parse done                                                            0.132 s
+   buildy           Type check done                                                       0.130 s
+   http             Type check done                                                       0.260 s
+   buildy           Wrote .tydb                                                           0.055 s
+   buildy           Compilation done                                                      0.059 s
+   uri              Type check done                                                       0.090 s
+   testing          Parse done                                                            0.528 s
+   http             Wrote .tydb                                                           0.072 s
+   uri              Compilation done                                                      0.032 s
+   fs               Parse done                                                            0.108 s
+   uri              Wrote .tydb                                                           0.089 s
+   process          Parse done                                                            0.098 s
+   fs               Type check done                                                       0.117 s
+   random           Parse done                                                            0.180 s
+   fs               Compilation done                                                      0.015 s
+   process          Type check done                                                       0.070 s
+   fs               Wrote .tydb                                                           0.025 s
+   random           Type check done                                                       0.052 s
+   process          Wrote .tydb                                                           0.044 s
+   qcheck           Parse done                                                            0.062 s
+   random           Compilation done                                                      0.007 s
+   xml              Parse done                                                            0.045 s
+   random           Wrote .tydb                                                           0.020 s
+   qcheck           Type check done                                                       0.038 s
+   xml              Type check done                                                       0.029 s
+   crypto.hash.md5  Parse done                                                            0.012 s
+   math             Parse done                                                            0.052 s
+   qcheck           Wrote .tydb                                                           0.014 s
+   xml              Wrote .tydb                                                           0.007 s
+   crypto.hash.md5  Type check done                                                       0.009 s
+   math             Type check done                                                       0.010 s
+   hash.wyhash      Parse done                                                            0.010 s
+   math             Wrote .tydb                                                           0.007 s
+   qcheck           Compilation done                                                      0.011 s
+   snappy           Parse done                                                            0.008 s
+   crypto.hash.md5  Wrote .tydb                                                           0.013 s
+   hash.wyhash      Type check done                                                       0.007 s
+   base64           Parse done                                                            0.009 s
+   snappy           Type check done                                                       0.002 s
+   base64           Type check done                                                       0.003 s
+   hash.wyhash      Wrote .tydb                                                           0.006 s
+   base64           Wrote .tydb                                                           0.003 s
+   snappy           Wrote .tydb                                                           0.005 s
+   xml              Compilation done                                                      0.032 s
+   crypto.hash.md5  Compilation done                                                      0.003 s
+   math             Compilation done                                                      0.002 s
+   process          Compilation done                                                      0.133 s
+   hash.wyhash      Compilation done                                                      0.002 s
+   snappy           Compilation done                                                      0.001 s
+   base64           Compilation done                                                      0.000 s
+   http             Compilation done                                                      0.536 s
+   __builtin__      Compilation done                                                      1.588 s
+   testing          Type check done                                                       1.761 s
+   testing          Wrote .tydb                                                           0.020 s
+   testing          Compilation done                                                      0.420 s
+  Skipping final build step
+mkdir -p "dist/std" "dist/std/.build" "dist/std/out"
+rm -rf "dist/std/src" "dist/std/out/types"
+cp -a std/Build.act std/build.zig std/build.zig.zon std/src dist/std/
+cd dist/std && ../bin/acton build --skip-build && rm -rf .build
+Building project in /__w/acton/acton/dist/std
+Resolving dependencies (fetching if missing)...
+   std.json             Parse done                                                            0.006 s
+   std.json             Wrote .tydb                                                           0.006 s
+   std.json             Type check done                                                       0.034 s
+   std.json             Compilation done                                                      0.012 s
+   std.term             Parse done                                                            0.085 s
+   std.argparse         Parse done                                                            0.091 s
+   std.term             Type check done                                                       0.011 s
+   std.diff             Parse done                                                            0.055 s
+   std.term             Wrote .tydb                                                           0.008 s
+   std.term             Compilation done                                                      0.006 s
+   std.http             Parse done                                                            0.107 s
+   std.uri              Parse done                                                            0.029 s
+   std.uri              Type check done                                                       0.049 s
+   std.uri              Compilation done                                                      0.027 s
+   std.uri              Wrote .tydb                                                           0.029 s
+   std.random           Parse done                                                            0.020 s
+   std.argparse         Type check done                                                       0.151 s
+   std.random           Type check done                                                       0.023 s
+   std.random           Compilation done                                                      0.007 s
+   std.argparse         Wrote .tydb                                                           0.027 s
+   std.re               Parse done                                                            0.041 s
+   std.qcheck           Parse done                                                            0.037 s
+   std.re               Type check done                                                       0.022 s
+   std.argparse         Compilation done                                                      0.066 s
+   std.random           Wrote .tydb                                                           0.066 s
+   std.re               Wrote .tydb                                                           0.008 s
+   std.re               Compilation done                                                      0.010 s
+   std.xml              Parse done                                                            0.012 s
+   std.qcheck           Type check done                                                       0.024 s
+   std.http             Type check done                                                       0.209 s
+   std.diff             Type check done                                                       0.224 s
+   std.qcheck           Wrote .tydb                                                           0.008 s
+   std.crypto.hash.md5  Parse done                                                            0.006 s
+   std.qcheck           Compilation done                                                      0.009 s
+   std.hash.wyhash      Parse done                                                            0.006 s
+   std.crypto.hash.md5  Type check done                                                       0.005 s
+   std.math             Parse done                                                            0.014 s
+   std.crypto.hash.md5  Wrote .tydb                                                           0.005 s
+   std.crypto.hash.md5  Compilation done                                                      0.004 s
+   std.diff             Wrote .tydb                                                           0.032 s
+   std.http             Wrote .tydb                                                           0.038 s
+   std.hash.wyhash      Type check done                                                       0.017 s
+   std.snappy           Parse done                                                            0.016 s
+   std.hash.wyhash      Wrote .tydb                                                           0.007 s
+   std.hash.wyhash      Compilation done                                                      0.002 s
+   std.base64           Parse done                                                            0.002 s
+   std.snappy           Type check done                                                       0.001 s
+   std.math             Type check done                                                       0.017 s
+   std.xml              Type check done                                                       0.045 s
+   std.snappy           Compilation done                                                      0.000 s
+   std.math             Wrote .tydb                                                           0.008 s
+   std.math             Compilation done                                                      0.002 s
+   std.xml              Wrote .tydb                                                           0.008 s
+   std.snappy           Wrote .tydb                                                           0.006 s
+   std.xml              Compilation done                                                      0.008 s
+   std.base64           Type check done                                                       0.009 s
+   std.base64           Compilation done                                                      0.000 s
+   std.base64           Wrote .tydb                                                           0.003 s
+   std.diff             Compilation done                                                      0.055 s
+   std.http             Compilation done                                                      0.370 s
+  Skipping final build step
+make dist/deps/mbedtls dist/deps/libargp dist/deps/libbsdnt dist/deps/libgc dist/deps/libnetstring dist/deps/pcre2 dist/deps/libprotobuf_c dist/deps/tlsuv dist/deps/libutf8proc dist/deps/libuuid dist/deps/libuv dist/deps/libxml2 dist/deps/libyyjson dist/deps/libsnappy_c
+make[3]: Entering directory '/__w/acton/acton'
+make[3]: 'dist/deps/mbedtls' is up to date.
+make[3]: 'dist/deps/libargp' is up to date.
+make[3]: 'dist/deps/libbsdnt' is up to date.
+make[3]: 'dist/deps/libgc' is up to date.
+make[3]: 'dist/deps/libnetstring' is up to date.
+make[3]: 'dist/deps/pcre2' is up to date.
+make[3]: 'dist/deps/libprotobuf_c' is up to date.
+make[3]: 'dist/deps/tlsuv' is up to date.
+make[3]: 'dist/deps/libutf8proc' is up to date.
+make[3]: 'dist/deps/libuuid' is up to date.
+make[3]: 'dist/deps/libuv' is up to date.
+make[3]: 'dist/deps/libxml2' is up to date.
+make[3]: 'dist/deps/libyyjson' is up to date.
+make[3]: 'dist/deps/libsnappy_c' is up to date.
+make[3]: Leaving directory '/__w/acton/acton'
+make[2]: Leaving directory '/__w/acton/acton'
+make[1]: Leaving directory '/__w/acton/acton'
+   debian/rules override_dh_auto_test
+make[1]: Entering directory '/__w/acton/acton'
+Skipping tests
+make[1]: Leaving directory '/__w/acton/acton'
+   create-stamp debian/debhelper-build-stamp
+   dh_prep
+	rm -f -- debian/acton.substvars
+	rm -fr -- debian/.debhelper/generated/acton/ debian/acton/ debian/tmp/
+   dh_auto_install
+	install -d /__w/acton/acton/debian/acton
+	make -j4 install DESTDIR=/__w/acton/acton/debian/acton AM_UPDATE_INFO_DIR=no "INSTALL=install --strip-program=true"
+make[1]: Entering directory '/__w/acton/acton'
+mkdir -p "/__w/acton/acton/debian/acton/usr/bin" "/__w/acton/acton/debian/acton/usr/lib/acton"
+cp -a dist/. "/__w/acton/acton/debian/acton/usr/lib/acton/"
+cd "/__w/acton/acton/debian/acton/usr/bin" && ln -s ../lib/acton/bin/acton
+cd "/__w/acton/acton/debian/acton/usr/bin" && ln -s ../lib/acton/bin/acton actonc
+cd "/__w/acton/acton/debian/acton/usr/bin" && ln -s ../lib/acton/bin/actondb
+cd "/__w/acton/acton/debian/acton/usr/bin" && ln -s ../lib/acton/bin/runacton
+cd "/__w/acton/acton/debian/acton/usr/bin" && ln -s ../lib/acton/bin/lsp-server-acton
+make[1]: Leaving directory '/__w/acton/acton'
+   dh_installdocs
+	install -d debian/acton/usr/share/doc/acton
+	install -d debian/.debhelper/generated/acton
+	install -p -m0644 debian/copyright debian/acton/usr/share/doc/acton/copyright
+   dh_installchangelogs
+	install -p -m0644 debian/changelog debian/acton/usr/share/doc/acton/changelog
+   dh_bash-completion
+dh_bash-completion: warning: file-list parsing failed, installing as proper snippet
+	install -d debian/acton/usr/share/bash-completion/completions
+	installing source as acton`)
+	install -p -m0644 debian/acton.bash-completion debian/acton/usr/share/bash-completion/completions/acton
+   dh_perl
+	(grep -a -s -v perl:Depends debian/acton.substvars; echo perl:Depends=perl:any) > debian/acton.substvars.new
+	mv debian/acton.substvars.new debian/acton.substvars
+   dh_link
+	rm -f debian/acton/usr/bin/acton
+	ln -s ../lib/acton/bin/acton debian/acton/usr/bin/acton
+	rm -f debian/acton/usr/bin/runacton
+	ln -s ../lib/acton/bin/runacton debian/acton/usr/bin/runacton
+	rm -f debian/acton/usr/bin/actonc
+	ln -s ../lib/acton/bin/acton debian/acton/usr/bin/actonc
+	rm -f debian/acton/usr/bin/lsp-server-acton
+	ln -s ../lib/acton/bin/lsp-server-acton debian/acton/usr/bin/lsp-server-acton
+	rm -f debian/acton/usr/bin/actondb
+	ln -s ../lib/acton/bin/actondb debian/acton/usr/bin/actondb
+	rm -f debian/acton/usr/lib/acton/bin/actonc
+	ln -s acton debian/acton/usr/lib/acton/bin/actonc
+	rm -f debian/acton/usr/lib/acton/backend/deps
+	ln -s ../deps debian/acton/usr/lib/acton/backend/deps
+   dh_strip_nondeterminism
+	Using 1631563568 as canonical time
+	Normalizing debian/acton/usr/lib/acton/deps/pcre2/testdata/grepinputC.gz using File::StripNondeterminism::handlers::gzip
+   dh_compress
+	cd debian/acton
+	chmod a-x usr/share/doc/acton/changelog
+	gzip -9nf usr/share/doc/acton/changelog
+	cd '/__w/acton/acton'
+   dh_fixperms
+	find debian/acton ! -type l -a -true -a -true -print0 2>/dev/null | xargs -0r chmod go=rX,u+rw,a-s
+	find debian/acton/usr/share/doc -type f -a -true -a ! -regex 'debian/acton/usr/share/doc/[^/]*/examples/.*' -print0 2>/dev/null | xargs -0r chmod 0644
+	find debian/acton/usr/share/doc -type d -a -true -a -true -print0 2>/dev/null | xargs -0r chmod 0755
+	find debian/acton -type f \( -name '*.so.*' -o -name '*.so' -o -name '*.la' -o -name '*.a' -o -name '*.js' -o -name '*.css' -o -name '*.scss' -o -name '*.sass' -o -name '*.jpeg' -o -name '*.jpg' -o -name '*.png' -o -name '*.gif' -o -name '*.cmxs' -o -name '*.node' \) -a -true -a -true -print0 2>/dev/null | xargs -0r chmod 0644
+	find debian/acton/usr/bin -type f -a -true -a -true -print0 2>/dev/null | xargs -0r chmod a+x
+	find debian/acton/usr/lib -type f -name '*.ali' -a -true -a -true -print0 2>/dev/null | xargs -0r chmod uga-w
+   dh_missing
+   debian/rules override_dh_dwz
+make[1]: Entering directory '/__w/acton/acton'
+Skipping dwz
+make[1]: Leaving directory '/__w/acton/acton'
+   debian/rules override_dh_strip
+make[1]: Entering directory '/__w/acton/acton'
+Skipping strip
+make[1]: Leaving directory '/__w/acton/acton'
+   dh_makeshlibs -a
+	rm -f debian/acton/DEBIAN/shlibs
+   dh_shlibdeps -a
+	install -d debian/acton/DEBIAN
+	dpkg-shlibdeps -Tdebian/acton.substvars debian/acton/usr/lib/acton/bin/actondb debian/acton/usr/lib/acton/bin/lsp-server-acton debian/acton/usr/lib/acton/bin/acton
+   dh_installdeb
+   dh_gencontrol
+	echo misc:Depends= >> debian/acton.substvars
+	echo misc:Pre-Depends= >> debian/acton.substvars
+	dpkg-gencontrol -pacton -ldebian/changelog -Tdebian/acton.substvars -Pdebian/acton
+dpkg-gencontrol: warning: package acton: substitution variable ${perl:Depends} unused, but is defined
+	chmod 0644 -- debian/acton/DEBIAN/control
+   dh_md5sums
+	cd debian/acton >/dev/null && xargs -r0 md5sum | perl -pe 'if (s@^\\@@) { s/\\\\/\\/g; }' > DEBIAN/md5sums
+	chmod 0644 -- debian/acton/DEBIAN/md5sums
+   debian/rules override_dh_builddeb
+make[1]: Entering directory '/__w/acton/acton'
+dh_builddeb -- -Zxz --uniform-compression
+	dpkg-deb --root-owner-group -Zxz --uniform-compression --build debian/acton ..
+dpkg-deb: building package 'acton' in '../acton_0.27.0.20260605.13.0_amd64.deb'.
+make[1]: Leaving directory '/__w/acton/acton'
+ dpkg-genbuildinfo --build=binary
+ dpkg-genchanges --build=binary >../acton_0.27.0.20260605.13.0_amd64.changes
+dpkg-genchanges: info: binary-only upload (no source code included)
+ dpkg-source -i --after-build .
+dpkg-buildpackage: info: binary-only upload (no source included)
+Now running lintian acton_0.27.0.20260605.13.0_amd64.changes ...
+warning: running with root privileges is not recommended!
+E: acton changes: bad-distribution-in-changes-file tip
+E: acton: description-starts-with-package-name
+E: acton: embedded-library usr/lib/acton/bin/acton: gmp
+E: acton: embedded-library usr/lib/acton/bin/acton: zlib
+E: acton: embedded-library usr/lib/acton/bin/lsp-server-acton: gmp
+E: acton: embedded-library usr/lib/acton/bin/lsp-server-acton: zlib
+E: acton: embedded-library usr/lib/acton/zig/zig: zlib
+E: acton: python3-script-but-no-python3-dep usr/lib/acton/deps/libxml2/build_glob.py #!python3
+E: acton: python3-script-but-no-python3-dep usr/lib/acton/deps/libxml2/check-relaxng-test-suite.py #!python3
+E: acton: python3-script-but-no-python3-dep usr/lib/acton/deps/libxml2/check-relaxng-test-suite2.py #!python3
+E: acton: python3-script-but-no-python3-dep usr/lib/acton/deps/libxml2/check-xinclude-test-suite.py #!python3
+E: acton: python3-script-but-no-python3-dep usr/lib/acton/deps/libxml2/check-xml-test-suite.py #!python3
+E: acton: python3-script-but-no-python3-dep usr/lib/acton/deps/libxml2/check-xsddata-test-suite.py #!python3
+E: acton: python3-script-but-no-python3-dep usr/lib/acton/deps/libxml2/genChRanges.py #!python3
+E: acton: python3-script-but-no-python3-dep usr/lib/acton/deps/libxml2/genUnicode.py #!python3
+E: acton: python3-script-but-no-python3-dep usr/lib/acton/deps/libxml2/gentest.py #!python3
+E: acton: python3-script-but-no-python3-dep usr/lib/acton/deps/libxml2/xstc/fixup-tests.py #!python3
+E: acton: python3-script-but-no-python3-dep usr/lib/acton/deps/libxml2/xstc/xstc.py #!python3
+E: acton: python3-script-but-no-python3-dep usr/lib/acton/deps/mbedtls/scripts/abi_check.py #!python3
+E: acton: python3-script-but-no-python3-dep usr/lib/acton/deps/mbedtls/scripts/assemble_changelog.py #!python3
+E: acton: python3-script-but-no-python3-dep usr/lib/acton/deps/mbedtls/scripts/code_size_compare.py #!python3
+E: acton: python3-script-but-no-python3-dep usr/lib/acton/deps/mbedtls/scripts/code_style.py #!python3
+E: acton: python3-script-but-no-python3-dep usr/lib/acton/deps/mbedtls/scripts/config.py #!python3
+E: acton: python3-script-but-no-python3-dep usr/lib/acton/deps/mbedtls/scripts/ecp_comb_table.py #!python3
+E: acton: python3-script-but-no-python3-dep usr/lib/acton/deps/mbedtls/scripts/generate_driver_wrappers.py #!python3
+E: acton: python3-script-but-no-python3-dep usr/lib/acton/deps/mbedtls/scripts/generate_psa_constants.py #!python3
+E: acton: python3-script-but-no-python3-dep usr/lib/acton/deps/mbedtls/scripts/generate_ssl_debug_helpers.py #!python3
+E: acton: python3-script-but-no-python3-dep usr/lib/acton/deps/mbedtls/scripts/min_requirements.py #!python3
+E: acton: python3-script-but-no-python3-dep usr/lib/acton/deps/mbedtls/tests/scripts/analyze_outcomes.py #!python3
+E: acton: python3-script-but-no-python3-dep usr/lib/acton/deps/mbedtls/tests/scripts/check_files.py #!python3
+E: acton: python3-script-but-no-python3-dep usr/lib/acton/deps/mbedtls/tests/scripts/check_names.py #!python3
+E: acton: python3-script-but-no-python3-dep usr/lib/acton/deps/mbedtls/tests/scripts/check_test_cases.py #!python3
+E: acton: python3-script-but-no-python3-dep usr/lib/acton/deps/mbedtls/tests/scripts/depends.py #!python3
+E: acton: python3-script-but-no-python3-dep usr/lib/acton/deps/mbedtls/tests/scripts/generate_bignum_tests.py #!python3
+E: acton: python3-script-but-no-python3-dep usr/lib/acton/deps/mbedtls/tests/scripts/generate_ecp_tests.py #!python3
+E: acton: python3-script-but-no-python3-dep usr/lib/acton/deps/mbedtls/tests/scripts/generate_pkcs7_tests.py #!python3
+E: acton: python3-script-but-no-python3-dep usr/lib/acton/deps/mbedtls/tests/scripts/generate_psa_tests.py #!python3
+E: acton: python3-script-but-no-python3-dep usr/lib/acton/deps/mbedtls/tests/scripts/generate_test_code.py #!python3
+E: acton: python3-script-but-no-python3-dep usr/lib/acton/deps/mbedtls/tests/scripts/generate_tls13_compat_tests.py #!python3
+E: acton: python3-script-but-no-python3-dep usr/lib/acton/deps/mbedtls/tests/scripts/list_internal_identifiers.py #!python3
+E: acton: python3-script-but-no-python3-dep usr/lib/acton/deps/mbedtls/tests/scripts/psa_collect_statuses.py #!python3
+E: acton: python3-script-but-no-python3-dep usr/lib/acton/deps/mbedtls/tests/scripts/set_psa_test_dependencies.py #!python3
+E: acton: python3-script-but-no-python3-dep usr/lib/acton/deps/mbedtls/tests/scripts/test_config_script.py #!python3
+E: acton: python3-script-but-no-python3-dep usr/lib/acton/deps/mbedtls/tests/scripts/test_generate_test_code.py #!python3
+E: acton: python3-script-but-no-python3-dep usr/lib/acton/deps/mbedtls/tests/scripts/test_psa_compliance.py #!python3
+E: acton: python3-script-but-no-python3-dep usr/lib/acton/deps/mbedtls/tests/scripts/test_psa_constant_names.py #!python3
+E: acton: python3-script-but-no-python3-dep usr/lib/acton/deps/mbedtls/tests/scripts/translate_ciphers.py #!python3
+E: acton: statically-linked-binary usr/lib/acton/zig/zig
+E: acton: unstripped-binary-or-object usr/lib/acton/bin/actondb
+W: acton: broken-bz2 usr/lib/acton/deps/pcre2/testdata/grepnot.bz2
+W: acton: executable-not-elf-or-script usr/lib/acton/deps/libprotobuf_c/protobuf-c/protobuf-c.h
+W: acton: executable-not-elf-or-script usr/lib/acton/deps/libprotobuf_c/protoc-c/c_message.cc
+W: acton: executable-not-elf-or-script usr/lib/acton/deps/libprotobuf_c/t/generated-code2/test-generated-code2.c
+W: acton: executable-not-elf-or-script usr/lib/acton/deps/libxml2/vms/build_libxml.com
+W: acton: executable-not-elf-or-script usr/lib/acton/deps/libxml2/vms/config.vms
+W: acton: executable-not-elf-or-script usr/lib/acton/deps/libxml2/xstc/xstc-to-python.xsl
+W: acton: executable-not-elf-or-script usr/lib/acton/deps/pcre2/PrepareRelease
+W: acton: executable-not-elf-or-script usr/lib/acton/deps/tlsuv/sample/engine_test.c
+W: acton: executable-not-elf-or-script usr/lib/acton/deps/tlsuv/sample/sample-cf.c
+W: acton: executable-not-elf-or-script usr/lib/acton/deps/tlsuv/sample/sample.c
+W: acton: hardening-no-pie usr/lib/acton/bin/acton
+W: acton: hardening-no-pie usr/lib/acton/bin/actondb
+W: acton: hardening-no-pie usr/lib/acton/bin/lsp-server-acton
+W: acton: incorrect-path-for-interpreter usr/lib/acton/deps/mbedtls/scripts/config.pl (#!/usr/bin/env perl != /usr/bin/perl)
+W: acton: incorrect-path-for-interpreter usr/lib/acton/deps/mbedtls/scripts/generate_errors.pl (#!/usr/bin/env perl != /usr/bin/perl)
+W: acton: incorrect-path-for-interpreter usr/lib/acton/deps/mbedtls/scripts/generate_features.pl (#!/usr/bin/env perl != /usr/bin/perl)
+W: acton: incorrect-path-for-interpreter usr/lib/acton/deps/mbedtls/scripts/generate_query_config.pl (#!/usr/bin/env perl != /usr/bin/perl)
+W: acton: incorrect-path-for-interpreter usr/lib/acton/deps/mbedtls/scripts/generate_visualc_files.pl (#!/usr/bin/env perl != /usr/bin/perl)
+W: acton: incorrect-path-for-interpreter usr/lib/acton/deps/mbedtls/scripts/massif_max.pl (#!/usr/bin/env perl != /usr/bin/perl)
+W: acton: incorrect-path-for-interpreter usr/lib/acton/deps/mbedtls/tests/data_files/print_c.pl (#!/usr/bin/env perl != /usr/bin/perl)
+W: acton: incorrect-path-for-interpreter usr/lib/acton/deps/mbedtls/tests/scripts/check-doxy-blocks.pl (#!/usr/bin/env perl != /usr/bin/perl)
+W: acton: incorrect-path-for-interpreter usr/lib/acton/deps/mbedtls/tests/scripts/gen_ctr_drbg.pl (#!/usr/bin/env perl != /usr/bin/perl)
+W: acton: incorrect-path-for-interpreter usr/lib/acton/deps/mbedtls/tests/scripts/gen_gcm_decrypt.pl (#!/usr/bin/env perl != /usr/bin/perl)
+W: acton: incorrect-path-for-interpreter usr/lib/acton/deps/mbedtls/tests/scripts/gen_gcm_encrypt.pl (#!/usr/bin/env perl != /usr/bin/perl)
+W: acton: incorrect-path-for-interpreter usr/lib/acton/deps/mbedtls/tests/scripts/gen_pkcs1_v21_sign_verify.pl (#!/usr/bin/env perl != /usr/bin/perl)
+W: acton: incorrect-path-for-interpreter usr/lib/acton/deps/mbedtls/tests/scripts/recursion.pl (#!/usr/bin/env perl != /usr/bin/perl)
+W: acton: incorrect-path-for-interpreter usr/lib/acton/deps/mbedtls/tests/scripts/run-test-suites.pl (#!/usr/bin/env perl != /usr/bin/perl)
+W: acton: incorrect-path-for-interpreter usr/lib/acton/deps/mbedtls/tests/scripts/tcp_client.pl (#!/usr/bin/env perl != /usr/bin/perl)
+W: acton: incorrect-path-for-interpreter usr/lib/acton/deps/mbedtls/tests/scripts/test-ref-configs.pl (#!/usr/bin/env perl != /usr/bin/perl)
+W: acton: national-encoding usr/lib/acton/deps/libxml2/result/XInclude/tstencoding.xml
+W: acton: national-encoding usr/lib/acton/deps/libxml2/result/cdata-2-byte-UTF-8.xml.sax
+W: acton: national-encoding usr/lib/acton/deps/libxml2/result/cdata-2-byte-UTF-8.xml.sax2
+W: acton: national-encoding usr/lib/acton/deps/libxml2/result/cdata-3-byte-UTF-8.xml.sax
+W: acton: national-encoding usr/lib/acton/deps/libxml2/result/cdata-3-byte-UTF-8.xml.sax2
+W: acton: national-encoding usr/lib/acton/deps/libxml2/result/cdata-4-byte-UTF-8.xml.sax
+W: acton: national-encoding usr/lib/acton/deps/libxml2/result/cdata-4-byte-UTF-8.xml.sax2
+W: acton: national-encoding usr/lib/acton/deps/libxml2/result/comment4.xml
+W: acton: national-encoding usr/lib/acton/deps/libxml2/result/ebcdic_566012.xml
+W: acton: national-encoding usr/lib/acton/deps/libxml2/result/icu_parse_test.xml
+W: acton: national-encoding usr/lib/acton/deps/libxml2/result/isolat1
+W: acton: national-encoding usr/lib/acton/deps/libxml2/result/isolat2
+W: acton: national-encoding usr/lib/acton/deps/libxml2/result/isolat3
+W: acton: national-encoding usr/lib/acton/deps/libxml2/result/noent/cdata-2-byte-UTF-8.xml.sax2
+W: acton: national-encoding usr/lib/acton/deps/libxml2/result/noent/cdata-3-byte-UTF-8.xml.sax2
+W: acton: national-encoding usr/lib/acton/deps/libxml2/result/noent/cdata-4-byte-UTF-8.xml.sax2
+W: acton: national-encoding usr/lib/acton/deps/libxml2/result/noent/comment4.xml
+W: acton: national-encoding usr/lib/acton/deps/libxml2/result/noent/ebcdic_566012.xml
+W: acton: national-encoding usr/lib/acton/deps/libxml2/result/noent/icu_parse_test.xml
+W: acton: national-encoding usr/lib/acton/deps/libxml2/result/noent/isolat1
+W: acton: national-encoding usr/lib/acton/deps/libxml2/result/noent/isolat2
+W: acton: national-encoding usr/lib/acton/deps/libxml2/result/noent/isolat3
+W: acton: national-encoding usr/lib/acton/deps/libxml2/result/noent/slashdot16.xml
+W: acton: national-encoding usr/lib/acton/deps/libxml2/result/noent/text-4-byte-UTF-16-BE-offset.xml.sax2
+W: acton: national-encoding usr/lib/acton/deps/libxml2/result/noent/text-4-byte-UTF-16-BE.xml.sax2
+W: acton: national-encoding usr/lib/acton/deps/libxml2/result/noent/text-4-byte-UTF-16-LE-offset.xml.sax2
+W: acton: national-encoding usr/lib/acton/deps/libxml2/result/noent/text-4-byte-UTF-16-LE.xml.sax2
+W: acton: national-encoding usr/lib/acton/deps/libxml2/result/noent/utf16bom.xml
+W: acton: national-encoding usr/lib/acton/deps/libxml2/result/slashdot16.xml
+W: acton: national-encoding usr/lib/acton/deps/libxml2/result/text-4-byte-UTF-16-BE-offset.xml.sax
+W: acton: national-encoding usr/lib/acton/deps/libxml2/result/text-4-byte-UTF-16-BE-offset.xml.sax2
+W: acton: national-encoding usr/lib/acton/deps/libxml2/result/text-4-byte-UTF-16-BE.xml.sax
+W: acton: national-encoding usr/lib/acton/deps/libxml2/result/text-4-byte-UTF-16-BE.xml.sax2
+W: acton: national-encoding usr/lib/acton/deps/libxml2/result/text-4-byte-UTF-16-LE-offset.xml.sax
+W: acton: national-encoding usr/lib/acton/deps/libxml2/result/text-4-byte-UTF-16-LE-offset.xml.sax2
+W: acton: national-encoding usr/lib/acton/deps/libxml2/result/text-4-byte-UTF-16-LE.xml.sax
+W: acton: national-encoding usr/lib/acton/deps/libxml2/result/text-4-byte-UTF-16-LE.xml.sax2
+W: acton: national-encoding usr/lib/acton/deps/libxml2/result/utf16bom.xml
+W: acton: national-encoding usr/lib/acton/deps/libxml2/result/valid/REC-xml-19980210.xml
+W: acton: national-encoding usr/lib/acton/deps/libxml2/result/valid/index.xml
+W: acton: national-encoding usr/lib/acton/deps/mbedtls/tests/data_files/base64/def_b64_ff.bin
+W: acton: national-encoding usr/lib/acton/deps/pcre2/testdata/testinput10
+W: acton: national-encoding usr/lib/acton/deps/pcre2/testdata/testinput11
+W: acton: national-encoding usr/lib/acton/deps/pcre2/testdata/testinput12
+W: acton: national-encoding usr/lib/acton/deps/pcre2/testdata/testinput3
+W: acton: national-encoding usr/lib/acton/deps/pcre2/testdata/testinputEBC
+W: acton: national-encoding usr/lib/acton/deps/pcre2/testdata/testoutput10
+W: acton: national-encoding usr/lib/acton/deps/pcre2/testdata/testoutput11-16
+W: acton: national-encoding usr/lib/acton/deps/pcre2/testdata/testoutput11-32
+W: acton: national-encoding usr/lib/acton/deps/pcre2/testdata/testoutput12-16
+W: acton: national-encoding usr/lib/acton/deps/pcre2/testdata/testoutput12-32
+W: acton: national-encoding usr/lib/acton/deps/pcre2/testdata/testoutput3
+W: acton: national-encoding usr/lib/acton/deps/pcre2/testdata/testoutput3A
+W: acton: national-encoding usr/lib/acton/deps/pcre2/testdata/testoutput3B
+W: acton: national-encoding usr/lib/acton/deps/pcre2/testdata/testoutputEBC
+W: acton: national-encoding usr/lib/acton/deps/pcre2/testdata/wintestinput3
+W: acton: national-encoding usr/lib/acton/deps/pcre2/testdata/wintestoutput3
+W: acton: national-encoding usr/lib/acton/zig/lib/libc/include/any-windows-any/ddk/ide.h
+W: acton: national-encoding usr/lib/acton/zig/lib/libc/include/generic-netbsd/netinet/dccp.h
+W: acton: national-encoding usr/lib/acton/zig/lib/libc/mingw/math/x86/log10l.S
+W: acton: national-encoding usr/lib/acton/zig/lib/libc/mingw/math/x86/log1pl.S
+W: acton: national-encoding usr/lib/acton/zig/lib/libc/mingw/math/x86/log2l.S
+W: acton: no-manual-page usr/bin/acton
+W: acton: no-manual-page usr/bin/actonc
+W: acton: no-manual-page usr/bin/actondb
+W: acton: no-manual-page usr/bin/lsp-server-acton
+W: acton: no-manual-page usr/bin/runacton
+W: acton: package-contains-vcs-control-file usr/lib/acton/deps/libargp/.gitignore
+W: acton: package-contains-vcs-control-file usr/lib/acton/deps/libbsdnt/.gitignore
+W: acton: package-contains-vcs-control-file usr/lib/acton/deps/libgc/.gitattributes
+W: acton: package-contains-vcs-control-file usr/lib/acton/deps/libgc/.gitignore
+W: acton: package-contains-vcs-control-file usr/lib/acton/deps/libprotobuf_c/.gitignore
+W: acton: package-contains-vcs-control-file usr/lib/acton/deps/libprotobuf_c/build-cmake/.gitignore
+W: acton: package-contains-vcs-control-file usr/lib/acton/deps/libprotobuf_c/m4/.gitignore
+W: acton: package-contains-vcs-control-file usr/lib/acton/deps/libprotobuf_c/t/issue204/.gitignore
+W: acton: package-contains-vcs-control-file usr/lib/acton/deps/libprotobuf_c/t/issue220/.gitignore
+W: acton: package-contains-vcs-control-file usr/lib/acton/deps/libprotobuf_c/t/issue251/.gitignore
+W: acton: package-contains-vcs-control-file usr/lib/acton/deps/libprotobuf_c/t/issue330/.gitignore
+W: acton: package-contains-vcs-control-file usr/lib/acton/deps/libprotobuf_c/t/issue375/.gitignore
+W: acton: package-contains-vcs-control-file usr/lib/acton/deps/libprotobuf_c/t/issue440/.gitignore
+W: acton: package-contains-vcs-control-file usr/lib/acton/deps/libsnappy_c/.gitignore
+W: acton: package-contains-vcs-control-file usr/lib/acton/deps/libsnappy_c/.gitmodules
+W: acton: package-contains-vcs-control-file usr/lib/acton/deps/libutf8proc/.gitignore
+W: acton: package-contains-vcs-control-file usr/lib/acton/deps/libxml2/.gitattributes
+W: acton: package-contains-vcs-control-file usr/lib/acton/deps/libxml2/.gitignore
+W: acton: package-contains-vcs-control-file usr/lib/acton/deps/libxml2/xstc/.gitignore
+W: acton: package-contains-vcs-control-file usr/lib/acton/deps/mbedtls/.gitattributes
+W: acton: package-contains-vcs-control-file usr/lib/acton/deps/mbedtls/.gitignore
+W: acton: package-contains-vcs-control-file usr/lib/acton/deps/mbedtls/3rdparty/.gitignore
+W: acton: package-contains-vcs-control-file usr/lib/acton/deps/mbedtls/3rdparty/everest/.gitignore
+W: acton: package-contains-vcs-control-file usr/lib/acton/deps/mbedtls/docs/.gitignore
+W: acton: package-contains-vcs-control-file usr/lib/acton/deps/mbedtls/include/.gitignore
+W: acton: package-contains-vcs-control-file usr/lib/acton/deps/mbedtls/library/.gitignore
+W: acton: package-contains-vcs-control-file usr/lib/acton/deps/mbedtls/programs/.gitignore
+W: acton: package-contains-vcs-control-file usr/lib/acton/deps/mbedtls/programs/fuzz/.gitignore
+W: acton: package-contains-vcs-control-file usr/lib/acton/deps/mbedtls/programs/test/cmake_package/.gitignore
+W: acton: package-contains-vcs-control-file usr/lib/acton/deps/mbedtls/programs/test/cmake_package_install/.gitignore
+W: acton: package-contains-vcs-control-file usr/lib/acton/deps/mbedtls/programs/test/cmake_subproject/.gitignore
+W: acton: package-contains-vcs-control-file usr/lib/acton/deps/mbedtls/tests/.gitignore
+W: acton: package-contains-vcs-control-file usr/lib/acton/deps/mbedtls/tests/data_files/.gitignore
+W: acton: package-contains-vcs-control-file usr/lib/acton/deps/mbedtls/visualc/VS2013/.gitignore
+W: acton: package-contains-vcs-control-file usr/lib/acton/deps/pcre2/.gitignore
+W: acton: package-contains-vcs-control-file usr/lib/acton/deps/tlsuv/.gitattributes
+W: acton: package-contains-vcs-control-file usr/lib/acton/deps/tlsuv/.gitignore
+W: acton: package-contains-vcs-control-file usr/lib/acton/deps/tlsuv/.gitmodules
+W: acton: package-contains-vcs-control-file usr/lib/acton/deps/tlsuv/deps/uv_link_t/.gitignore
+W: acton: privacy-breach-generic usr/lib/acton/deps/libxml2/result/HTML/doc3.htm [<img src="http://ads.gamesquad.net/addclick.exe/adcycle.cgi?group=52&amp;media=1&amp;id=1" width="468" height="60" border="0" alt="gsn ros ad">] (http://ads.gamesquad.net/addclick.exe/adcycle.cgi?group=52&amp;media=1&amp;id=1)
+W: acton: privacy-breach-generic usr/lib/acton/deps/libxml2/result/HTML/doc3.htm [<img width="468" height="60" border="0" alt="advertisement" src="http://ads.adflight.com/ad_static.asp?pid=2097&amp;sid=1881&amp;asid=7708">] (http://ads.adflight.com/ad_static.asp?pid=2097&amp;sid=1881&amp;asid=7708)
+W: acton: privacy-breach-generic usr/lib/acton/deps/libxml2/result/HTML/noscript.html [<link rel="stylesheet" href="http://foo.com">] (http://foo.com)
+W: acton: privacy-breach-generic usr/lib/acton/deps/libxml2/result/HTML/wired.html [<img src="http://barnesandnoble.bfast.com/booklink/serve?sourceid=383471&amp;is_search=y" border="0" align="top">] (http://barnesandnoble.bfast.com/booklink/serve?sourceid=383471&amp;is_search=y)
+W: acton: privacy-breach-generic usr/lib/acton/deps/libxml2/result/HTML/wired.html [<img src="http://static.wired.com/advertising/blipverts/hp_colorinkjet/hp_970c_120x60_6.gif" border="1" height="60" width="120" alt="true to the original">] (http://static.wired.com/advertising/blipverts/hp_colorinkjet/hp_970c_120x60_6.gif)
+W: acton: privacy-breach-generic usr/lib/acton/deps/libxml2/result/HTML/wired.html [<img src="http://static.wired.com/news/images/button_ads_news10.gif" width="143" height="56" border="0" alt="" usemap="#buttons" hspace="0" vspace="0">] (http://static.wired.com/news/images/button_ads_news10.gif)
+W: acton: privacy-breach-generic usr/lib/acton/deps/libxml2/result/HTML/wired.html [<img src="http://static.wired.com/news/images/navstrip_off.gif" height="17" width="126" usemap="#navstrip.map" border="0" alt="">] (http://static.wired.com/news/images/navstrip_off.gif)
+W: acton: privacy-breach-generic usr/lib/acton/deps/libxml2/result/HTML/wired.html [<img src="http://static.wired.com/news/images/news_ffffff.gif" width="103" height="30" border="0">] (http://static.wired.com/news/images/news_ffffff.gif)
+W: acton: privacy-breach-generic usr/lib/acton/deps/libxml2/result/HTML/wired.html [<img src="http://static.wired.com/news/images/pix155.gif" height="10" width="155" alt="">] (http://static.wired.com/news/images/pix155.gif)
+W: acton: privacy-breach-generic usr/lib/acton/deps/libxml2/result/HTML/wired.html [<img src="http://static.wired.com/news/images/spacer.gif" height="5" width="447" alt="">] (http://static.wired.com/news/images/spacer.gif)
+W: acton: privacy-breach-generic usr/lib/acton/deps/libxml2/result/HTML/wired.html [<img src="http://static.wired.com/news/images/wired_000000.gif" width="153" height="30" border="0">] (http://static.wired.com/news/images/wired_000000.gif)
+W: acton: privacy-breach-generic usr/lib/acton/deps/libxml2/result/HTML/wired.html [<img src="http://static.wired.com/news/images/wiredcover.gif" width="91" height="109" border="0" alt="wired magazine">] (http://static.wired.com/news/images/wiredcover.gif)
+W: acton: privacy-breach-generic usr/lib/acton/deps/libxml2/result/HTML/wired.html [<img src="http://www.wired.com/special/modx/news.gif" height="1" width="1" alt="">] (http://www.wired.com/special/modx/news.gif)
+W: acton: privacy-breach-generic usr/lib/acton/deps/libxml2/result/HTML/wired.html [<input type="image" src="http://static.wired.com/advertising/blipverts/allapartments/990625jpa_ssthome.gif" width="375" height="60" border="0" value="search" hspace="0" alt="search over 6,000,000 apts with springstreet">] (http://static.wired.com/advertising/blipverts/allapartments/990625jpa_ssthome.gif)
+W: acton: script-not-executable usr/lib/acton/deps/libutf8proc/data/data_generator.rb
+W: acton: script-not-executable usr/lib/acton/deps/libxml2/.gitlab-ci/setup_mingw.sh
+W: acton: script-not-executable usr/lib/acton/deps/libxml2/.gitlab-ci/test.sh
+W: acton: script-not-executable usr/lib/acton/deps/libxml2/.gitlab-ci/test_cmake.sh
+W: acton: unusual-interpreter usr/lib/acton/deps/pcre2/maint/GenerateCommon.py #!/usr/bin/python
+W: acton: unusual-interpreter usr/lib/acton/deps/pcre2/maint/GenerateTest26.py #!/usr/bin/python
+W: acton: unusual-interpreter usr/lib/acton/deps/pcre2/maint/GenerateUcd.py #!/usr/bin/python
+W: acton: unusual-interpreter usr/lib/acton/deps/pcre2/maint/GenerateUcpHeader.py #!/usr/bin/python
+W: acton: unusual-interpreter usr/lib/acton/deps/pcre2/maint/GenerateUcpTables.py #!/usr/bin/python
+W: acton: windows-devel-file-in-package usr/lib/acton/deps/mbedtls/scripts/data_files/vs2013-sln-template.sln
+W: acton: windows-devel-file-in-package usr/lib/acton/deps/mbedtls/scripts/data_files/vs6-app-template.dsp
+W: acton: windows-devel-file-in-package usr/lib/acton/deps/mbedtls/scripts/data_files/vs6-main-template.dsp
+W: acton: windows-devel-file-in-package usr/lib/acton/deps/mbedtls/scripts/data_files/vs6-workspace-template.dsw
+W: acton: windows-devel-file-in-package usr/lib/acton/deps/mbedtls/visualc/VS2013/mbedTLS.sln
+Finished running lintian.
