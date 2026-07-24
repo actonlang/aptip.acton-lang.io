@@ -1,0 +1,172 @@
+ dpkg-buildpackage -us -uc -ui -i -nc -b
+dpkg-buildpackage: info: source package acton
+dpkg-buildpackage: info: source version 0.29.1.20260724.4.56
+dpkg-buildpackage: info: source distribution tip
+dpkg-buildpackage: info: source changed by Kristian Larsson <kristian@spritelink.net>
+ dpkg-source -i --before-build .
+dpkg-buildpackage: info: host architecture amd64
+ debian/rules binary
+dh binary --parallel --with bash-completion
+   dh_update_autotools_config
+	cp -an --reflink=auto bdeps/ncurses/zig-pkg/N-V-__8AAMZOFwGYoq9VA4jW9LOy4Ud9bufE7x2ep88NNqFr/config.guess debian/.debhelper/bucket/files/759e0ed9f97c01f94156d39c9f98881acc972498f8a204a898a020b25afe9b90.tmp
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+	mv debian/.debhelper/bucket/files/759e0ed9f97c01f94156d39c9f98881acc972498f8a204a898a020b25afe9b90.tmp debian/.debhelper/bucket/files/759e0ed9f97c01f94156d39c9f98881acc972498f8a204a898a020b25afe9b90
+	cp -f /usr/share/misc/config.guess ./bdeps/ncurses/zig-pkg/N-V-__8AAMZOFwGYoq9VA4jW9LOy4Ud9bufE7x2ep88NNqFr/config.guess
+	cp -an --reflink=auto bdeps/ncurses/zig-pkg/N-V-__8AAMZOFwGYoq9VA4jW9LOy4Ud9bufE7x2ep88NNqFr/config.sub debian/.debhelper/bucket/files/33d7f1b7145bdfcd512a8d0b14b35fc9196fd340efd2f0e074075f89bdf5dd55.tmp
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+	mv debian/.debhelper/bucket/files/33d7f1b7145bdfcd512a8d0b14b35fc9196fd340efd2f0e074075f89bdf5dd55.tmp debian/.debhelper/bucket/files/33d7f1b7145bdfcd512a8d0b14b35fc9196fd340efd2f0e074075f89bdf5dd55
+	cp -f /usr/share/misc/config.sub ./bdeps/ncurses/zig-pkg/N-V-__8AAMZOFwGYoq9VA4jW9LOy4Ud9bufE7x2ep88NNqFr/config.sub
+   dh_autoreconf
+   dh_auto_configure
+   debian/rules override_dh_auto_build
+make[1]: Entering directory '/home/runner/work/acton/acton'
+/usr/bin/make package-dist-validate
+make[2]: Entering directory '/home/runner/work/acton/acton'
+make[2]: Leaving directory '/home/runner/work/acton/acton'
+Using prebuilt dist/ payload
+make[1]: Leaving directory '/home/runner/work/acton/acton'
+   debian/rules override_dh_auto_test
+make[1]: Entering directory '/home/runner/work/acton/acton'
+Skipping tests
+make[1]: Leaving directory '/home/runner/work/acton/acton'
+   create-stamp debian/debhelper-build-stamp
+   dh_prep
+	rm -f -- debian/acton.substvars
+	rm -fr -- debian/.debhelper/generated/acton/ debian/acton/ debian/tmp/
+   debian/rules override_dh_auto_install
+make[1]: Entering directory '/home/runner/work/acton/acton'
+/usr/bin/make install DESTDIR=/home/runner/work/acton/acton/debian/acton
+make[2]: Entering directory '/home/runner/work/acton/acton'
+mkdir -p "/home/runner/work/acton/acton/debian/acton/usr/bin" "/home/runner/work/acton/acton/debian/acton/usr/lib/acton"
+cp -a dist/. "/home/runner/work/acton/acton/debian/acton/usr/lib/acton/"
+cd "/home/runner/work/acton/acton/debian/acton/usr/bin" && ln -s ../lib/acton/bin/acton
+cd "/home/runner/work/acton/acton/debian/acton/usr/bin" && ln -s ../lib/acton/bin/acton actonc
+cd "/home/runner/work/acton/acton/debian/acton/usr/bin" && ln -s ../lib/acton/bin/actondb
+cd "/home/runner/work/acton/acton/debian/acton/usr/bin" && ln -s ../lib/acton/bin/runacton
+cd "/home/runner/work/acton/acton/debian/acton/usr/bin" && ln -s ../lib/acton/bin/lsp-server-acton
+make[2]: Leaving directory '/home/runner/work/acton/acton'
+make[1]: Leaving directory '/home/runner/work/acton/acton'
+   dh_installdocs
+	install -m0755 -d debian/acton/usr/share/doc/acton
+	install -p -m0644 debian/copyright debian/acton/usr/share/doc/acton/copyright
+   dh_installchangelogs
+	install -m0755 -d debian/acton/usr/share/doc/acton
+	install -p -m0644 debian/.debhelper/generated/acton/dh_installchangelogs.dch.trimmed debian/acton/usr/share/doc/acton/changelog
+   dh_bash-completion
+dh_bash-completion: warning: file-list parsing failed, installing as proper snippet
+	install -m0755 -d debian/acton/usr/share/bash-completion/completions
+	installing source as acton`)
+	install -p -m0644 debian/acton.bash-completion debian/acton/usr/share/bash-completion/completions/acton
+   dh_perl
+   dh_link
+	rm -f debian/acton/usr/lib/acton/backend/deps
+	ln -s ../deps debian/acton/usr/lib/acton/backend/deps
+	rm -f debian/acton/usr/lib/acton/bin/actonc
+	ln -s acton debian/acton/usr/lib/acton/bin/actonc
+	rm -f debian/acton/usr/bin/acton
+	ln -s ../lib/acton/bin/acton debian/acton/usr/bin/acton
+	rm -f debian/acton/usr/bin/runacton
+	ln -s ../lib/acton/bin/runacton debian/acton/usr/bin/runacton
+	rm -f debian/acton/usr/bin/lsp-server-acton
+	ln -s ../lib/acton/bin/lsp-server-acton debian/acton/usr/bin/lsp-server-acton
+	rm -f debian/acton/usr/bin/actondb
+	ln -s ../lib/acton/bin/actondb debian/acton/usr/bin/actondb
+	rm -f debian/acton/usr/bin/actonc
+	ln -s ../lib/acton/bin/acton debian/acton/usr/bin/actonc
+   dh_strip_nondeterminism
+   dh_compress
+	cd debian/acton
+	chmod a-x usr/share/doc/acton/changelog
+	gzip -9nf usr/share/doc/acton/changelog
+	cd '/home/runner/work/acton/acton'
+   dh_fixperms
+	find debian/acton ! -type l -a -true -a -true -print0 2>/dev/null | xargs -0r chmod go=rX,u+rw,a-s
+	find debian/acton/usr/share/doc -type f -a -true -a ! -regex 'debian/acton/usr/share/doc/[^/]*/examples/.*' -print0 2>/dev/null | xargs -0r chmod 0644
+	find debian/acton/usr/share/doc -type d -a -true -a -true -print0 2>/dev/null | xargs -0r chmod 0755
+	find debian/acton -type f \( -name '*.so.*' -o -name '*.so' -o -name '*.la' -o -name '*.a' -o -name '*.js' -o -name '*.css' -o -name '*.scss' -o -name '*.sass' -o -name '*.jpeg' -o -name '*.jpg' -o -name '*.png' -o -name '*.gif' -o -name '*.cmxs' -o -name '*.node' \) -a -true -a -true -print0 2>/dev/null | xargs -0r chmod 0644
+	find debian/acton/usr/bin -type f -a -true -a -true -print0 2>/dev/null | xargs -0r chmod a+x
+	find debian/acton/usr/lib -type f -name '*.ali' -a -true -a -true -print0 2>/dev/null | xargs -0r chmod uga-w
+   dh_missing
+   debian/rules override_dh_dwz
+make[1]: Entering directory '/home/runner/work/acton/acton'
+Skipping dwz
+make[1]: Leaving directory '/home/runner/work/acton/acton'
+   debian/rules override_dh_strip
+make[1]: Entering directory '/home/runner/work/acton/acton'
+Skipping strip
+make[1]: Leaving directory '/home/runner/work/acton/acton'
+   dh_makeshlibs -a
+	rm -f debian/acton/DEBIAN/shlibs
+   debian/rules override_dh_shlibdeps
+make[1]: Entering directory '/home/runner/work/acton/acton'
+Skipping dh_shlibdeps; make ldd verifies the hermetic dist/ libc floor
+make[1]: Leaving directory '/home/runner/work/acton/acton'
+   dh_installdeb
+	install -m0755 -d debian/acton/DEBIAN
+   dh_gencontrol
+	install -m0755 -d debian/acton/DEBIAN
+	echo misc:Depends= >> debian/acton.substvars
+	echo misc:Pre-Depends= >> debian/acton.substvars
+	dpkg-gencontrol -pacton -ldebian/changelog -Tdebian/acton.substvars -Pdebian/acton
+	chmod 0644 -- debian/acton/DEBIAN/control
+   dh_md5sums
+	install -m0755 -d debian/acton/DEBIAN
+	cd debian/acton >/dev/null && xargs -r0 md5sum | perl -pe 'if (s@^\\@@) { s/\\\\/\\/g; }' > DEBIAN/md5sums
+	chmod 0644 -- debian/acton/DEBIAN/md5sums
+   debian/rules override_dh_builddeb
+make[1]: Entering directory '/home/runner/work/acton/acton'
+dh_builddeb -- -Zxz --uniform-compression
+	dpkg-deb --root-owner-group -Zxz --uniform-compression --build debian/acton ..
+dpkg-deb: building package 'acton' in '../acton_0.29.1.20260724.4.56_amd64.deb'.
+make[1]: Leaving directory '/home/runner/work/acton/acton'
+ dpkg-genbuildinfo --build=binary -O../acton_0.29.1.20260724.4.56_amd64.buildinfo
+ dpkg-genchanges --build=binary -O../acton_0.29.1.20260724.4.56_amd64.changes
+dpkg-genchanges: info: binary-only upload (no source code included)
+ dpkg-source -i --after-build .
+dpkg-buildpackage: info: binary-only upload (no source included)
+Now running lintian acton_0.29.1.20260724.4.56_amd64.changes ...
+E: acton changes: bad-distribution-in-changes-file tip
+E: acton: description-starts-with-package-name
+E: acton: embedded-library gmp [usr/lib/acton/bin/acton]
+E: acton: embedded-library gmp [usr/lib/acton/bin/lsp-server-acton]
+E: acton: embedded-library zlib [usr/lib/acton/bin/acton]
+E: acton: embedded-library zlib [usr/lib/acton/bin/lsp-server-acton]
+E: acton: embedded-library zlib [usr/lib/acton/zig/zig]
+E: acton: statically-linked-binary [usr/lib/acton/zig/zig]
+E: acton: unstripped-binary-or-object [usr/lib/acton/bin/actondb]
+W: acton: hardening-no-pie [usr/lib/acton/bin/acton]
+W: acton: hardening-no-pie [usr/lib/acton/bin/actondb]
+W: acton: hardening-no-pie [usr/lib/acton/bin/lsp-server-acton]
+W: acton: national-encoding [usr/lib/acton/zig/lib/libc/include/any-windows-any/ddk/ide.h]
+W: acton: national-encoding [usr/lib/acton/zig/lib/libc/include/generic-netbsd/netinet/dccp.h]
+W: acton: national-encoding [usr/lib/acton/zig/lib/libc/mingw/math/x86/log10l.S]
+W: acton: national-encoding [usr/lib/acton/zig/lib/libc/mingw/math/x86/log1pl.S]
+W: acton: national-encoding [usr/lib/acton/zig/lib/libc/mingw/math/x86/log2l.S]
+W: acton: no-manual-page [usr/bin/acton]
+W: acton: no-manual-page [usr/bin/actonc]
+W: acton: no-manual-page [usr/bin/actondb]
+W: acton: no-manual-page [usr/bin/lsp-server-acton]
+W: acton: no-manual-page [usr/bin/runacton]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/libargp/.gitignore]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/libbsdnt/.gitignore]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/libgc/.gitattributes]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/libgc/.gitignore]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/libprotobuf_c/.gitignore]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/libprotobuf_c/m4/.gitignore]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/libsnappy_c/.gitignore]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/libsnappy_c/.gitmodules]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/libutf8proc/.gitignore]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/libxml2/.gitattributes]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/libxml2/.gitignore]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/mbedtls/.gitattributes]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/mbedtls/.gitignore]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/mbedtls/3rdparty/.gitignore]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/mbedtls/3rdparty/everest/.gitignore]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/mbedtls/include/.gitignore]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/mbedtls/library/.gitignore]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/pcre2/.gitignore]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/tlsuv/.gitattributes]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/tlsuv/.gitignore]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/tlsuv/.gitmodules]
+W: acton: package-contains-vcs-control-file [usr/lib/acton/deps/tlsuv/deps/uv_link_t/.gitignore]
+Finished running lintian.
