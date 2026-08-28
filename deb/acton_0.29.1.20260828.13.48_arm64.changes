@@ -1,0 +1,26 @@
+Format: 1.8
+Date: Mon, 13 Sep 2021 22:06:08 +0200
+Source: acton
+Binary: acton
+Built-For-Profiles: noudeb
+Architecture: arm64
+Version: 0.29.1.20260828.13.48
+Distribution: tip
+Urgency: medium
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Changed-By: Kristian Larsson <kristian@spritelink.net>
+Description:
+ acton      - Acton Programming Language
+Changes:
+ acton (0.29.1.20260828.13.48) tip; urgency=medium
+ .
+   * See CHANGELOG.md
+Checksums-Sha1:
+ f56f204c90db77a50f464397455d31b44fe2496a 7515 acton_0.29.1.20260828.13.48_arm64.buildinfo
+ bae2804a51aeed7f8c15473e7b5995953af5b1d1 81299356 acton_0.29.1.20260828.13.48_arm64.deb
+Checksums-Sha256:
+ 598a05bf3434242b2230a9dc4dd17ee57bce15f18e1104a1670731b3dd537aa0 7515 acton_0.29.1.20260828.13.48_arm64.buildinfo
+ c5771f5acb5bdd272ea87303eeb19aa4195b0d46f01f160e2edb0be26cfe68c6 81299356 acton_0.29.1.20260828.13.48_arm64.deb
+Files:
+ 4f17525541e97ae97ecddc4e660e9881 7515 devel optional acton_0.29.1.20260828.13.48_arm64.buildinfo
+ 25902ff5ddff1038fda848a4ffa6976a 81299356 devel optional acton_0.29.1.20260828.13.48_arm64.deb
