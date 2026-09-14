@@ -41,10 +41,13 @@ jobs:
           for CHANGES_FILE in $(ls deb/*.changes); do
             reprepro include tip "$CHANGES_FILE"
           done
+      - name: "Trim Apt repository to size budget"
+        run: bash prune.sh
       - name: "Create gh-pages branch from scratch"
         run: |
           git status
           git checkout --orphan gh-pages
+          git rm -r --cached .
           git add acton.gpg CNAME conf db dists pool README.md
           git status
           git commit -a -m "Create APT repo for tip releases"

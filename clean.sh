@@ -1,31 +1,25 @@
 #!/bin/bash
 
-# Set the number of commits to keep
-X=${1:-15}  # Default to keeping the last 5 commits if not specified
+set -euo pipefail
 
-# Get all commits with the "Add Acton tip" message, in chronological order
-all_commits=$(git log --grep="^Add Acton tip" --pretty=format:"%H")
+max_bytes=9000000000
 
-# Count the total number of matching commits
-total_commits=$(echo "$all_commits" | wc -l)
+repository_size() {
+    git ls-tree -r -l HEAD | awk '{total += $4} END {printf "%.0f\n", total}'
+}
 
-# Calculate the number of commits to remove
-commits_to_remove_count=$((total_commits - X))
+size=$(repository_size)
+while (( size > max_bytes )); do
+    # Rebasing changes descendant hashes, so read the history again each time.
+    commits=($(git log --grep="^Add Acton tip" --pretty=format:"%H"))
+    if (( ${#commits[@]} <= 1 )); then
+        echo "Cannot fit the newest release within $max_bytes bytes ($size bytes remain)." >&2
+        exit 1
+    fi
 
-# If there's nothing to remove, exit early
-if [ "$commits_to_remove_count" -le 0 ]; then
-    echo "No commits to remove."
-    exit 0
-fi
-
-# Get the commits to remove (the oldest ones)
-commits_to_remove=$(echo "$all_commits" | tail -n "$commits_to_remove_count")
-
-# Perform a non-interactive rebase to remove the commits
-for commit in $commits_to_remove; do
-    git rebase --onto "$commit^" "$commit"
+    oldest=${commits[${#commits[@]} - 1]}
+    git rebase --onto "$oldest^" "$oldest"
+    size=$(repository_size)
 done
 
-# Force push the changes (if required)
-# Uncomment the next line if you want to force push the changes after filtering
-# git push origin main --force
+echo "Source repository: $size / $max_bytes bytes."
