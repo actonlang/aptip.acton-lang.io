@@ -11,3 +11,10 @@ echo "deb [signed-by=/etc/apt/keyrings/acton.asc] http://aptip.acton-lang.io/ ti
 sudo apt-get update
 sudo apt-get install -qy acton
 ```
+
+The repository keeps the newest releases within a 9 GB budget.
+Daily cleanup limits the files retained on `main`.
+Each publication also checks the generated APT repository and removes the oldest
+versions, including both architectures, until the published files fit. Publication
+fails if the newest release alone cannot fit. Git history and the incoming `deb/`
+copies are not published.
