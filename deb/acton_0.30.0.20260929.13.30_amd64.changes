@@ -1,0 +1,26 @@
+Format: 1.8
+Date: Mon, 13 Sep 2021 22:06:08 +0200
+Source: acton
+Binary: acton
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 0.30.0.20260929.13.30
+Distribution: tip
+Urgency: medium
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Changed-By: Kristian Larsson <kristian@spritelink.net>
+Description:
+ acton      - Acton Programming Language
+Changes:
+ acton (0.30.0.20260929.13.30) tip; urgency=medium
+ .
+   * See CHANGELOG.md
+Checksums-Sha1:
+ 917c0d2a38ca010dd45d5ea07dd8ad4afed6ae0a 7555 acton_0.30.0.20260929.13.30_amd64.buildinfo
+ e9d4a487a5556b326b940ddb0e10503f98780838 83273428 acton_0.30.0.20260929.13.30_amd64.deb
+Checksums-Sha256:
+ 940da36a06378dfaf6a97f2671c6231fd9e03f9130a60bc843cb4106b9b96ce5 7555 acton_0.30.0.20260929.13.30_amd64.buildinfo
+ d55dd06a7ead714dc889f50fee8730fa2366cffe72318ea9653f9b8e02bc13da 83273428 acton_0.30.0.20260929.13.30_amd64.deb
+Files:
+ e2640a48aa2a9ec94252d65bae3f64fe 7555 devel optional acton_0.30.0.20260929.13.30_amd64.buildinfo
+ 778d98eba7f248b42e96ebc8f38f272f 83273428 devel optional acton_0.30.0.20260929.13.30_amd64.deb
