@@ -1,0 +1,972 @@
+Package: acton
+Version: 0.30.0.20261003.7.36
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 538335
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20261003.7.36_amd64.deb
+Size: 83317428
+SHA512: eb7a724fb0e9434165e1bd6533c338b8d8ed2036ad10379bb0cb904f3ca78644f7e26e64a8097fcacd276b610b81b4ac4e48d67ca6d63cbb1b87b7b97b1a4606
+SHA256: b95aa8fb652b6c78b8593eb41b233d181381375c920fc04d1f2ec29d86db1649
+SHA1: c1c47573fad4209075262849c36d53e02ba21c76
+MD5sum: 41274c6bd260c8054e266ff28ce50f92
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20261002.10.7
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 538335
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20261002.10.7_amd64.deb
+Size: 83316648
+SHA512: 7c317c4b3891c7f36670af8a897da3e9f46c603ff98601694b2a6cfe113bb75044d5e459eeed03ec61d1c5cd66ad58bddbf01f5a85c6079eecdbbc4ce1a2ed38
+SHA256: 6c5619af1822a6b77c8993501d1ab2b870fed0c323a9e1d59a0c2f7bba8c8e92
+SHA1: 1e47210f99e341e39670ef4b754750932b6de1b3
+MD5sum: b29ba831ca2bafcf9c6dd2061ed162e9
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20261001.18.56
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 538332
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20261001.18.56_amd64.deb
+Size: 83331012
+SHA512: 5267c30be464faa79f8fd8416a903c3471ce6bc7b2622add614906310a182bbe69da4d18e5ff741ad9fb75304e02b23f30f372b7212f78415c8819371dcda800
+SHA256: 9b3a30405455059ff6921afdeee821e98a479ec485771ce4eac6cd067591d1bc
+SHA1: 1e06d40050cffd49ef5ade5d9782e596d29bf834
+MD5sum: 856dd2bfe6446bce14b413b6043e5232
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20261001.16.38
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 538329
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20261001.16.38_amd64.deb
+Size: 83347484
+SHA512: f24418a5848e26c81874bb8c59e7def4f60c9a3114d403863601411c2d9b31000c56dd36be9c83d573c085d2243eeb432234911366ea30d6d90543aee6c627f6
+SHA256: 69b0901dc4614016915743ff4d5bc47d69e13c345400814a105746727ca5236c
+SHA1: 1d307a35f731348517fec9d4e1e8d60532968990
+MD5sum: fd18ca2524f46b03d15e235d8f1b5317
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20261001.12.27
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 538328
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20261001.12.27_amd64.deb
+Size: 83351212
+SHA512: 18b50be5020db2e4609aaafc1feaef3a8aa357f066ae05ce1949c3ad9ba410cf9c1cc80ef860de95066e715e78e985bb8b2d7e0e6eff90a514b0216c481be1ec
+SHA256: 20b5161fc7c92b330b01babe929c9af869a74855c5d7ddbf5ccdc0589cd5494a
+SHA1: 156aef31c3db6e4d12e9858658f085c31d516d5d
+MD5sum: 80f2e11b9f08037611d415930bc50038
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20261001.8.28
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 537839
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20261001.8.28_amd64.deb
+Size: 83276460
+SHA512: 131108eb9894e9c6db258a2dc89cbf23b93dfc1c0292a845b06a1076df6e678f22376f57c1915a59be49ef0334597feb1e9360f585db6544dcaa44f262414735
+SHA256: 752b5a7e72b47ee4aaa9229b45b32abba30a51c5c3683a4a489ec6034737fccf
+SHA1: 2449b5baac7956e52b9676b6146937797b57a472
+MD5sum: bd87ba5d7c3dd0b4168fba38d1d3a034
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20260930.15.56
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 537839
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20260930.15.56_amd64.deb
+Size: 83277940
+SHA512: 3074fcdd25b9b129a3e0ed6860f9f5c0c077b7c6020ee784c3afc431705d98b7828541913d5f6649af2823ce0611abeeda5bfb4f987ce903d79692f1e7e12e4b
+SHA256: 1644993d79efbae029806300ae0181d65b85360b8fa50fde9af90f25656e6c8d
+SHA1: 32462565c5756ae65167a765f0cba30d65abef5f
+MD5sum: 0ff6ae93a25a83e1e8ea45aea3200453
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20260930.12.25
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 537838
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20260930.12.25_amd64.deb
+Size: 83277332
+SHA512: 7b0eba790d37bdb76b7f386287f7f12b81fbbd5e6663562dea64921ce8c77fae153096e4d90baeac2ec05c993d5b62c089988784964143987e4c8cac0ed966e1
+SHA256: 5cf35304bca37406493e6d99ae5f46338ac84729f873169317b7cef3ec7e8f2c
+SHA1: 9544a2ed8782a5273ebb68cf3fd26956a0d5ea08
+MD5sum: 2771a64e467b4a5eb14c34d0d05ff6fc
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20260930.11.37
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 537829
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20260930.11.37_amd64.deb
+Size: 83272584
+SHA512: 8cf3acfd1c5988745211dfdb3b84938272b372175218d5ea5ae4bf49c2a29893e3f12dc7a10f0da985e2e021c2a0fc1721f4f821037baa10514f4cafa3598896
+SHA256: 1d50df65578377264856aec404efe220d24b3fa0a78862b449cbdad022e5e156
+SHA1: 0cb396abb29054b06167545920011a54d03df7d6
+MD5sum: a46f647ae124e5cfe0ed5d738ed91db7
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20260930.8.7
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 537820
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20260930.8.7_amd64.deb
+Size: 83286612
+SHA512: 3a54058df7ac1f6233ca087bc26c2d349344b17e4f5c428045d5af8674d914def53cd3943df30c85229679134eae9af4767824af8132ee8c768a2bc063c20160
+SHA256: 6716f01e2d6526fa0d16839a70a25dbdad97581cbcd795bc4328dd91c7880919
+SHA1: 1c6634f459cc67034f9751ebe171b7c26a561006
+MD5sum: f414eeeeac6cb74acd8b806c81d852ba
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20260929.21.35
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 537820
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20260929.21.35_amd64.deb
+Size: 83283728
+SHA512: ec083d83d998c43b5d1ca91b700a4370cc2936c7c5a30bfddec43874089c1fc486391f5ff627c90ef8bc0c46dcd7846fbd0aa96b583090910ac6049e5bc5c0bc
+SHA256: 7a885d75df8c31ff4a38e5ddd320df1629aea9b58514fb25ce50dbd9323e7d02
+SHA1: 4a68a855e60766bfc77db7b3bc9d7a15672e46dc
+MD5sum: baefb4db818d6f7a03c47c3a93056c42
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20260929.20.18
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 537818
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20260929.20.18_amd64.deb
+Size: 83289224
+SHA512: 5a4258e6874b7639e107ba4d321e4a98b4c1d04e211880abef0a9d25fa07aba299928e1beeb4147ed7ba644017b0c88adf776f9aeb9eac44ecd6e6efaf97bbe5
+SHA256: e9670775ef3c813003afa264308e0b4bd16720fde89e4eef501f447d3f65fa8d
+SHA1: 2f86287560afc7eb2bc1168fd764b88f9ed2daa6
+MD5sum: 6a10ff532cb677bca8034027fd090978
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20260929.13.30
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 537793
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20260929.13.30_amd64.deb
+Size: 83273428
+SHA512: 81263da22c56f0b57bcc843fb884c887e3c0247efa4d6b0c47fce436f8328f4deb56c59c3ed2bff5f35d1616f74cc4b9fba19cd0835493029a9e41028e0abfae
+SHA256: d55dd06a7ead714dc889f50fee8730fa2366cffe72318ea9653f9b8e02bc13da
+SHA1: e9d4a487a5556b326b940ddb0e10503f98780838
+MD5sum: 778d98eba7f248b42e96ebc8f38f272f
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20260929.12.4
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 537751
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20260929.12.4_amd64.deb
+Size: 83252560
+SHA512: fb6a8d5f0a8670c115e0f1e64e4b1efc4c2eb9699a1c5a3e18070d4788f7381585307ce201aabbdd88843edaf805a7778160305e8c1d2234989d7ef9a0e8d155
+SHA256: 271e891841d2d862a902b7929284194468329f416d4afd0f63bcd76f0116aa85
+SHA1: dfeae9472d8991b182bc28d4af7d1505d5bca6ef
+MD5sum: 57c048e28256b68824818a7b2932aa94
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20260929.6.36
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 537751
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20260929.6.36_amd64.deb
+Size: 83254788
+SHA512: 05cca2cbc07144ddcf55278f74bac9186663cb0d410c02803651bad8d8c3f140d40725a59f88677b6ac5f3e8234b2d5605604af03d65e96e9b6b4020a8311bc0
+SHA256: 128d000d1cc351afed1d26d9667278a1c87e1016681cab6d00a591ac6d54a178
+SHA1: f239950aefffcdea5193b9aaeabe9f2f6d907e85
+MD5sum: 0987cebdd0758edf87233930d5cf64d1
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20260928.13.9
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 536617
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20260928.13.9_amd64.deb
+Size: 83059228
+SHA512: f66b6e7e0151d8b62ae9eb8c2f8360c9c1159ffd80ecf282e48a24081d8a8d4b867cd07a88951672632e62c4d695e19a2aa1c714574e05e8997a09f77aaf9a97
+SHA256: b14c73bf00f78ce6481b7d459794e14de1f197e1f75415eb424aca271f091e53
+SHA1: 5e4db2152079c222aa0497f181f32b990370d715
+MD5sum: 7858c17851efc7c7507409e867fe6260
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20260928.12.0
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 536617
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20260928.12.0_amd64.deb
+Size: 83060552
+SHA512: 8cdfdeabf03b8e748a0c6d39a54d01820c27413f7c2f86419b24e6270c41c9c5e60ff947eed9bf6eea19969455126bd41ed95f55ea3b6fd9f1dc65177b065e19
+SHA256: 74fb538a57b2b9f12402c8641135aa9fcd1d61d4d2679c8981174b0d65a53ebb
+SHA1: 0bbc3a2fa1b6a4fc9a01ae170016184d539bf82b
+MD5sum: 9c0c5777b6a804b49a49c07b04180462
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20260928.5.49
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 536613
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20260928.5.49_amd64.deb
+Size: 83089468
+SHA512: b744d4fd1fe3519eb252596771d78e8de830e573a575fe821353d1b29e559e296d1853dadfb6c0e407195781e5c0cd489bdb74ef02337c3b78631b96f53a5035
+SHA256: f94c855c581bed13752cdab4101b557099537f9fb6cb80a1552342478f8cff60
+SHA1: 6911b449b807f49ad2b47b18a37a44386666f0be
+MD5sum: 0fc8320b9376720b1fab0122c821abbd
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20260927.21.28
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 536613
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20260927.21.28_amd64.deb
+Size: 83067464
+SHA512: 0a0534d1cbee751196bc83a2e9891941f5bce2588c53d573df7da14bfbd8579aa7185c5b710909de2f2ef527fa3821c062ec93835bc3a160203956f05a34f774
+SHA256: a8918ca7947a356871a2c0e474616bc827d669591a25dc9e907699eb806877b7
+SHA1: 02235000c092ee684d7ce29d61127e2b69f21171
+MD5sum: 10d88172a66b9cb1d48a721f3e780646
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20260927.19.27
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 536613
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20260927.19.27_amd64.deb
+Size: 83067576
+SHA512: d884ae768790cf7b6ff07c6185cceb699a29373adb071bcbde7b6469592d98c63f28380cba38b61d203ff9471882eb1c85bd148f62af988a557f3d544afb1954
+SHA256: dbeb7488ac7fbc171af82ae37d7e1a908c86a673b310e03da81e8e16157bd4e9
+SHA1: 37f8ce366c4dbe733a31cba19713c85258393a6d
+MD5sum: 72587f4a8fd72531e50f92915dc8267c
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20260927.13.51
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 536491
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20260927.13.51_amd64.deb
+Size: 83039076
+SHA512: fc60b74f9fdc89858a8367941e9d06b503137bdff58cff47d91194b880d1ab5079ce13cbef86bfd39ffb6eca08caf2f664a33de054451ba2d8ffa8849b0f4cae
+SHA256: f904509a31faf501eb88dd8050cece886123e50c8d2f4b1d69d965720861619c
+SHA1: 968cc6b337d3cd85f44e75a32bee8c82a94672d8
+MD5sum: db1a8c240f020b5a66a5d5a92b251c6c
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20260927.9.42
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 536454
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20260927.9.42_amd64.deb
+Size: 83040640
+SHA512: 3fbe09bbd617e03b2128767731c6b6c3f925f39e45206ba21c932af610428ebc50f801417f900fcd0865ddbe760177c70b01acd48ae1f9d92311a780c2cdae37
+SHA256: cda2c36c4dcf0d9f8249608fa41be49d8e419fbc261522a7b0bb6547e5fefead
+SHA1: 8cda7d4de1dbc618fa8047bf691818b68f0f16bd
+MD5sum: ed811ffa0ff75fe77e482be8ce31cf9c
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20260927.7.37
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 536455
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20260927.7.37_amd64.deb
+Size: 83040280
+SHA512: 6e7f75462173f704c3bcceeb756d9177dd972b34ddd9663c77abfbe14daeb873e1a09269f06ce158297946b46870ae97ba1311ba0281033e93ee52e3eeaa3b5e
+SHA256: 37fcd36187065068edec27d3a7772206a07bba8857042606ae7a344cd4626206
+SHA1: 295e24a90b13352122259bc6e6938b203fe8c170
+MD5sum: 755b9a6e1b13e7604938d148e3c7af3d
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20260926.22.2
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 536964
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20260926.22.2_amd64.deb
+Size: 83083844
+SHA512: 80a3933559da784b03229220c825500f0072b1e65bc6c5c8b1dd402052cd05452b80e6f8b397e68d51547c511b24df3cf6fa1dc8c2c30ce357723af644c2cd24
+SHA256: d3dacacc43fb89dd69e429b62ae9a44d0fe746987a0b10e2cc68050742087bd0
+SHA1: 2c996dee04d2b1715bf09f7825ad96e4f1250dee
+MD5sum: bbc1aecd707e2c37de0c048d6894ce8e
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20260926.19.47
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 536709
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20260926.19.47_amd64.deb
+Size: 83050380
+SHA512: a3f30ea53a212e40328e79c3c3e50e4d5f2cb6fe273391d9025daa8443085691ffd725c9028e879702c04ddf93b23ecb4453f2ceb675f914f4eff0195d110f2a
+SHA256: 429f6e8781e33e77a92012d3689f22045c91f423621fc23264ea52e0028c200d
+SHA1: 76e666f48ba6d31af498b4d4af786cdbe7ede325
+MD5sum: a7112dd39b8bf2e26abcad3208318456
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20260926.19.24
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 536709
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20260926.19.24_amd64.deb
+Size: 83052296
+SHA512: f31dab6b35a4c454017da03e23805ac17b8966010e7a45b90a4647b92dde3887c615275cdf8292fbfc74b2e2b1c3959631e4e9fbb9e78553d8bbbbe71dc5c13a
+SHA256: 473cfb1dd50b44314b8a0251e7ca0eb330eb4d7ce46abdd5094f64da57241a81
+SHA1: fc4554f45ed9cd85d432a6f87fd8685dab7ec05a
+MD5sum: 905824f9ca799eee11482377d9e7605b
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20260926.7.5
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 536707
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20260926.7.5_amd64.deb
+Size: 83059792
+SHA512: 3046b622f145e7bff828e5c8c02befa7f30a7267c34eb3d3766477b707985330a15671aa6844e45e6c998f7a584fba0f6c1f0bb7132ab2e38de1b93f612f0b0e
+SHA256: eb9ca967eb67867bc5ee46599207fc45330583a2f29261379b854bdc049bcb4d
+SHA1: 2a29eb36d414c876d56702f277b2cc5543b63a16
+MD5sum: d63bb62c3d27965b3f535cf561157203
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20260925.21.46
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 536707
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20260925.21.46_amd64.deb
+Size: 83061392
+SHA512: fcef80f4069361b420c65e2962fc82f994139c5d4bb86684cedc5ad409e44b28fb9b10600e99ea570ad53ca2dedf510980cef78fccd71b1a602370b72c8946b9
+SHA256: f66675cae91ebd242f87fcda4ca42ac7cfc139a5dbe8744882288280a484a43d
+SHA1: 2ab4ea733818e6f7a99ba9a584aa48576f85ee24
+MD5sum: 35b3aedd9154e2c200598b30233c47e1
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20260925.21.0
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 536707
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20260925.21.0_amd64.deb
+Size: 83063980
+SHA512: 76de1eb9418a81491c28e45d61a956025b8f900cddf6e1b086ad09ca3b18a7b1fabd7b89eaa261b664c2b62b968387ca73c77d273ce1b4013b1bca98444a4a41
+SHA256: 39126ac145dcc28b8d3b99469129dab77f3eca8e6cab54d7e0470314b6875f13
+SHA1: 05115992b8778b227caa25dcdd6a99c13d0a4dc0
+MD5sum: 2375565a75bcc97d945ebdd41769bd60
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20260925.19.59
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 536692
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20260925.19.59_amd64.deb
+Size: 83047872
+SHA512: c23e125820a8a4cd0aae52d61f9076b3ae34f8db95f0516fea4480c5e67a3c7284b7bc10395dd5ee4f58b808943b2484264c13e3faa8c54373df883e848b089b
+SHA256: b58bf58ba949573c31ef803d55620cd1003c6f74f7de72dfbdd68d70ab9a7a45
+SHA1: 519c34df0d630b3d90d5b4dab51251fe389019f4
+MD5sum: 38da0cbb765698b587eaf5203da49d55
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20260925.16.47
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 536692
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20260925.16.47_amd64.deb
+Size: 83046200
+SHA512: c06ece0249dca35fc2ae3cf15529708ca60643c1df3320ac0511b4c23b8d22d093b02afcce076e04e29cd6e173c8be00d6f8a4a3629c1675dcf7f8b3985135bc
+SHA256: d030ddd63f01985c96cc2ae15d1bb4c430133d8ff8a14f834c054e00f0a9cbb5
+SHA1: 100de565f2fdacd0d92c32888e252bf35adebf2a
+MD5sum: fb99d4588ef56132572132207085ac22
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20260925.14.30
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 536686
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20260925.14.30_amd64.deb
+Size: 83056208
+SHA512: 9ffbc940026a5061f22deab601f7769014586c2487b2c3936e4039e70befc65c8a741a45120f859e1f930c83b1661928d440a1c696a1c8723c874b67fe0ef863
+SHA256: f76aa6893d5be9d12e6e4266d61a8392141baa497a1a494eb69983ea8f021a50
+SHA1: bcbc2a537eff802a63410b15dc2ec29d003748be
+MD5sum: fe511efd14b3291fecf325ecdfecd2c3
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20260925.14.17
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 536680
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20260925.14.17_amd64.deb
+Size: 83049760
+SHA512: 7d94f33f54297b37287088ef9bbf3d529a01301b76f800a3745a44f21cdbf4ec8ce1ffd9839b99e071e7ffdf19f3d8727fb1b9bafb527ad194c5a020c02ab23a
+SHA256: 8ad704f252c0c46a8eb7f631ac2579a4b553dbe7027b913ec600efe4bf729a64
+SHA1: 61c9381194606802e4ea99ca79ebcd63aa0d9dd2
+MD5sum: b178751c417ec7efa37e300aa141c18e
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20260925.11.38
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 536680
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20260925.11.38_amd64.deb
+Size: 83054008
+SHA512: d6f0c58c12f89b0da35a49cde17550f0a54b484a8eb0c0ce5d30bda3133e789eff931158f7283958ab053856eec9bd4113670bdf998407d377696cdd4bddcff8
+SHA256: c0b458f7eaaa4a1cf5b8ab0c8244860cc3b95ed2e2d85f3c27830695dcc976b7
+SHA1: 08aefb81c8e257ea1512ad28f11ae3b6971afe08
+MD5sum: 599abfcf7d6497181de317c05c5a254c
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20260925.10.46
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 536680
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20260925.10.46_amd64.deb
+Size: 83053732
+SHA512: 98cf6bf1ae5027152430d9aa2dd00fc0857b6503ace5f6afa7a450336232ce54c03cbd89921f293c716b195e3035efa89a3200f68f356759ce5476afe9caf461
+SHA256: 34d3816ab57d3cdd7be8e68cbd2d97e8c67991060c303034a35e9ca7f7a751b0
+SHA1: 3a5f5eaa7ae4ecdc6e3af782b88661ec9d3d27ff
+MD5sum: 74f8e4c06b82a838920a52106806dcec
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20260925.10.31
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 536680
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20260925.10.31_amd64.deb
+Size: 83052024
+SHA512: 0d31a168a2ab54c863f989aa7ba4f81d3093ad93fbc375ba4851b7a61a5a97ebd02787401dff4c2081da4be90513e224097a258f715c12176931c7687b89e0e6
+SHA256: 111dd9eb670cdad3e0fe2ebbe0b3071da7033d200e91967bc62a080c6be45078
+SHA1: e4677a191f296a9f52a652537fb404b5f78724b3
+MD5sum: 8669ac7d447e524c1fe7954581a72381
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20260925.10.9
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 536680
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20260925.10.9_amd64.deb
+Size: 83055492
+SHA512: 1a69af3ddaa4ab85e707c11da0635f55f1cce73d15123f469e299e3dcb3f8b1eb4c5d9fb3961d3f76d4395526f8081fc4a300aac86dc9c33cf079976b589dac5
+SHA256: 78b5a7b3b8cb20a01f5ac51867f88964a809cae78edcd53a06230c0101f91b07
+SHA1: 78519546ebf9148813df8865f8b1c351b8a5b003
+MD5sum: cbbf84426bfbe050de6b8022b280757f
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20260924.18.20
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 536646
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20260924.18.20_amd64.deb
+Size: 83041500
+SHA512: d86abd3b0154cb2f451467c789b1c63c8b0c493ee47322fb81975c20e9708693728eb7769f312b1700094115970e9b2007187b1d4e1c6a181c74e1cecca992ad
+SHA256: 46ebc64a808fef5cba5a9a0e5d3ed889d16893bf008a5fdf8f1eeb5c3814d91a
+SHA1: 4eaa3ff3cb85ab2cb3386eddf6ec0ba7e2e41c4d
+MD5sum: a1ad3e7bcfd45c0610a27af1cca0be1a
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20260924.13.15
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 536704
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20260924.13.15_amd64.deb
+Size: 83045544
+SHA512: 30a8ef9a8a31df496512c7c156f63c1fff9b754fe5c1fe88e65d10ab817d38668956d713de19b2f9dbda2f7efa9ae9671c3c376e311fbd9bfd4f56e30fb98e3d
+SHA256: 5c77c5ea1d4ff0e5104acb653291456f55bfb1e49b4d758f1a23382d3e80cab2
+SHA1: 3863feca99150c0ea60f223999fdffa47bcc8533
+MD5sum: 0978ad6b05026ad212ad9fdf0e0b4f44
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20260924.12.31
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 536646
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20260924.12.31_amd64.deb
+Size: 83043236
+SHA512: 69a85b54a92f184a9dd8859ee01ab9d93f1dd3223d6c37536b74d4fdd5fdfdc51df8f635bbd1f939dcabb433f88e2066bdf2d7b6a06f7fd0b313c8680d5ea480
+SHA256: b4f43344bf127d9e5727e9612436e705f5ff61a05756209df2eccfa1b06782fb
+SHA1: 3b783e5493bb6253ea4fa8561fd37bbd0a615448
+MD5sum: de1860a3942275cd4ab6ff90376b6621
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20260924.11.17
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 536646
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20260924.11.17_amd64.deb
+Size: 83045076
+SHA512: a70d7d820e6da306ae4ac938229a167fd4278f7837bf66361b4c8a2a484e8be18f811f51e34d6bc4cd0630c1d0f372ca5cc39a10407b438b191fa7c2c7d79f90
+SHA256: 7b8181b9f3142f29b71cbef3d7ced7af89912cb3e7c91a5bb7afb1e83959af38
+SHA1: 4b65bf0a6be0506d23886de36d49ccba0e3efa3b
+MD5sum: 91b1676e1163616a05281039adddc4db
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20260923.17.59
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 536648
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20260923.17.59_amd64.deb
+Size: 83036636
+SHA512: 3b6e7e35978b88aaa4bed7099cb2fd687f3e4f6424f76589fab7cb076b116bfb1c5e0a9b78065532ddd4ec269e52ec2e0f408cd071a88db3eb5e67ce10bead19
+SHA256: 3c13ac3dc07591500844162891b78fa7ddfa71194b60ab864b9e810c714d3a08
+SHA1: 1f0cfd0a3ebd0e70a8d0cfa18f8923010028dd7d
+MD5sum: fdafc3d589b64f51ba633f88c0e01767
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20260923.7.22
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 536649
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20260923.7.22_amd64.deb
+Size: 83058472
+SHA512: 710e2afa1359977fc627de7fa5f5b17b9d8aa3b11462e4444bebac7e1900acd71359906f61142d0ea266364f9909737a4f7e7e3fbae15b8ecebba41b5282d01f
+SHA256: aebeb334bc67e12e46e4168a669ecde762778f7e2ce9393f38f5b7fc156d33eb
+SHA1: 105632563cc5c92227ef377918debd7390aae659
+MD5sum: 60bd8ccd8d31dd1b62650349ce1fcecf
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20260922.14.41
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 536649
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20260922.14.41_amd64.deb
+Size: 83056984
+SHA512: 4b0e7af093258ff8dac12f64eed7bb021ccbf0cc79c4cc5c2303122b86a083e0875a84f6dbf1b3a6baea749712474684bc8dcc1e6df0b6c6bd9829bf60a0e208
+SHA256: b150f788c9649df49871fc73e76f767df058b3148b517cb8db07464588d2aeb3
+SHA1: 455ef045531da381e4dd85a2df4bada5d8c56818
+MD5sum: 7631432c79dabf09883c99f3d316d96c
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20260922.13.33
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 536577
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20260922.13.33_amd64.deb
+Size: 83016256
+SHA512: c4e150a3184c6abbabc180fc82b2528ce8e03e96f49a9212b9d046aa3a989bf58148eca321b17432b78cdafcd10f79a3f9c55f7b61930f21fce6c0f6c835cb6f
+SHA256: 65add1c94c9a8d8c11e1a7c669a213c91cf407e5eef10c6f4b6a8082a09f6bfa
+SHA1: 6dcd3e2a20d2d6d959855cb226ed9bca7d12520c
+MD5sum: b36966cf02a4701757a303d975aba663
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20260922.7.20
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 536299
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20260922.7.20_amd64.deb
+Size: 83015372
+SHA512: a76f344bfcbf5b0624a13526611e4128c76f75f5c937e0c4ae13c907d2bdc7ec8367951b182f5b618c23f35c05e0bf2b7a247c1838fcb3450e8c781dccc2ea21
+SHA256: 022bb54b231dba5b9922b52edf5925c89d40e5dee07c46e91b104a3abdf40ef8
+SHA1: 23f91b9efc7e872355e9d65b04b1e3fc4183d7a7
+MD5sum: eb6f637b16c8b55878b40de8c438e150
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20260921.20.50
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 536299
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20260921.20.50_amd64.deb
+Size: 83014696
+SHA512: d3b8c09b173c64763abd6ee5216e458651e946a41182bc18d206c9329c949d949b5b35990df6a5567dc9bd9cdfbe51af9b096ce1c1b5c14367d97ba2ee9f4a07
+SHA256: 52806cfeb35a80886a9c1af48732360ee25b5d6237f633d398c5ab8db2085ae4
+SHA1: 46b3070a02598d45976f9b2c365bdae47b720db8
+MD5sum: 4fdb2d0f814199cb99af964b95c02c85
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20260920.7.27
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 536226
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20260920.7.27_amd64.deb
+Size: 82959920
+SHA512: 9552cd05ba2982f26a9dc0805ecf68d5c30a5a8ad3e1e6e76a1a3fcae0170856359584f325a2390150c4c4b8882aa426b6908deb4b34e7468b68390d870e1821
+SHA256: c3feb27e0c11e391c3578e3afc0c21c7a2e5177dba5f2a468dc62341470e58b6
+SHA1: e71520724e72462f90200813edc3af18fabb70e6
+MD5sum: bcf3ff05d878787e1cb0115c89cf17aa
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20260920.6.30
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 536226
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20260920.6.30_amd64.deb
+Size: 82959336
+SHA512: 6e64fb04a14c225c0fdc5fec15c7ac3bd1df6ce3ae3f2a0dbb374298eab310cc8968b3615584f0f39aab04c5654a0bdce6892a99111198722c8fff09d559a86b
+SHA256: 4eeb43ffa2d68616ab5e4107a80693913b080da9dfcc38c2b79d7c1c96068f84
+SHA1: 09a12bb7d7daa874b3192cc4473dd3c979c82163
+MD5sum: 965306306bda280ae9629a71be491321
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20260919.6.54
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 536226
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20260919.6.54_amd64.deb
+Size: 82969244
+SHA512: b0cffd519e7d50d3a7955950863907cd9ea74ab9bc1f255a5d8c3579d07856fde461f1d23a46845890166147b76d43fcd1891218e0bbc43eb0b9d888e54edce3
+SHA256: 9045c7d05fa902b3edfa95d64c8f2825e10957d34dda026e12d4fc1489345e17
+SHA1: 9c04171024053f45782b5aa23b8079e7ee56a781
+MD5sum: 98b9f44c498008260c11197cd4cb6d54
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20260919.5.56
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 536223
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20260919.5.56_amd64.deb
+Size: 82972244
+SHA512: 150b2bc5b3d148f0b6e5ef23d9403744528bd9015e141cd9eb61e5f510aff9f2d23775ba76b5e1d81c6617c7d0e991061dfc31a5c4fbddf98fd00213c2204d49
+SHA256: 4f5b30f61c6fa37730c61a0929133e937d401cc2551394e076d5cf8b63617436
+SHA1: ac9d1d7b1fe0b358f6788b44936048157b21c642
+MD5sum: 656992aff716d8ffaf43531986ca5580
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20260919.4.57
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 536302
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20260919.4.57_amd64.deb
+Size: 82960148
+SHA512: d98aa151ad877f29efa9d49a05e0ab77fcbd83c03a5ff981469cc1e691c2679f251467cdaaf58af97eb34c609e50e970e8bc7b1e4083469848d9dc27ba538903
+SHA256: 64d8c97003deeafb8921c0e7917e10f57f88f31290001b9fdba3fd4966473e78
+SHA1: 1b220b0a04e2227e2431f644eb2487051ba12d17
+MD5sum: 392403c89dea17d949f33f83379b4e62
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20260919.4.53
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 536207
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20260919.4.53_amd64.deb
+Size: 82936608
+SHA512: f5ce1375a8334248981561bff6732f7a3d86138dcbbab1a06b5c26c834c3c0ac150f88c92e94fa53efe5381244303be34c66f9c7eb5a3758d72dd0714356efa9
+SHA256: 350b9557aba59854cd605de81f9368dfe7297976fc21c687ac3c6bb1caad6761
+SHA1: 115392dce592cff84ac030d30823334b4a49d6cd
+MD5sum: ba64f21812e63a5e5642f84d691c4354
+Description: Acton Programming Language
+ An awesome programming language.
+
+Package: acton
+Version: 0.30.0.20260918.7.5
+Architecture: amd64
+Maintainer: Kristian Larsson <kristian@spritelink.net>
+Installed-Size: 536209
+Depends: libc6 (>= 2.28), ca-certificates
+Homepage: https://acton.now/
+Priority: optional
+Section: devel
+Filename: pool/main/a/acton/acton_0.30.0.20260918.7.5_amd64.deb
+Size: 82960684
+SHA512: f568424716cf03d172a0cc4a190e645c3327ff353caf26cad94463286bab23c778fd621294c546feac63ffe2d46dd261955e736edc065e1c72a8b7c74d12c863
+SHA256: 4e1035ccdc5884eddd74d8fa057c509cd94ca03b13170153d3884655fb9b6e80
+SHA1: 4e5674f8fd1b00b02d5fcb1278ef5e923d14f9d7
+MD5sum: 95f856bc674f664540ecf79b9b569f15
+Description: Acton Programming Language
+ An awesome programming language.
+
