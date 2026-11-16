@@ -1,11 +1,18 @@
 # Clean old tip releases from the repo by running the clean.sh script. Run it once a day.
 # Ensure that the GitHub Actions workflow has enough permissions to push changes to the repo.
+# A manual run pushes only when the "push" input is set; without it, the log shows what
+# would be dropped.
 
 name: "Clean old tip releases"
 on:
   schedule:
     - cron: '0 4 * * *'
   workflow_dispatch:
+    inputs:
+      push:
+        description: "Push the cleaned main"
+        type: boolean
+        default: false
 
 jobs:
   build:
@@ -17,15 +24,22 @@ jobs:
         uses: actions/checkout@v6
         with:
           fetch-depth: 0
-      - name: "Configure git"
-        run: |
-          pwd
-          ls -la
-          git config --global --add safe.directory /__w/aptip.acton-lang.io/aptip.acton-lang.io
-          git config user.name "Apt Bot"
-          git config user.email apt@acton-lang.org
+          filter: blob:none
+          sparse-checkout: .github
       - name: "Run clean.sh"
         run: bash clean.sh
+        env:
+          GH_TOKEN: ${{ github.token }}
       - name: "Push changes"
+        if: github.event_name == 'schedule' || inputs.push
         run: |
-          git push --force origin main
+          if ! git rev-parse -q --verify refs/heads/cleaned > /dev/null; then
+            echo "Nothing to push."
+            exit 0
+          fi
+          # The root commit has no parents, so marking it shallow leaves the history
+          # as it is. A push from a shallow repository counts everything in the tree
+          # of the old main as already on GitHub, so only the rewritten commits and
+          # trees are sent, not the kept releases.
+          git rev-list --max-parents=0 cleaned > .git/shallow
+          git push --force-with-lease=main:"$(git rev-parse origin/main)" origin cleaned:main
