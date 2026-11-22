@@ -4,14 +4,14 @@ Binary: acton
 Architecture: amd64
 Version: 0.31.0.20261122.20.31
 Checksums-Md5:
- a07a140df14a692d3b83db64e3a64bf8 87137260 acton_0.31.0.20261122.20.31_amd64.deb
+ 27d97731a9518002fccf244adf4a4556 87138424 acton_0.31.0.20261122.20.31_amd64.deb
 Checksums-Sha1:
- caaf5eda2bf46b3a8c056f3e14dbbf0318cf3ea2 87137260 acton_0.31.0.20261122.20.31_amd64.deb
+ 3cce5071af407666eda96fc4bb380b6c9822972c 87138424 acton_0.31.0.20261122.20.31_amd64.deb
 Checksums-Sha256:
- a9b89881d6abc1e9264381c1f2818bbe537306f62257b41b99e6737590d2c4e5 87137260 acton_0.31.0.20261122.20.31_amd64.deb
+ 9377691e56c4401cabef1b4031a3e7c87c23245fd26d9a1b57a1d63be641ea0a 87138424 acton_0.31.0.20261122.20.31_amd64.deb
 Build-Origin: Ubuntu
 Build-Architecture: amd64
-Build-Date: Sun, 22 Nov 2026 20:38:57 +0000
+Build-Date: Sun, 22 Nov 2026 20:39:19 +0000
 Build-Tainted-By:
  merged-usr-via-aliased-dirs
  usr-local-has-includes

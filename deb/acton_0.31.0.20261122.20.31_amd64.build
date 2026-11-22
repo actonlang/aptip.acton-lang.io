@@ -58,30 +58,30 @@ dh_bash-completion: warning: file-list parsing failed, installing as proper snip
 	installing source as acton`)
 	install -p -m0644 debian/acton.bash-completion debian/acton/usr/share/bash-completion/completions/acton
    dh_perl
+	/usr/bin/perl -p -i -e "s{#!\\s*(/usr/bin/perl|\\/usr\\/bin\\/perl|/usr/bin/env\\s+perl)}{#! /usr/bin/perl} if (\$. == 1);" debian/acton/usr/lib/acton/deps/mbedtls/framework/scripts/gen_gcm_encrypt.pl
+	/usr/bin/perl -p -i -e "s{#!\\s*(/usr/bin/perl|\\/usr\\/bin\\/perl|/usr/bin/env\\s+perl)}{#! /usr/bin/perl} if (\$. == 1);" debian/acton/usr/lib/acton/deps/mbedtls/framework/scripts/recursion.pl
+	/usr/bin/perl -p -i -e "s{#!\\s*(/usr/bin/perl|\\/usr\\/bin\\/perl|/usr/bin/env\\s+perl)}{#! /usr/bin/perl} if (\$. == 1);" debian/acton/usr/lib/acton/deps/mbedtls/framework/scripts/gen_ctr_drbg.pl
+	/usr/bin/perl -p -i -e "s{#!\\s*(/usr/bin/perl|\\/usr\\/bin\\/perl|/usr/bin/env\\s+perl)}{#! /usr/bin/perl} if (\$. == 1);" debian/acton/usr/lib/acton/deps/mbedtls/framework/scripts/massif_max.pl
+	/usr/bin/perl -p -i -e "s{#!\\s*(/usr/bin/perl|\\/usr\\/bin\\/perl|/usr/bin/env\\s+perl)}{#! /usr/bin/perl} if (\$. == 1);" debian/acton/usr/lib/acton/deps/mbedtls/framework/scripts/gen_gcm_decrypt.pl
+	/usr/bin/perl -p -i -e "s{#!\\s*(/usr/bin/perl|\\/usr\\/bin\\/perl|/usr/bin/env\\s+perl)}{#! /usr/bin/perl} if (\$. == 1);" debian/acton/usr/lib/acton/deps/mbedtls/framework/scripts/check-doxy-blocks.pl
+	/usr/bin/perl -p -i -e "s{#!\\s*(/usr/bin/perl|\\/usr\\/bin\\/perl|/usr/bin/env\\s+perl)}{#! /usr/bin/perl} if (\$. == 1);" debian/acton/usr/lib/acton/deps/mbedtls/framework/scripts/gen_pkcs1_v21_sign_verify.pl
 	/usr/bin/perl -p -i -e "s{#!\\s*(/usr/bin/perl|\\/usr\\/bin\\/perl|/usr/bin/env\\s+perl)}{#! /usr/bin/perl} if (\$. == 1);" debian/acton/usr/lib/acton/deps/mbedtls/framework/data_files/print_c.pl
 	/usr/bin/perl -p -i -e "s{#!\\s*(/usr/bin/perl|\\/usr\\/bin\\/perl|/usr/bin/env\\s+perl)}{#! /usr/bin/perl} if (\$. == 1);" debian/acton/usr/lib/acton/deps/mbedtls/framework/psasim/src/psa_sim_serialise.pl
 	/usr/bin/perl -p -i -e "s{#!\\s*(/usr/bin/perl|\\/usr\\/bin\\/perl|/usr/bin/env\\s+perl)}{#! /usr/bin/perl} if (\$. == 1);" debian/acton/usr/lib/acton/deps/mbedtls/framework/psasim/src/psa_sim_generate.pl
-	/usr/bin/perl -p -i -e "s{#!\\s*(/usr/bin/perl|\\/usr\\/bin\\/perl|/usr/bin/env\\s+perl)}{#! /usr/bin/perl} if (\$. == 1);" debian/acton/usr/lib/acton/deps/mbedtls/framework/scripts/recursion.pl
-	/usr/bin/perl -p -i -e "s{#!\\s*(/usr/bin/perl|\\/usr\\/bin\\/perl|/usr/bin/env\\s+perl)}{#! /usr/bin/perl} if (\$. == 1);" debian/acton/usr/lib/acton/deps/mbedtls/framework/scripts/gen_pkcs1_v21_sign_verify.pl
-	/usr/bin/perl -p -i -e "s{#!\\s*(/usr/bin/perl|\\/usr\\/bin\\/perl|/usr/bin/env\\s+perl)}{#! /usr/bin/perl} if (\$. == 1);" debian/acton/usr/lib/acton/deps/mbedtls/framework/scripts/gen_gcm_decrypt.pl
-	/usr/bin/perl -p -i -e "s{#!\\s*(/usr/bin/perl|\\/usr\\/bin\\/perl|/usr/bin/env\\s+perl)}{#! /usr/bin/perl} if (\$. == 1);" debian/acton/usr/lib/acton/deps/mbedtls/framework/scripts/massif_max.pl
-	/usr/bin/perl -p -i -e "s{#!\\s*(/usr/bin/perl|\\/usr\\/bin\\/perl|/usr/bin/env\\s+perl)}{#! /usr/bin/perl} if (\$. == 1);" debian/acton/usr/lib/acton/deps/mbedtls/framework/scripts/check-doxy-blocks.pl
-	/usr/bin/perl -p -i -e "s{#!\\s*(/usr/bin/perl|\\/usr\\/bin\\/perl|/usr/bin/env\\s+perl)}{#! /usr/bin/perl} if (\$. == 1);" debian/acton/usr/lib/acton/deps/mbedtls/framework/scripts/gen_gcm_encrypt.pl
-	/usr/bin/perl -p -i -e "s{#!\\s*(/usr/bin/perl|\\/usr\\/bin\\/perl|/usr/bin/env\\s+perl)}{#! /usr/bin/perl} if (\$. == 1);" debian/acton/usr/lib/acton/deps/mbedtls/framework/scripts/gen_ctr_drbg.pl
 	mv debian/acton.substvars.new debian/acton.substvars
    dh_link
 	rm -f debian/acton/usr/lib/acton/bin/actonc
 	ln -s acton debian/acton/usr/lib/acton/bin/actonc
-	rm -f debian/acton/usr/bin/acton
-	ln -s ../lib/acton/bin/acton debian/acton/usr/bin/acton
-	rm -f debian/acton/usr/bin/lsp-server-acton
-	ln -s ../lib/acton/bin/lsp-server-acton debian/acton/usr/bin/lsp-server-acton
 	rm -f debian/acton/usr/bin/actondb
 	ln -s ../lib/acton/bin/actondb debian/acton/usr/bin/actondb
+	rm -f debian/acton/usr/bin/acton
+	ln -s ../lib/acton/bin/acton debian/acton/usr/bin/acton
 	rm -f debian/acton/usr/bin/runacton
 	ln -s ../lib/acton/bin/runacton debian/acton/usr/bin/runacton
 	rm -f debian/acton/usr/bin/actonc
 	ln -s ../lib/acton/bin/acton debian/acton/usr/bin/actonc
+	rm -f debian/acton/usr/bin/lsp-server-acton
+	ln -s ../lib/acton/bin/lsp-server-acton debian/acton/usr/bin/lsp-server-acton
    dh_strip_nondeterminism
    dh_compress
 	cd debian/acton
